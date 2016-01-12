@@ -1,0 +1,75 @@
+% Compiler ce document 
+
+% package de base
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+
+% langues
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[francais]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage[hidelinks]{hyperref} % liens
+\usepackage{fancyhdr} % En tetes / bas de page
+\usepackage{uarial} % police arial
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor} % Style pour affichage du C
+\usepackage{courier} % police pour les listings
+
+% Page de Garde -- Necessite d'installer le package titling, si probleme
+% commenter la ligne suivante ainsi que les infos necessaires a la page
+% de garde
+\usepackage{pageGarde/HEIG_STY}
+
+\input{utils/myCommands.tex}
+\input{utils/myColors.tex}
+\input{utils/myConfigurations.tex}
+
+% Mise en forme de la page de titre
+\author{Domingues Pedrosa João Miguel \\ Nicolas Kobel}
+\title{Journal du commande de déplacement d'un chariot 
+\\Laboratoire MSS complexe}
+
+% Informations necessaires a la page de garde
+% Commenter si probleme de compilation
+\acro{CSN}
+\cours{Conception de système numérique}
+\date{\today}
+\prof{Professeur: M. Messerli Etienne}
+
+%en-tête
+\lhead{Domingues João // Nicolas Kobel}
+\chead{Laboratoire déplacement chariot}
+\rhead{\theAcro}
+
+%pied-de-page
+\lfoot{HEIG-VD}
+\cfoot{\today}
+\rfoot{\thepage}
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+%Ici commence réelement l'écriture du rapport
+\section{Mandat}
+
+\section{Analyse}
+
+\section{Schéma}
+
+\section{Simulation}
+
+\section{Synthèse}
+
+\section{VHDL}
+
+\end{document}
