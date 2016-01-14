@@ -40,11 +40,13 @@ end mss_cmd_moteur ;
 
 architecture struct of mss_cmd_moteur is
 
+   -- Etat lorsque le moteur est à l'arrêt
    constant E_Stop_0     : std_logic_vector(2 downto 0) := "000";
    constant E_Stop_1     : std_logic_vector(2 downto 0) := "001";
    constant E_Stop_2     : std_logic_vector(2 downto 0) := "010";
    constant E_Stop_3     : std_logic_vector(2 downto 0) := "011";
    
+   -- Etat lorsque le moteur est en marche
    constant E_Run_0      : std_logic_vector(2 downto 0) := "100";
    constant E_Run_1      : std_logic_vector(2 downto 0) := "101";
    constant E_Run_2      : std_logic_vector(2 downto 0) := "110";
@@ -87,54 +89,153 @@ begin
          
          -- Gestion quand le moteur à l'arrêt
          when E_Stop_0 =>
+            -- sens anti-horaire
             if ((m_auto_s = '0') and (dir_s = '0') and (start_s = '1') and (clk_div_s = '1')) or 
                ((m_auto_s = '1') and (dir_s = '0') and (start_s = '1') and (end_dist_s = '0') and (clk_div_s = '1')) then
-               Etat_Fut <= E_Run_2;
-               
+               Etat_Fut <= E_Run_1;
+            
+            -- sens horaire
             elsif ((m_auto_s = '0') and (dir_s = '1') and (start_s = '1') and (clk_div_s = '1')) or 
                   ((m_auto_s = '1') and (dir_s = '1') and (start_s = '1') and (end_dist_s = '0') and (clk_div_s = '1')) then
-               Etat_Fut <= E_Run_1;
-               
+               Etat_Fut <= E_Run_2;
+            
+            -- Surplace
             else
                Etat_Fut <= E_Stop_0; 
             end if; 
          
          when E_Stop_1 =>
+            -- sens anti-horaire
             if ((m_auto_s = '0') and (dir_s = '0') and (start_s = '1') and (clk_div_s = '1')) or 
                ((m_auto_s = '1') and (dir_s = '0') and (start_s = '1') and (end_dist_s = '0') and (clk_div_s = '1')) then
                Etat_Fut <= E_Run_3;
-               
+            
+            -- sens horaire
             elsif ((m_auto_s = '0') and (dir_s = '1') and (start_s = '1') and (clk_div_s = '1')) or 
                   ((m_auto_s = '1') and (dir_s = '1') and (start_s = '1') and (end_dist_s = '0') and (clk_div_s = '1')) then
-               Etat_Fut <= E_Run_1;
-               
+               Etat_Fut <= E_Run_0;
+            
+            -- Surplace            
             else
-               Etat_Fut <= E_Stop_0; 
+               Etat_Fut <= E_Stop_1; 
             end if; 
          
          when E_Stop_2 =>
+            -- sens anti-horaire
             if ((m_auto_s = '0') and (dir_s = '0') and (start_s = '1') and (clk_div_s = '1')) or 
                ((m_auto_s = '1') and (dir_s = '0') and (start_s = '1') and (end_dist_s = '0') and (clk_div_s = '1')) then
-               Etat_Fut <= E_Run_3;
+               Etat_Fut <= E_Run_0;
                
+            -- sens horaire
             elsif ((m_auto_s = '0') and (dir_s = '1') and (start_s = '1') and (clk_div_s = '1')) or 
                   ((m_auto_s = '1') and (dir_s = '1') and (start_s = '1') and (end_dist_s = '0') and (clk_div_s = '1')) then
-               Etat_Fut <= E_Run_1;
+               Etat_Fut <= E_Run_3;
                
+            -- Surplace
             else
-               Etat_Fut <= E_Stop_0; 
+               Etat_Fut <= E_Stop_2; 
             end if; 
             
          when E_Stop_3 =>
+            -- sens anti-horaire
+            if ((m_auto_s = '0') and (dir_s = '0') and (start_s = '1') and (clk_div_s = '1')) or 
+               ((m_auto_s = '1') and (dir_s = '0') and (start_s = '1') and (end_dist_s = '0') and (clk_div_s = '1')) then
+               Etat_Fut <= E_Run_2;
+            
+            -- sens horaire
+            elsif ((m_auto_s = '0') and (dir_s = '1') and (start_s = '1') and (clk_div_s = '1')) or 
+                  ((m_auto_s = '1') and (dir_s = '1') and (start_s = '1') and (end_dist_s = '0') and (clk_div_s = '1')) then
+               Etat_Fut <= E_Run_1;
+            
+            -- Surplace
+            else
+               Etat_Fut <= E_Stop_3; 
+            end if; 
          
          -- Gestion quand le moteur est en marche
          when E_Run_0 =>
+            -- sens anti-horaire
+            if ((m_auto_s = '0') and (dir_s = '0') and (start_s = '1') and (clk_div_s = '1')) or 
+               ((m_auto_s = '1') and (dir_s = '0') and (end_dist_s = '0') and (clk_div_s = '1')) then
+               Etat_Fut <= E_Run_1;
+            
+            -- sens horaire
+            elsif ((m_auto_s = '0') and (dir_s = '1') and (start_s = '1') and (clk_div_s = '1')) or 
+                  ((m_auto_s = '1') and (dir_s = '1') and (end_dist_s = '0') and (clk_div_s = '1')) then
+               Etat_Fut <= E_Run_2;
+            
+            -- arret du moteur
+            elsif ((m_auto_s = '0') and (start_s = '0') and (clk_div_s = '1')) or 
+                  ((m_auto_s = '1') and (end_dist_s = '1') and (clk_div_s = '1')) then
+               Etat_Fut <= E_Stop_0;
+            
+            -- Surplace
+            else
+               Etat_Fut <= E_Run_0; 
+            end if; 
          
          when E_Run_1 =>
+            -- sens anti-horaire
+            if ((m_auto_s = '0') and (dir_s = '0') and (start_s = '1') and (clk_div_s = '1')) or 
+               ((m_auto_s = '1') and (dir_s = '0') and (end_dist_s = '0') and (clk_div_s = '1')) then
+               Etat_Fut <= E_Run_3;
+            
+            -- sens horaire
+            elsif ((m_auto_s = '0') and (dir_s = '1') and (start_s = '1') and (clk_div_s = '1')) or 
+                  ((m_auto_s = '1') and (dir_s = '1') and (end_dist_s = '0') and (clk_div_s = '1')) then
+               Etat_Fut <= E_Run_0;
+            
+            -- arret du moteur
+            elsif ((m_auto_s = '0') and (start_s = '0') and (clk_div_s = '1')) or 
+                  ((m_auto_s = '1') and (end_dist_s = '1') and (clk_div_s = '1')) then
+               Etat_Fut <= E_Stop_1;
+            
+            -- Surplace
+            else
+               Etat_Fut <= E_Run_1; 
+            end if;
          
          when E_Run_2 =>
+            -- sens anti-horaire
+            if ((m_auto_s = '0') and (dir_s = '0') and (start_s = '1') and (clk_div_s = '1')) or 
+               ((m_auto_s = '1') and (dir_s = '0') and (end_dist_s = '0') and (clk_div_s = '1')) then
+               Etat_Fut <= E_Run_0;
+            
+            -- sens horaire
+            elsif ((m_auto_s = '0') and (dir_s = '1') and (start_s = '1') and (clk_div_s = '1')) or 
+                  ((m_auto_s = '1') and (dir_s = '1') and (end_dist_s = '0') and (clk_div_s = '1')) then
+               Etat_Fut <= E_Run_3;
+            
+            -- arret du moteur
+            elsif ((m_auto_s = '0') and (start_s = '0') and (clk_div_s = '1')) or 
+                  ((m_auto_s = '1') and (end_dist_s = '1') and (clk_div_s = '1')) then
+               Etat_Fut <= E_Stop_2;
+            
+            -- Surplace
+            else
+               Etat_Fut <= E_Run_2; 
+            end if;
          
          when E_Run_3 =>
+            -- sens anti-horaire
+            if ((m_auto_s = '0') and (dir_s = '0') and (start_s = '1') and (clk_div_s = '1')) or 
+               ((m_auto_s = '1') and (dir_s = '0') and (end_dist_s = '0') and (clk_div_s = '1')) then
+               Etat_Fut <= E_Run_2;
+            
+            -- sens horaire
+            elsif ((m_auto_s = '0') and (dir_s = '1') and (start_s = '1') and (clk_div_s = '1')) or 
+                  ((m_auto_s = '1') and (dir_s = '1') and (end_dist_s = '0') and (clk_div_s = '1')) then
+               Etat_Fut <= E_Run_1;
+            
+            -- arret du moteur
+            elsif ((m_auto_s = '0') and (start_s = '0') and (clk_div_s = '1')) or 
+                  ((m_auto_s = '1') and (end_dist_s = '1') and (clk_div_s = '1')) then
+               Etat_Fut <= E_Stop_3;
+            
+            -- Surplace
+            else
+               Etat_Fut <= E_Run_3; 
+            end if;
          
       end case;
    end process;
@@ -148,8 +249,8 @@ begin
       end if;
    end process;
    
-   done_nbusy_o <= done_nbusy_s;
-   PH_A_o       <= PH_A_s;      
-   PH_B_o       <= PH_B_s;      
+   done_nbusy_o <= Etat_Pres(2);
+   PH_A_o       <= Etat_Pres(1);      
+   PH_B_o       <= Etat_Pres(0);      
    
 end struct;
