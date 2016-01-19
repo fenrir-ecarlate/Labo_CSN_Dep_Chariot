@@ -2,11 +2,11 @@
 -- HEIG-VD, Haute Ecole d'Ingenierie et de Gestion du canton de Vaud
 -- Institut REDS, Reconfigurable & Embedded Digital Systems
 --
--- Fichier      : div_clk.vhd
+-- Fichier      : cpt_pos.vhd
 --
 -- Description  : Diviseur d'horloge pour labo ctrl de chariot
 -- 
--- Auteur       : Nicolas Kobel
+-- Auteur       : ---
 -- Date         : ---
 -- Version      : 1.0
 --
@@ -14,32 +14,31 @@
 --| Modifications |-------------------------------------------------------------
 
 --------------------------------------------------------------------------------
-
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-entity div_clk is
+entity cpt_pos is
   port (
   clock_i       : in  std_logic;
   reset_i       : in  std_logic;
-  sel_vitesse_i : in  std_logic_vector(2 downto 0);
+  clk_div_i     : in  std_logic;
+  start_i       : in  std_logic;
+  dist_i        : in  std_logic_vector(6 downto 0);
   pulse_o       : out std_logic
         );
         
-end div_clk;
+end cpt_pos;
 
-architecture cpt of div_clk is
+architecture cpt of cpt_pos is
   signal cpt_now  : unsigned(9 downto 0);
   signal cpt_fut  : unsigned(9 downto 0);
-  signal cycle    : unsigned(9 downto 0);
   signal is_min_s : std_logic;
-  type vitesses_t is array (0 to 7) of unsigned(9 downto 0);
-  constant vitesses : vitesses_t := (to_unsigned(1000,10),to_unsigned(500,10),to_unsigned(200,10),to_unsigned(100,10),to_unsigned(60,10),to_unsigned(40,10),to_unsigned(20,10),to_unsigned(10,10));
   
   begin
-  cpt_fut <= cycle when (is_min_s = '1') else
-             cpt_now - 1;
+  cpt_fut <= dist_i & "000" when (start_i = '1') else -- RAZ synchrone
+             cpt_now - 1 when (clk_div_i = '1') else  -- comptage
+             cpt_now;                                 -- maintient
   
   process(reset_i, clock_i) begin
     if (reset_i = '1') then
@@ -52,5 +51,5 @@ architecture cpt of div_clk is
   is_min_s <= '1' when (cpt_now = 0) else
               '0';
   pulse_o <= is_min_s;
-  cycle <= vitesses(to_integer(unsigned(sel_vitesse_i)));
+  
 end cpt;
