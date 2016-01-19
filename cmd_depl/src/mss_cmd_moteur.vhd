@@ -68,11 +68,11 @@ begin
    Sync:process(reset_i, clock_i)
    begin
       if reset_i = '1' then
-         m_auto_s <= 0; 
-         dir_s <= 0;    
-         start_s <= 0;  
-         end_dist_s <= 0;
-         clk_div_s <= 0;
+         m_auto_s <= '0'; 
+         dir_s <= '0';    
+         start_s <= '0';  
+         end_dist_s <= '0';
+         clk_div_s <= '0';
       elsif (Rising_Edge(clock_i)) then
          m_auto_s   <= m_auto_i; 
          dir_s      <= start_i;    
@@ -83,8 +83,8 @@ begin
    end process;
    
    Fut:process(m_auto_s,dir_s,start_s,end_dist_s,clk_div_s,Etat_Pres)
-      Etat_Fut <= E_Stop_0;
    begin
+      Etat_Fut <= E_Stop_0;
       case Etat_Pres is
          
          -- Gestion quand le moteur à l'arrêt
@@ -236,7 +236,8 @@ begin
             else
                Etat_Fut <= E_Run_3; 
             end if;
-         
+         when others =>
+            Etat_Fut <= E_Stop_0;
       end case;
    end process;
    
