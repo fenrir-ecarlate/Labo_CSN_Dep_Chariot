@@ -25,6 +25,14 @@ vmap work work
 
 # Files compilation
 # to be complete with all your files
+
+# files aq pos
+vcom -reportprogress 300 -work work   ../src/src_aq_pos/mss_dir.vhd
+vcom -reportprogress 300 -work work   ../src/src_aq_pos/det_err.vhd
+vcom -reportprogress 300 -work work   ../src/src_aq_pos/cpt_pos.vhd
+vcom -reportprogress 300 -work work   ../src/src_aq_pos/acqu_pos_top.vhd
+
+# files cmd motor
 vcom -reportprogress 300 -work work   ../src/cpt_pos.vhd
 vcom -reportprogress 300 -work work   ../src/div_clk.vhd
 vcom -reportprogress 300 -work work   ../src/mss_cmd_moteur.vhd
