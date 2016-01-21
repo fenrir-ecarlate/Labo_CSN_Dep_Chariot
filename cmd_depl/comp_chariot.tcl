@@ -25,7 +25,9 @@ vmap work work
 
 # Files compilation
 # to be complete with all your files
-  #vcom -reportprogress 300 -work work   ../src/ **** to complete *****
+vcom -reportprogress 300 -work work   ../src/cpt_pos.vhd
+vcom -reportprogress 300 -work work   ../src/div_clk.vhd
+vcom -reportprogress 300 -work work   ../src/mss_cmd_moteur.vhd
 
 #compile top file
 
