@@ -36,13 +36,13 @@ architecture cpt of cpt_pos is
   signal is_min_s : std_logic;
   
   begin
-  cpt_fut <= dist_i & "000" when (start_i = '1') else -- RAZ synchrone
+  cpt_fut <= unsigned(dist_i & "000") when (start_i = '1') else -- RAZ synchrone
              cpt_now - 1 when (clk_div_i = '1') else  -- comptage
              cpt_now;                                 -- maintient
   
   process(reset_i, clock_i) begin
     if (reset_i = '1') then
-      cpt_now <= cycle;
+      cpt_now <= (others => '0');
     elsif (Rising_Edge(clock_i)) then 
       cpt_now <= cpt_fut;
     end if;
