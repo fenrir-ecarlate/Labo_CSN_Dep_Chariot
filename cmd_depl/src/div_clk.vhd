@@ -30,12 +30,12 @@ entity div_clk is
 end div_clk;
 
 architecture cpt of div_clk is
-  signal cpt_now  : unsigned(9 downto 0);
-  signal cpt_fut  : unsigned(9 downto 0);
-  signal cycle    : unsigned(9 downto 0);
+  signal cpt_now  : unsigned(18 downto 0);
+  signal cpt_fut  : unsigned(18 downto 0);
+  signal cycle    : unsigned(18 downto 0);
   signal is_min_s : std_logic;
-  type vitesses_t is array (0 to 7) of unsigned(9 downto 0);
-  constant vitesses : vitesses_t := (to_unsigned(1000,10),to_unsigned(500,10),to_unsigned(200,10),to_unsigned(100,10),to_unsigned(60,10),to_unsigned(40,10),to_unsigned(20,10),to_unsigned(10,10));
+  type vitesses_t is array (0 to 7) of unsigned(18 downto 0);
+  constant vitesses : vitesses_t := (to_unsigned(1000000,19),to_unsigned(500000,19),to_unsigned(200000,19),to_unsigned(100000,19),to_unsigned(60000,19),to_unsigned(40000,19),to_unsigned(20000,19),to_unsigned(10000,19));
   
   begin
   cpt_fut <= cycle when (is_min_s = '1') else

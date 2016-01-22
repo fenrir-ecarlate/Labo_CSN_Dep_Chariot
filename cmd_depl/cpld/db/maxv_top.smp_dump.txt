@@ -1,0 +1,25 @@
+
+State Machine - |maxv_top|cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|mss_dir:Bloc_MSS|Etat_Pres
+Name Etat_Pres.E_ERR Etat_Pres.E_T_CCW3 Etat_Pres.E_T_CCW2 Etat_Pres.E_T_CCW1 Etat_Pres.E_T_CCW0 Etat_Pres.E_CCW3 Etat_Pres.E_CCW2 Etat_Pres.E_CCW1 Etat_Pres.E_CCW0 Etat_Pres.E_T_CW3 Etat_Pres.E_T_CW2 Etat_Pres.E_T_CW1 Etat_Pres.E_T_CW0 Etat_Pres.E_CW3 Etat_Pres.E_CW2 Etat_Pres.E_CW1 Etat_Pres.E_CW0 Etat_Pres.E_Start3 Etat_Pres.E_Start2 Etat_Pres.E_Start1 Etat_Pres.E_Start0 Etat_Pres.E_Init 
+Etat_Pres.E_Init 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Etat_Pres.E_Start0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+Etat_Pres.E_Start1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+Etat_Pres.E_Start2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+Etat_Pres.E_Start3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+Etat_Pres.E_CW0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+Etat_Pres.E_CW1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+Etat_Pres.E_CW2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+Etat_Pres.E_CW3 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+Etat_Pres.E_T_CW0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+Etat_Pres.E_T_CW1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+Etat_Pres.E_T_CW2 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+Etat_Pres.E_T_CW3 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+Etat_Pres.E_CCW0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Etat_Pres.E_CCW1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Etat_Pres.E_CCW2 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Etat_Pres.E_CCW3 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Etat_Pres.E_T_CCW0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Etat_Pres.E_T_CCW1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Etat_Pres.E_T_CCW2 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Etat_Pres.E_T_CCW3 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Etat_Pres.E_ERR 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

@@ -1,0 +1,554 @@
+# //  Questa Sim
+# //  Version 10.2_1 linux Feb 16 2013
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+do ../runconsole_chariot.tcl
+# Copying /opt/EDA/mentor/questasim/10.2/questasim/linux/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied /opt/EDA/mentor/questasim/10.2/questasim/linux/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mss_dir
+# -- Compiling architecture struct of mss_dir
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity det_err
+# -- Compiling architecture struct of det_err
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cpt_pos
+# -- Compiling architecture struct of cpt_pos
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity acqu_pos_top
+# -- Compiling architecture struct of acqu_pos_top
+# -- Loading package NUMERIC_STD
+# -- Loading entity mss_dir
+# -- Loading entity cpt_pos
+# -- Loading entity det_err
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cpt_pos
+# -- Compiling architecture cpt of cpt_pos
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity div_clk
+# -- Compiling architecture cpt of div_clk
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mss_cmd_moteur
+# -- Compiling architecture struct of mss_cmd_moteur
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cmd_mvnt_mot_top
+# -- Compiling architecture behav of cmd_mvnt_mot_top
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity console_sim
+# -- Compiling architecture struct of console_sim
+# -- Loading package NUMERIC_STD
+# -- Loading entity cmd_mvnt_mot_top
+# vsim work.console_sim 
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-13) Recompile work.acqu_pos_top(struct) because work.cpt_pos has changed.
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(76): (vopt-1131) Port "incr_i" is declared on component "cpt_pos" but not on entity "cpt_pos".
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(76): (vopt-1131) Port "decr_i" is declared on component "cpt_pos" but not on entity "cpt_pos".
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(76): (vopt-1131) Port "en_i" is declared on component "cpt_pos" but not on entity "cpt_pos".
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(76): (vopt-1131) Port "cpt_o" is declared on component "cpt_pos" but not on entity "cpt_pos".
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(76): (vopt-1130) Port "clk_div_i" of entity "cpt_pos" is not in the component being instantiated.
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(76): (vopt-1130) Port "start_i" of entity "cpt_pos" is not in the component being instantiated.
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(76): (vopt-1130) Port "dist_i" of entity "cpt_pos" is not in the component being instantiated.
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(132): (vopt-1131) Port "incr_i" is declared on component "cpt_pos" but not on entity "cpt_pos".
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(132): (vopt-1131) Port "decr_i" is declared on component "cpt_pos" but not on entity "cpt_pos".
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(132): (vopt-1131) Port "en_i" is declared on component "cpt_pos" but not on entity "cpt_pos".
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(132): (vopt-1131) Port "cpt_o" is declared on component "cpt_pos" but not on entity "cpt_pos".
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(132): (vopt-1130) Port "clk_div_i" of entity "cpt_pos" is not in the component being instantiated.
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(132): (vopt-1130) Port "start_i" of entity "cpt_pos" is not in the component being instantiated.
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(132): (vopt-1130) Port "dist_i" of entity "cpt_pos" is not in the component being instantiated.
+# ** Warning: (vopt-13) Recompile work.cpt_pos(struct) because work.cpt_pos has changed.
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(43): (vopt-1136) Unknown identifier "cpt_o".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(43): (vopt-1079) Range left bound type (error) is not the same as right bound type Integer.
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(44): (vopt-1136) Unknown identifier "cpt_o".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(44): (vopt-1079) Range left bound type (error) is not the same as right bound type Integer.
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(48): (vopt-1136) Unknown identifier "en_i".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(48): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(49): (vopt-1136) Unknown identifier "incr_i".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(49): (vopt-1136) Unknown identifier "decr_i".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(49): Bad expression in left operand of infix expression "and".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(49): Bad expression in right operand of infix expression "and".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(49): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(50): (vopt-1136) Unknown identifier "incr_i".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(50): (vopt-1136) Unknown identifier "decr_i".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(50): Bad expression in left operand of infix expression "and".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(50): Bad expression in right operand of infix expression "and".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(50): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(65): (vopt-1136) Unknown identifier "cpt_o".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(65): Prefix of attribute "length" must be appropriate for an array object or must denote an array subtype.
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(68): Illegal target for signal assignment.
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(68): (vopt-1136) Unknown identifier "cpt_o".
+# Optimization failed
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./../runconsole_chariot.tcl PAUSED at line 24
+vcom -reportprogress 300 -work work /home/redsuser/nicolas.kobel/csn/Labo_CSN_Dep_Chariot/cmd_depl/src/src_aq_pos/cpt_pos.vhd
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cpt_pos
+# -- Compiling architecture struct of cpt_pos
+vcom -reportprogress 300 -work work /home/redsuser/nicolas.kobel/csn/Labo_CSN_Dep_Chariot/cmd_depl/src/src_aq_pos/acqu_pos_top.vhd
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity acqu_pos_top
+# -- Compiling architecture struct of acqu_pos_top
+# -- Loading package NUMERIC_STD
+# -- Loading entity mss_dir
+# -- Loading entity cpt_pos
+# -- Loading entity det_err
+do ../runconsole_chariot.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mss_dir
+# -- Compiling architecture struct of mss_dir
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity det_err
+# -- Compiling architecture struct of det_err
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cpt_pos
+# -- Compiling architecture struct of cpt_pos
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity acqu_pos_top
+# -- Compiling architecture struct of acqu_pos_top
+# -- Loading package NUMERIC_STD
+# -- Loading entity mss_dir
+# -- Loading entity cpt_pos
+# -- Loading entity det_err
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cpt_pos
+# -- Compiling architecture cpt of cpt_pos
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity div_clk
+# -- Compiling architecture cpt of div_clk
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mss_cmd_moteur
+# -- Compiling architecture struct of mss_cmd_moteur
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cmd_mvnt_mot_top
+# -- Compiling architecture behav of cmd_mvnt_mot_top
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity console_sim
+# -- Compiling architecture struct of console_sim
+# -- Loading package NUMERIC_STD
+# -- Loading entity cmd_mvnt_mot_top
+# vsim work.console_sim 
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-13) Recompile work.acqu_pos_top(struct) because work.cpt_pos has changed.
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(76): (vopt-1131) Port "incr_i" is declared on component "cpt_pos" but not on entity "cpt_pos".
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(76): (vopt-1131) Port "decr_i" is declared on component "cpt_pos" but not on entity "cpt_pos".
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(76): (vopt-1131) Port "en_i" is declared on component "cpt_pos" but not on entity "cpt_pos".
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(76): (vopt-1131) Port "cpt_o" is declared on component "cpt_pos" but not on entity "cpt_pos".
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(76): (vopt-1130) Port "clk_div_i" of entity "cpt_pos" is not in the component being instantiated.
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(76): (vopt-1130) Port "start_i" of entity "cpt_pos" is not in the component being instantiated.
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(76): (vopt-1130) Port "dist_i" of entity "cpt_pos" is not in the component being instantiated.
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(132): (vopt-1131) Port "incr_i" is declared on component "cpt_pos" but not on entity "cpt_pos".
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(132): (vopt-1131) Port "decr_i" is declared on component "cpt_pos" but not on entity "cpt_pos".
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(132): (vopt-1131) Port "en_i" is declared on component "cpt_pos" but not on entity "cpt_pos".
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(132): (vopt-1131) Port "cpt_o" is declared on component "cpt_pos" but not on entity "cpt_pos".
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(132): (vopt-1130) Port "clk_div_i" of entity "cpt_pos" is not in the component being instantiated.
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(132): (vopt-1130) Port "start_i" of entity "cpt_pos" is not in the component being instantiated.
+# ** Error: ../src/src_aq_pos/acqu_pos_top.vhd(132): (vopt-1130) Port "dist_i" of entity "cpt_pos" is not in the component being instantiated.
+# ** Warning: (vopt-13) Recompile work.cpt_pos(struct) because work.cpt_pos has changed.
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(43): (vopt-1136) Unknown identifier "cpt_o".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(43): (vopt-1079) Range left bound type (error) is not the same as right bound type Integer.
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(44): (vopt-1136) Unknown identifier "cpt_o".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(44): (vopt-1079) Range left bound type (error) is not the same as right bound type Integer.
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(48): (vopt-1136) Unknown identifier "en_i".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(48): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(49): (vopt-1136) Unknown identifier "incr_i".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(49): (vopt-1136) Unknown identifier "decr_i".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(49): Bad expression in left operand of infix expression "and".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(49): Bad expression in right operand of infix expression "and".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(49): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(50): (vopt-1136) Unknown identifier "incr_i".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(50): (vopt-1136) Unknown identifier "decr_i".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(50): Bad expression in left operand of infix expression "and".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(50): Bad expression in right operand of infix expression "and".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(50): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(65): (vopt-1136) Unknown identifier "cpt_o".
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(65): Prefix of attribute "length" must be appropriate for an array object or must denote an array subtype.
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(68): Illegal target for signal assignment.
+# ** Error: ../src/src_aq_pos/cpt_pos.vhd(68): (vopt-1136) Unknown identifier "cpt_o".
+# Optimization failed
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./../runconsole_chariot.tcl PAUSED at line 24
+do ../runconsole_chariot.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mss_dir
+# -- Compiling architecture struct of mss_dir
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity det_err
+# -- Compiling architecture struct of det_err
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cpt_pos_acq
+# ** Error: ../src/cpt_pos_acq.vhd(36): Labels do not match: 'cpt_pos_acq' and 'cpt_pos'.
+# ** Error: ../src/cpt_pos_acq.vhd(36): VHDL Compiler exiting
+# ** Error: /opt/EDA/mentor/questasim/10.2/questasim/linux/vcom failed.
+# Error in macro ./../comp_chariot.tcl line 32
+# /opt/EDA/mentor/questasim/10.2/questasim/linux/vcom failed.
+#     while executing
+# "vcom -reportprogress 300 -work work   ../src/cpt_pos_acq.vhd"
+do ../runconsole_chariot.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mss_dir
+# -- Compiling architecture struct of mss_dir
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity det_err
+# -- Compiling architecture struct of det_err
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cpt_pos_acq
+# -- Compiling architecture struct of cpt_pos
+# -- Loading entity cpt_pos
+# ** Error: ../src/cpt_pos_acq.vhd(43): (vcom-1136) Unknown identifier "cpt_o".
+# ** Error: ../src/cpt_pos_acq.vhd(43): (vcom-1079) Range left bound type (error) is not the same as right bound type Integer.
+# ** Error: ../src/cpt_pos_acq.vhd(44): (vcom-1136) Unknown identifier "cpt_o".
+# ** Error: ../src/cpt_pos_acq.vhd(44): (vcom-1079) Range left bound type (error) is not the same as right bound type Integer.
+# ** Error: ../src/cpt_pos_acq.vhd(48): (vcom-1136) Unknown identifier "en_i".
+# ** Error: ../src/cpt_pos_acq.vhd(48): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
+# ** Error: ../src/cpt_pos_acq.vhd(49): (vcom-1136) Unknown identifier "incr_i".
+# ** Error: ../src/cpt_pos_acq.vhd(49): (vcom-1136) Unknown identifier "decr_i".
+# ** Error: ../src/cpt_pos_acq.vhd(49): Bad expression in left operand of infix expression "and".
+# ** Error: ../src/cpt_pos_acq.vhd(49): Bad expression in right operand of infix expression "and".
+# ** Error: ../src/cpt_pos_acq.vhd(49): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+# ** Error: ../src/cpt_pos_acq.vhd(50): (vcom-1136) Unknown identifier "incr_i".
+# ** Error: ../src/cpt_pos_acq.vhd(50): (vcom-1136) Unknown identifier "decr_i".
+# ** Error: ../src/cpt_pos_acq.vhd(50): Bad expression in left operand of infix expression "and".
+# ** Error: ../src/cpt_pos_acq.vhd(50): Bad expression in right operand of infix expression "and".
+# ** Error: ../src/cpt_pos_acq.vhd(50): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
+# ** Error: ../src/cpt_pos_acq.vhd(65): (vcom-1136) Unknown identifier "cpt_o".
+# ** Error: ../src/cpt_pos_acq.vhd(65): Prefix of attribute "length" must be appropriate for an array object or must denote an array subtype.
+# ** Error: ../src/cpt_pos_acq.vhd(68): Illegal target for signal assignment.
+# ** Error: ../src/cpt_pos_acq.vhd(68): (vcom-1136) Unknown identifier "cpt_o".
+# ** Error: ../src/cpt_pos_acq.vhd(69): VHDL Compiler exiting
+# ** Error: /opt/EDA/mentor/questasim/10.2/questasim/linux/vcom failed.
+# Error in macro ./../comp_chariot.tcl line 32
+# /opt/EDA/mentor/questasim/10.2/questasim/linux/vcom failed.
+#     while executing
+# "vcom -reportprogress 300 -work work   ../src/cpt_pos_acq.vhd"
+do ../runconsole_chariot.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mss_dir
+# -- Compiling architecture struct of mss_dir
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity det_err
+# -- Compiling architecture struct of det_err
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cpt_pos_acq
+# -- Compiling architecture struct of cpt_pos_acq
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity acqu_pos_top
+# -- Compiling architecture struct of acqu_pos_top
+# -- Loading package NUMERIC_STD
+# -- Loading entity mss_dir
+# ** Error: ../src/acqu_pos_top.vhd(76): (vcom-1141) Identifier "cpt_pos" does not identify a component declaration.
+# -- Loading entity cpt_pos
+# -- Loading entity det_err
+# ** Error: ../src/acqu_pos_top.vhd(148): VHDL Compiler exiting
+# ** Error: /opt/EDA/mentor/questasim/10.2/questasim/linux/vcom failed.
+# Error in macro ./../comp_chariot.tcl line 33
+# /opt/EDA/mentor/questasim/10.2/questasim/linux/vcom failed.
+#     while executing
+# "vcom -reportprogress 300 -work work   ../src/acqu_pos_top.vhd"
+do ../runconsole_chariot.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mss_dir
+# -- Compiling architecture struct of mss_dir
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity det_err
+# -- Compiling architecture struct of det_err
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cpt_pos_acq
+# -- Compiling architecture struct of cpt_pos_acq
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity acqu_pos_top
+# -- Compiling architecture struct of acqu_pos_top
+# -- Loading package NUMERIC_STD
+# -- Loading entity mss_dir
+# -- Loading entity cpt_pos_acq
+# -- Loading entity det_err
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cpt_pos
+# -- Compiling architecture cpt of cpt_pos
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity div_clk
+# -- Compiling architecture cpt of div_clk
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mss_cmd_moteur
+# -- Compiling architecture struct of mss_cmd_moteur
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cmd_mvnt_mot_top
+# -- Compiling architecture behav of cmd_mvnt_mot_top
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity console_sim
+# -- Compiling architecture struct of console_sim
+# -- Loading package NUMERIC_STD
+# -- Loading entity cmd_mvnt_mot_top
+# vsim work.console_sim 
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.console_sim(struct)#1
+# Loading work.cmd_mvnt_mot_top(behav)#1
+# Loading work.mss_dir(struct)#1
+# Loading work.cpt_pos_acq(struct)#1
+# Loading work.det_err(struct)#1
+do ../runconsole_chariot.tcl
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mss_dir
+# -- Compiling architecture struct of mss_dir
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity det_err
+# -- Compiling architecture struct of det_err
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cpt_pos_acq
+# -- Compiling architecture struct of cpt_pos_acq
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity acqu_pos_top
+# -- Compiling architecture struct of acqu_pos_top
+# -- Loading package NUMERIC_STD
+# -- Loading entity mss_dir
+# -- Loading entity cpt_pos_acq
+# -- Loading entity det_err
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cpt_pos
+# -- Compiling architecture cpt of cpt_pos
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity div_clk
+# -- Compiling architecture cpt of div_clk
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mss_cmd_moteur
+# -- Compiling architecture struct of mss_cmd_moteur
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity cmd_mvnt_mot_top
+# -- Compiling architecture behav of cmd_mvnt_mot_top
+# QuestaSim vcom 10.2_1 Compiler 2013.02 Feb 16 2013
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity console_sim
+# -- Compiling architecture struct of console_sim
+# -- Loading package NUMERIC_STD
+# -- Loading entity cmd_mvnt_mot_top
+# vsim work.console_sim 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.console_sim(struct)#1
+# Loading work.cmd_mvnt_mot_top(behav)#1
+# Loading work.mss_dir(struct)#1
+# Loading work.cpt_pos_acq(struct)#1
+# Loading work.det_err(struct)#1
+# 8.5.8
+# 4.0.1
+# REDS Console
+# REDS_console_logisim
+# /opt/tools_reds
+# linux
+# FALSE
+# ./REDS_console_sigImg.gif
+# 16
+# 16
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /console_sim/uut/cpt_pas
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /console_sim/uut/div_clk_mod

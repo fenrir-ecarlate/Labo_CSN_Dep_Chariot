@@ -255,7 +255,7 @@ begin
 	);
 	
     
-    Con_80p_DO_s(58)          <=  Button_s(1);    --pap_ph_en
+    Con_80p_DO_s(58)          <=  '1'; --Button_s(1);    --pap_ph_en
     Con_80p_DO_s(71)           <= dc_pwm_en_s;
     Con_80p_DO_s(72)           <= dc_pwm_out_s;
 -- MODIF EMI 22 janvier *************************************************
