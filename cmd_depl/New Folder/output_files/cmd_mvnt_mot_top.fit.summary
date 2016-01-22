@@ -1,0 +1,11 @@
+Fitter Status : Successful - Fri Jan 22 13:32:22 2016
+Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Full Version
+Revision Name : cmd_mvnt_mot_top
+Top-level Entity Name : cmd_mvnt_mot_top
+Family : MAX V
+Device : 5M570ZF256C5
+Timing Models : Final
+Total logic elements : 129 / 570 ( 23 % )
+Total pins : 38 / 159 ( 24 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

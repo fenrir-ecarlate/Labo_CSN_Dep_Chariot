@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.0.0 Build 156 04/24/2013 SJ Full Version"
 
--- DATE "01/21/2016 11:40:32"
+-- DATE "01/22/2016 12:56:01"
 
 -- 
 -- Device: Altera 5M570ZF256C5 Package FBGA256
@@ -62,15 +62,15 @@ END maxv_top;
 -- Switch_i[7]	=>  Location: PIN_M8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- nButton_i[3]	=>  Location: PIN_E1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- Switch_i[2]	=>  Location: PIN_L1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- nButton_i[6]	=>  Location: PIN_E4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- nButton_i[5]	=>  Location: PIN_E3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- nButton_i[4]	=>  Location: PIN_E2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- Switch_i[0]	=>  Location: PIN_L3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- Switch_i[1]	=>  Location: PIN_L2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- Switch_i[3]	=>  Location: PIN_K3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- Switch_i[4]	=>  Location: PIN_K2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- Switch_i[5]	=>  Location: PIN_K1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- Switch_i[6]	=>  Location: PIN_J3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- nButton_i[6]	=>  Location: PIN_E4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- nButton_i[5]	=>  Location: PIN_E3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- nButton_i[4]	=>  Location: PIN_E2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 -- nLed_o[0]	=>  Location: PIN_J1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
 -- nLed_o[1]	=>  Location: PIN_H3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
 -- nLed_o[2]	=>  Location: PIN_H2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
@@ -236,7 +236,7 @@ SIGNAL \Con_80p_io[39]~41\ : std_logic;
 SIGNAL \Con_80p_io[40]~42\ : std_logic;
 SIGNAL \Clk_Main_i~combout\ : std_logic;
 SIGNAL \nReset_i~combout\ : std_logic;
-SIGNAL \U1|sel_vitesse_s[2]~_wirecell_combout\ : std_logic;
+SIGNAL \U1|div_clk_mod|Mux0~0_combout\ : std_logic;
 SIGNAL \U1|div_clk_mod|Mux4~0_combout\ : std_logic;
 SIGNAL \U1|div_clk_mod|Mux9~0_combout\ : std_logic;
 SIGNAL \~GND~combout\ : std_logic;
@@ -273,59 +273,52 @@ SIGNAL \U1|div_clk_mod|cpt_now[11]~29COUT1_73\ : std_logic;
 SIGNAL \U1|div_clk_mod|cpt_now[12]~31\ : std_logic;
 SIGNAL \U1|div_clk_mod|cpt_now[12]~31COUT1_75\ : std_logic;
 SIGNAL \U1|div_clk_mod|cpt_now[13]~33\ : std_logic;
+SIGNAL \U1|div_clk_mod|Mux1~0_combout\ : std_logic;
+SIGNAL \U1|sel_vitesse_s[2]~_wirecell_combout\ : std_logic;
 SIGNAL \U1|div_clk_mod|Mux2~0_combout\ : std_logic;
 SIGNAL \U1|div_clk_mod|Mux3~0_combout\ : std_logic;
 SIGNAL \U1|div_clk_mod|cpt_now[14]~35\ : std_logic;
 SIGNAL \U1|div_clk_mod|cpt_now[14]~35COUT1_77\ : std_logic;
 SIGNAL \U1|div_clk_mod|cpt_now[15]~37\ : std_logic;
 SIGNAL \U1|div_clk_mod|cpt_now[15]~37COUT1_79\ : std_logic;
-SIGNAL \U1|div_clk_mod|Mux0~0_combout\ : std_logic;
-SIGNAL \U1|div_clk_mod|Mux1~0_combout\ : std_logic;
 SIGNAL \U1|div_clk_mod|cpt_now[16]~1\ : std_logic;
 SIGNAL \U1|div_clk_mod|cpt_now[16]~1COUT1_81\ : std_logic;
 SIGNAL \U1|div_clk_mod|cpt_now[17]~3\ : std_logic;
 SIGNAL \U1|div_clk_mod|cpt_now[17]~3COUT1_83\ : std_logic;
 SIGNAL \U1|div_clk_mod|Equal0~2_combout\ : std_logic;
-SIGNAL \U1|div_clk_mod|Equal0~0_combout\ : std_logic;
 SIGNAL \U1|div_clk_mod|Equal0~3_combout\ : std_logic;
+SIGNAL \U1|div_clk_mod|Equal0~0_combout\ : std_logic;
 SIGNAL \U1|div_clk_mod|Equal0~1_combout\ : std_logic;
 SIGNAL \U1|div_clk_mod|Equal0~4_combout\ : std_logic;
 SIGNAL \U1|div_clk_mod|Equal0~5_combout\ : std_logic;
 SIGNAL \U1|start_s~regout\ : std_logic;
-SIGNAL \U1|cpt_pas|cpt_now[2]~20_combout\ : std_logic;
+SIGNAL \U1|cpt_pas|cpt_now[5]~14_combout\ : std_logic;
 SIGNAL \U1|cpt_pas|cpt_now[0]~1\ : std_logic;
-SIGNAL \U1|cpt_pas|cpt_now[0]~1COUT1_31\ : std_logic;
+SIGNAL \U1|cpt_pas|cpt_now[0]~1COUT1_22\ : std_logic;
 SIGNAL \U1|cpt_pas|cpt_now[1]~3\ : std_logic;
-SIGNAL \U1|cpt_pas|cpt_now[1]~3COUT1_33\ : std_logic;
+SIGNAL \U1|cpt_pas|cpt_now[1]~3COUT1_24\ : std_logic;
 SIGNAL \U1|cpt_pas|cpt_now[2]~5\ : std_logic;
-SIGNAL \U1|cpt_pas|cpt_now[2]~5COUT1_35\ : std_logic;
+SIGNAL \U1|cpt_pas|cpt_now[2]~5COUT1_26\ : std_logic;
 SIGNAL \U1|cpt_pas|cpt_now[3]~7\ : std_logic;
-SIGNAL \U1|cpt_pas|cpt_now[3]~7COUT1_37\ : std_logic;
 SIGNAL \U1|cpt_pas|cpt_now[4]~9\ : std_logic;
+SIGNAL \U1|cpt_pas|cpt_now[4]~9COUT1_28\ : std_logic;
 SIGNAL \U1|cpt_pas|cpt_now[5]~11\ : std_logic;
-SIGNAL \U1|cpt_pas|cpt_now[5]~11COUT1_39\ : std_logic;
-SIGNAL \U1|cpt_pas|cpt_now[6]~13\ : std_logic;
-SIGNAL \U1|cpt_pas|cpt_now[6]~13COUT1_41\ : std_logic;
-SIGNAL \U1|cpt_pas|Equal0~1_combout\ : std_logic;
-SIGNAL \U1|cpt_pas|cpt_now[7]~15\ : std_logic;
-SIGNAL \U1|cpt_pas|cpt_now[7]~15COUT1_43\ : std_logic;
-SIGNAL \U1|cpt_pas|cpt_now[8]~17\ : std_logic;
-SIGNAL \U1|cpt_pas|cpt_now[8]~17COUT1_45\ : std_logic;
-SIGNAL \U1|cpt_pas|Equal0~2_combout\ : std_logic;
+SIGNAL \U1|cpt_pas|cpt_now[5]~11COUT1_30\ : std_logic;
 SIGNAL \U1|cpt_pas|Equal0~0_combout\ : std_logic;
-SIGNAL \U1|mss|Mux0~0\ : std_logic;
-SIGNAL \U1|mss|Mux0~1_combout\ : std_logic;
+SIGNAL \U1|cpt_pas|Equal0~1_combout\ : std_logic;
+SIGNAL \U1|cpt_pas|Equal0~2_combout\ : std_logic;
 SIGNAL \U1|m_auto_s~regout\ : std_logic;
-SIGNAL \U1|mss|Fut~0_combout\ : std_logic;
+SIGNAL \U1|mss|Mux0~2_combout\ : std_logic;
+SIGNAL \U1|mss|Fut~0\ : std_logic;
 SIGNAL \U1|dir_s~regout\ : std_logic;
-SIGNAL \U1|mss|Mux2~5_combout\ : std_logic;
-SIGNAL \U1|mss|Mux2~6_combout\ : std_logic;
-SIGNAL \U1|mss|Mux2~1_combout\ : std_logic;
 SIGNAL \U1|mss|Mux2~0_combout\ : std_logic;
-SIGNAL \U1|mss|Mux2~2_combout\ : std_logic;
-SIGNAL \U1|mss|Mux2~3_combout\ : std_logic;
-SIGNAL \U1|mss|Mux1~0_combout\ : std_logic;
+SIGNAL \U1|mss|Mux2~1_combout\ : std_logic;
 SIGNAL \U1|mss|Mux2~4_combout\ : std_logic;
+SIGNAL \U1|mss|Mux2~6_combout\ : std_logic;
+SIGNAL \U1|mss|Mux2~7_combout\ : std_logic;
+SIGNAL \U1|mss|Mux2~2_combout\ : std_logic;
+SIGNAL \U1|mss|Mux1~0_combout\ : std_logic;
+SIGNAL \U1|mss|Mux2~3_combout\ : std_logic;
 SIGNAL \Cpt_s[1]~37\ : std_logic;
 SIGNAL \Cpt_s[1]~37COUT1_56\ : std_logic;
 SIGNAL \Cpt_s[2]~35\ : std_logic;
@@ -360,45 +353,45 @@ SIGNAL \Cpt_s[17]~5COUT1_82\ : std_logic;
 SIGNAL \Cpt_s[18]~3\ : std_logic;
 SIGNAL \Cpt_s[18]~3COUT1_84\ : std_logic;
 SIGNAL \U1|acqu_pos|reset_pos_s\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Fut~3_combout\ : std_logic;
 SIGNAL \U1|init_s~regout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2~regout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Init~regout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres~38_combout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1~regout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2~regout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres~40_combout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW2~regout\ : std_logic;
 SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW0~regout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres~39_combout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3~regout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start0~regout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW0~regout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW1~regout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW1~regout\ : std_logic;
 SIGNAL \U1|acqu_pos|Bloc_MSS|Fut~1_combout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW0~regout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Fut~0_combout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres~39_combout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW1~regout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3~regout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Init~regout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres~40_combout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start0~regout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3~regout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW3~regout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1~regout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Selector21~2\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Selector21~3_combout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Selector21~0\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres~41_combout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW3~regout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2~regout\ : std_logic;
 SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW0~regout\ : std_logic;
 SIGNAL \U1|acqu_pos|Bloc_MSS|Fut~2_combout\ : std_logic;
 SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2~regout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|WideOr8~0_combout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW1~regout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW0~regout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW0~regout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW1~regout\ : std_logic;
+SIGNAL \U1|capt_b_s~regout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Fut~3_combout\ : std_logic;
 SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW2~regout\ : std_logic;
 SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW3~regout\ : std_logic;
 SIGNAL \U1|capt_a_s~regout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW1~regout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3~regout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Selector21~0\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Selector21~2\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Selector21~3_combout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Fut~0_combout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|WideOr8~0_combout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW3~regout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1~regout\ : std_logic;
-SIGNAL \U1|capt_b_s~regout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres~41_combout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW3~regout\ : std_logic;
-SIGNAL \U1|acqu_pos|Bloc_MSS|WideOr15~1_combout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres~38_combout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1~regout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2~regout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW2~regout\ : std_logic;
 SIGNAL \U1|acqu_pos|Bloc_MSS|WideOr15~0_combout\ : std_logic;
+SIGNAL \U1|acqu_pos|Bloc_MSS|WideOr15~1_combout\ : std_logic;
 SIGNAL \U1|acqu_pos|Bloc_MSS|WideOr15~combout\ : std_logic;
 SIGNAL \U1|acqu_pos|Bloc_MSS|WideOr16~0_combout\ : std_logic;
 SIGNAL \U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ : std_logic;
@@ -436,7 +429,7 @@ SIGNAL \U1|sel_vitesse_s\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \U1|dist_x_s\ : std_logic_vector(6 DOWNTO 0);
 SIGNAL \U1|mss|Etat_Pres\ : std_logic_vector(2 DOWNTO 0);
 SIGNAL \U1|div_clk_mod|cpt_now\ : std_logic_vector(18 DOWNTO 0);
-SIGNAL \U1|cpt_pas|cpt_now\ : std_logic_vector(9 DOWNTO 0);
+SIGNAL \U1|cpt_pas|cpt_now\ : std_logic_vector(6 DOWNTO 0);
 SIGNAL \U1|acqu_pos|Bloc_position|cpt_pres\ : std_logic_vector(15 DOWNTO 0);
 SIGNAL \ALT_INV_Con_80p_io[2]~4\ : std_logic;
 SIGNAL \ALT_INV_nReset_i~combout\ : std_logic;
@@ -517,16 +510,16 @@ PORT MAP (
 	padio => ww_Clk_Main_i,
 	combout => \Clk_Main_i~combout\);
 
--- Location: PIN_E4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\nButton_i[6]~I\ : maxv_io
+-- Location: PIN_E3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\nButton_i[5]~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
 	operation_mode => "input")
 -- pragma translate_on
 PORT MAP (
 	oe => GND,
-	padio => ww_nButton_i(6),
-	combout => \nButton_i~combout\(6));
+	padio => ww_nButton_i(5),
+	combout => \nButton_i~combout\(5));
 
 -- Location: PIN_M9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 \nReset_i~I\ : maxv_io
@@ -539,60 +532,7 @@ PORT MAP (
 	padio => ww_nReset_i,
 	combout => \nReset_i~combout\);
 
--- Location: LC_X11_Y4_N7
-\U1|sel_vitesse_s[2]\ : maxv_lcell
--- Equation(s):
--- \U1|sel_vitesse_s\(2) = DFFEAS((((!\nButton_i~combout\(6)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "00ff",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	clk => \Clk_Main_i~combout\,
-	datad => \nButton_i~combout\(6),
-	aclr => \ALT_INV_nReset_i~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \U1|sel_vitesse_s\(2));
-
--- Location: LC_X11_Y4_N2
-\U1|sel_vitesse_s[2]~_wirecell\ : maxv_lcell
--- Equation(s):
--- \U1|sel_vitesse_s[2]~_wirecell_combout\ = (((!\U1|sel_vitesse_s\(2))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0f0f",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	datac => \U1|sel_vitesse_s\(2),
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \U1|sel_vitesse_s[2]~_wirecell_combout\);
-
--- Location: PIN_E3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\nButton_i[5]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_nButton_i(5),
-	combout => \nButton_i~combout\(5));
-
--- Location: LC_X11_Y4_N5
+-- Location: LC_X4_Y6_N2
 \U1|sel_vitesse_s[1]\ : maxv_lcell
 -- Equation(s):
 -- \U1|sel_vitesse_s\(1) = DFFEAS((((!\nButton_i~combout\(5)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -614,6 +554,60 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \U1|sel_vitesse_s\(1));
 
+-- Location: PIN_E4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\nButton_i[6]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_nButton_i(6),
+	combout => \nButton_i~combout\(6));
+
+-- Location: LC_X4_Y6_N5
+\U1|sel_vitesse_s[2]\ : maxv_lcell
+-- Equation(s):
+-- \U1|sel_vitesse_s\(2) = DFFEAS((((!\nButton_i~combout\(6)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "00ff",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	clk => \Clk_Main_i~combout\,
+	datad => \nButton_i~combout\(6),
+	aclr => \ALT_INV_nReset_i~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \U1|sel_vitesse_s\(2));
+
+-- Location: LC_X4_Y6_N8
+\U1|div_clk_mod|Mux0~0\ : maxv_lcell
+-- Equation(s):
+-- \U1|div_clk_mod|Mux0~0_combout\ = ((!\U1|sel_vitesse_s\(1) & (!\U1|sel_vitesse_s\(2))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0303",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	datab => \U1|sel_vitesse_s\(1),
+	datac => \U1|sel_vitesse_s\(2),
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \U1|div_clk_mod|Mux0~0_combout\);
+
 -- Location: PIN_E2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 \nButton_i[4]~I\ : maxv_io
 -- pragma translate_off
@@ -625,7 +619,7 @@ PORT MAP (
 	padio => ww_nButton_i(4),
 	combout => \nButton_i~combout\(4));
 
--- Location: LC_X11_Y4_N0
+-- Location: LC_X4_Y6_N7
 \U1|sel_vitesse_s[0]\ : maxv_lcell
 -- Equation(s):
 -- \U1|sel_vitesse_s\(0) = DFFEAS((((!\nButton_i~combout\(4)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -647,32 +641,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \U1|sel_vitesse_s\(0));
 
--- Location: LC_X11_Y4_N8
+-- Location: LC_X5_Y5_N6
 \U1|div_clk_mod|Mux4~0\ : maxv_lcell
 -- Equation(s):
--- \U1|div_clk_mod|Mux4~0_combout\ = (\U1|sel_vitesse_s\(1) & (\U1|sel_vitesse_s\(0) & (\U1|sel_vitesse_s\(2)))) # (!\U1|sel_vitesse_s\(1) & (\U1|sel_vitesse_s\(0) $ ((\U1|sel_vitesse_s\(2)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "9494",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \U1|sel_vitesse_s\(1),
-	datab => \U1|sel_vitesse_s\(0),
-	datac => \U1|sel_vitesse_s\(2),
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \U1|div_clk_mod|Mux4~0_combout\);
-
--- Location: LC_X12_Y3_N1
-\U1|div_clk_mod|Mux9~0\ : maxv_lcell
--- Equation(s):
--- \U1|div_clk_mod|Mux9~0_combout\ = ((\U1|sel_vitesse_s\(0) & (\U1|sel_vitesse_s\(2) $ (!\U1|sel_vitesse_s\(1)))) # (!\U1|sel_vitesse_s\(0) & (!\U1|sel_vitesse_s\(2) & \U1|sel_vitesse_s\(1))))
+-- \U1|div_clk_mod|Mux4~0_combout\ = ((\U1|sel_vitesse_s\(0) & (\U1|sel_vitesse_s\(1) $ (!\U1|sel_vitesse_s\(2)))) # (!\U1|sel_vitesse_s\(0) & (!\U1|sel_vitesse_s\(1) & \U1|sel_vitesse_s\(2))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -685,13 +657,35 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datab => \U1|sel_vitesse_s\(0),
-	datac => \U1|sel_vitesse_s\(2),
-	datad => \U1|sel_vitesse_s\(1),
+	datac => \U1|sel_vitesse_s\(1),
+	datad => \U1|sel_vitesse_s\(2),
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \U1|div_clk_mod|Mux4~0_combout\);
+
+-- Location: LC_X5_Y5_N8
+\U1|div_clk_mod|Mux9~0\ : maxv_lcell
+-- Equation(s):
+-- \U1|div_clk_mod|Mux9~0_combout\ = ((\U1|sel_vitesse_s\(0) & (\U1|sel_vitesse_s\(1) $ (!\U1|sel_vitesse_s\(2)))) # (!\U1|sel_vitesse_s\(0) & (\U1|sel_vitesse_s\(1) & !\U1|sel_vitesse_s\(2))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "c03c",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	datab => \U1|sel_vitesse_s\(0),
+	datac => \U1|sel_vitesse_s\(1),
+	datad => \U1|sel_vitesse_s\(2),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \U1|div_clk_mod|Mux9~0_combout\);
 
--- Location: LC_X5_Y4_N5
+-- Location: LC_X9_Y6_N2
 \~GND\ : maxv_lcell
 -- Equation(s):
 -- \~GND~combout\ = GND
@@ -710,7 +704,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	combout => \~GND~combout\);
 
--- Location: LC_X10_Y3_N1
+-- Location: LC_X5_Y6_N1
 \U1|div_clk_mod|cpt_now[0]\ : maxv_lcell
 -- Equation(s):
 -- \U1|div_clk_mod|cpt_now\(0) = DFFEAS(((!\U1|div_clk_mod|cpt_now\(0))), GLOBAL(\Clk_Main_i~combout\), VCC, , , \~GND~combout\, !GLOBAL(\nReset_i~combout\), , \U1|div_clk_mod|Equal0~5_combout\)
@@ -739,7 +733,7 @@ PORT MAP (
 	cout0 => \U1|div_clk_mod|cpt_now[0]~7\,
 	cout1 => \U1|div_clk_mod|cpt_now[0]~7COUT1_55\);
 
--- Location: LC_X10_Y3_N2
+-- Location: LC_X5_Y6_N2
 \U1|div_clk_mod|cpt_now[1]\ : maxv_lcell
 -- Equation(s):
 -- \U1|div_clk_mod|cpt_now\(1) = DFFEAS((\U1|div_clk_mod|cpt_now\(1) $ ((!\U1|div_clk_mod|cpt_now[0]~7\))), GLOBAL(\Clk_Main_i~combout\), VCC, , , \~GND~combout\, !GLOBAL(\nReset_i~combout\), , \U1|div_clk_mod|Equal0~5_combout\)
@@ -772,7 +766,7 @@ PORT MAP (
 	cout0 => \U1|div_clk_mod|cpt_now[1]~9\,
 	cout1 => \U1|div_clk_mod|cpt_now[1]~9COUT1_57\);
 
--- Location: LC_X10_Y3_N3
+-- Location: LC_X5_Y6_N3
 \U1|div_clk_mod|cpt_now[2]\ : maxv_lcell
 -- Equation(s):
 -- \U1|div_clk_mod|cpt_now\(2) = DFFEAS(\U1|div_clk_mod|cpt_now\(2) $ ((((\U1|div_clk_mod|cpt_now[1]~9\)))), GLOBAL(\Clk_Main_i~combout\), VCC, , , \~GND~combout\, !GLOBAL(\nReset_i~combout\), , \U1|div_clk_mod|Equal0~5_combout\)
@@ -805,7 +799,7 @@ PORT MAP (
 	cout0 => \U1|div_clk_mod|cpt_now[2]~11\,
 	cout1 => \U1|div_clk_mod|cpt_now[2]~11COUT1_59\);
 
--- Location: LC_X10_Y3_N4
+-- Location: LC_X5_Y6_N4
 \U1|div_clk_mod|cpt_now[3]\ : maxv_lcell
 -- Equation(s):
 -- \U1|div_clk_mod|cpt_now\(3) = DFFEAS(\U1|div_clk_mod|cpt_now\(3) $ ((((!\U1|div_clk_mod|cpt_now[2]~11\)))), GLOBAL(\Clk_Main_i~combout\), VCC, , , \~GND~combout\, !GLOBAL(\nReset_i~combout\), , \U1|div_clk_mod|Equal0~5_combout\)
@@ -836,14 +830,14 @@ PORT MAP (
 	regout => \U1|div_clk_mod|cpt_now\(3),
 	cout => \U1|div_clk_mod|cpt_now[3]~13\);
 
--- Location: LC_X12_Y3_N9
+-- Location: LC_X5_Y5_N7
 \U1|div_clk_mod|Mux10~0\ : maxv_lcell
 -- Equation(s):
--- \U1|div_clk_mod|Mux10~0_combout\ = ((\U1|sel_vitesse_s\(0) & (!\U1|sel_vitesse_s\(2) & \U1|sel_vitesse_s\(1))))
+-- \U1|div_clk_mod|Mux10~0_combout\ = ((\U1|sel_vitesse_s\(0) & (\U1|sel_vitesse_s\(1) & !\U1|sel_vitesse_s\(2))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0c00",
+	lut_mask => "00c0",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -852,20 +846,20 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datab => \U1|sel_vitesse_s\(0),
-	datac => \U1|sel_vitesse_s\(2),
-	datad => \U1|sel_vitesse_s\(1),
+	datac => \U1|sel_vitesse_s\(1),
+	datad => \U1|sel_vitesse_s\(2),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \U1|div_clk_mod|Mux10~0_combout\);
 
--- Location: LC_X12_Y3_N8
+-- Location: LC_X5_Y5_N2
 \U1|div_clk_mod|Mux11~0\ : maxv_lcell
 -- Equation(s):
 -- \U1|div_clk_mod|Mux11~0_combout\ = ((\U1|sel_vitesse_s\(2) & ((!\U1|sel_vitesse_s\(1)))) # (!\U1|sel_vitesse_s\(2) & (!\U1|sel_vitesse_s\(0))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "03f3",
+	lut_mask => "0f33",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -874,20 +868,20 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datab => \U1|sel_vitesse_s\(0),
-	datac => \U1|sel_vitesse_s\(2),
-	datad => \U1|sel_vitesse_s\(1),
+	datac => \U1|sel_vitesse_s\(1),
+	datad => \U1|sel_vitesse_s\(2),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \U1|div_clk_mod|Mux11~0_combout\);
 
--- Location: LC_X11_Y4_N9
+-- Location: LC_X4_Y6_N1
 \U1|div_clk_mod|Mux12~0\ : maxv_lcell
 -- Equation(s):
--- \U1|div_clk_mod|Mux12~0_combout\ = (\U1|sel_vitesse_s\(0) $ ((\U1|sel_vitesse_s\(2))))
+-- \U1|div_clk_mod|Mux12~0_combout\ = \U1|sel_vitesse_s\(2) $ ((((\U1|sel_vitesse_s\(0)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "3c3c",
+	lut_mask => "5a5a",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -895,16 +889,16 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \U1|sel_vitesse_s\(0),
-	datac => \U1|sel_vitesse_s\(2),
+	dataa => \U1|sel_vitesse_s\(2),
+	datac => \U1|sel_vitesse_s\(0),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \U1|div_clk_mod|Mux12~0_combout\);
 
--- Location: LC_X12_Y3_N7
+-- Location: LC_X5_Y5_N3
 \U1|div_clk_mod|Mux13~0\ : maxv_lcell
 -- Equation(s):
--- \U1|div_clk_mod|Mux13~0_combout\ = ((\U1|sel_vitesse_s\(0) & (\U1|sel_vitesse_s\(2) & \U1|sel_vitesse_s\(1))))
+-- \U1|div_clk_mod|Mux13~0_combout\ = ((\U1|sel_vitesse_s\(0) & (\U1|sel_vitesse_s\(1) & \U1|sel_vitesse_s\(2))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -917,13 +911,13 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datab => \U1|sel_vitesse_s\(0),
-	datac => \U1|sel_vitesse_s\(2),
-	datad => \U1|sel_vitesse_s\(1),
+	datac => \U1|sel_vitesse_s\(1),
+	datad => \U1|sel_vitesse_s\(2),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \U1|div_clk_mod|Mux13~0_combout\);
 
--- Location: LC_X10_Y3_N5
+-- Location: LC_X5_Y6_N5
 \U1|div_clk_mod|cpt_now[4]\ : maxv_lcell
 -- Equation(s):
 -- \U1|div_clk_mod|cpt_now\(4) = DFFEAS(\U1|div_clk_mod|cpt_now\(4) $ ((((\U1|div_clk_mod|cpt_now[3]~13\)))), GLOBAL(\Clk_Main_i~combout\), VCC, , , \U1|div_clk_mod|Mux13~0_combout\, !GLOBAL(\nReset_i~combout\), , \U1|div_clk_mod|Equal0~5_combout\)
@@ -954,7 +948,7 @@ PORT MAP (
 	cout0 => \U1|div_clk_mod|cpt_now[4]~15\,
 	cout1 => \U1|div_clk_mod|cpt_now[4]~15COUT1_61\);
 
--- Location: LC_X10_Y3_N6
+-- Location: LC_X5_Y6_N6
 \U1|div_clk_mod|cpt_now[5]\ : maxv_lcell
 -- Equation(s):
 -- \U1|div_clk_mod|cpt_now\(5) = DFFEAS(\U1|div_clk_mod|cpt_now\(5) $ ((((!(!\U1|div_clk_mod|cpt_now[3]~13\ & \U1|div_clk_mod|cpt_now[4]~15\) # (\U1|div_clk_mod|cpt_now[3]~13\ & \U1|div_clk_mod|cpt_now[4]~15COUT1_61\))))), GLOBAL(\Clk_Main_i~combout\), VCC, 
@@ -990,7 +984,7 @@ PORT MAP (
 	cout0 => \U1|div_clk_mod|cpt_now[5]~17\,
 	cout1 => \U1|div_clk_mod|cpt_now[5]~17COUT1_63\);
 
--- Location: LC_X10_Y3_N7
+-- Location: LC_X5_Y6_N7
 \U1|div_clk_mod|cpt_now[6]\ : maxv_lcell
 -- Equation(s):
 -- \U1|div_clk_mod|cpt_now\(6) = DFFEAS((\U1|div_clk_mod|cpt_now\(6) $ (((!\U1|div_clk_mod|cpt_now[3]~13\ & \U1|div_clk_mod|cpt_now[5]~17\) # (\U1|div_clk_mod|cpt_now[3]~13\ & \U1|div_clk_mod|cpt_now[5]~17COUT1_63\)))), GLOBAL(\Clk_Main_i~combout\), VCC, , , 
@@ -1026,7 +1020,7 @@ PORT MAP (
 	cout0 => \U1|div_clk_mod|cpt_now[6]~19\,
 	cout1 => \U1|div_clk_mod|cpt_now[6]~19COUT1_65\);
 
--- Location: LC_X10_Y3_N8
+-- Location: LC_X5_Y6_N8
 \U1|div_clk_mod|cpt_now[7]\ : maxv_lcell
 -- Equation(s):
 -- \U1|div_clk_mod|cpt_now\(7) = DFFEAS(\U1|div_clk_mod|cpt_now\(7) $ ((((!(!\U1|div_clk_mod|cpt_now[3]~13\ & \U1|div_clk_mod|cpt_now[6]~19\) # (\U1|div_clk_mod|cpt_now[3]~13\ & \U1|div_clk_mod|cpt_now[6]~19COUT1_65\))))), GLOBAL(\Clk_Main_i~combout\), VCC, 
@@ -1062,7 +1056,7 @@ PORT MAP (
 	cout0 => \U1|div_clk_mod|cpt_now[7]~21\,
 	cout1 => \U1|div_clk_mod|cpt_now[7]~21COUT1_67\);
 
--- Location: LC_X10_Y3_N9
+-- Location: LC_X5_Y6_N9
 \U1|div_clk_mod|cpt_now[8]\ : maxv_lcell
 -- Equation(s):
 -- \U1|div_clk_mod|cpt_now\(8) = DFFEAS((\U1|div_clk_mod|cpt_now\(8) $ (((!\U1|div_clk_mod|cpt_now[3]~13\ & \U1|div_clk_mod|cpt_now[7]~21\) # (\U1|div_clk_mod|cpt_now[3]~13\ & \U1|div_clk_mod|cpt_now[7]~21COUT1_67\)))), GLOBAL(\Clk_Main_i~combout\), VCC, , , 
@@ -1096,14 +1090,14 @@ PORT MAP (
 	regout => \U1|div_clk_mod|cpt_now\(8),
 	cout => \U1|div_clk_mod|cpt_now[8]~23\);
 
--- Location: LC_X12_Y3_N4
+-- Location: LC_X5_Y5_N4
 \U1|div_clk_mod|Mux5~0\ : maxv_lcell
 -- Equation(s):
--- \U1|div_clk_mod|Mux5~0_combout\ = ((\U1|sel_vitesse_s\(0) & (\U1|sel_vitesse_s\(2) & !\U1|sel_vitesse_s\(1))))
+-- \U1|div_clk_mod|Mux5~0_combout\ = ((\U1|sel_vitesse_s\(0) & (!\U1|sel_vitesse_s\(1) & \U1|sel_vitesse_s\(2))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "00c0",
+	lut_mask => "0c00",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -1112,20 +1106,20 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datab => \U1|sel_vitesse_s\(0),
-	datac => \U1|sel_vitesse_s\(2),
-	datad => \U1|sel_vitesse_s\(1),
+	datac => \U1|sel_vitesse_s\(1),
+	datad => \U1|sel_vitesse_s\(2),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \U1|div_clk_mod|Mux5~0_combout\);
 
--- Location: LC_X12_Y3_N3
+-- Location: LC_X5_Y5_N9
 \U1|div_clk_mod|Mux6~0\ : maxv_lcell
 -- Equation(s):
 -- \U1|div_clk_mod|Mux6~0_combout\ = ((\U1|sel_vitesse_s\(1) & (!\U1|sel_vitesse_s\(0))) # (!\U1|sel_vitesse_s\(1) & ((\U1|sel_vitesse_s\(2)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "33f0",
+	lut_mask => "3f30",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -1134,20 +1128,20 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datab => \U1|sel_vitesse_s\(0),
-	datac => \U1|sel_vitesse_s\(2),
-	datad => \U1|sel_vitesse_s\(1),
+	datac => \U1|sel_vitesse_s\(1),
+	datad => \U1|sel_vitesse_s\(2),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \U1|div_clk_mod|Mux6~0_combout\);
 
--- Location: LC_X11_Y4_N3
+-- Location: LC_X5_Y5_N1
 \U1|div_clk_mod|Mux7~0\ : maxv_lcell
 -- Equation(s):
--- \U1|div_clk_mod|Mux7~0_combout\ = (\U1|sel_vitesse_s\(1)) # ((\U1|sel_vitesse_s\(0) & (\U1|sel_vitesse_s\(2))))
+-- \U1|div_clk_mod|Mux7~0_combout\ = ((\U1|sel_vitesse_s\(1)) # ((\U1|sel_vitesse_s\(0) & \U1|sel_vitesse_s\(2))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "eaea",
+	lut_mask => "fcf0",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -1155,21 +1149,21 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \U1|sel_vitesse_s\(1),
 	datab => \U1|sel_vitesse_s\(0),
-	datac => \U1|sel_vitesse_s\(2),
+	datac => \U1|sel_vitesse_s\(1),
+	datad => \U1|sel_vitesse_s\(2),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \U1|div_clk_mod|Mux7~0_combout\);
 
--- Location: LC_X12_Y3_N2
+-- Location: LC_X5_Y5_N5
 \U1|div_clk_mod|Mux8~0\ : maxv_lcell
 -- Equation(s):
--- \U1|div_clk_mod|Mux8~0_combout\ = ((\U1|sel_vitesse_s\(0) & ((\U1|sel_vitesse_s\(1)))) # (!\U1|sel_vitesse_s\(0) & ((\U1|sel_vitesse_s\(2)) # (!\U1|sel_vitesse_s\(1)))))
+-- \U1|div_clk_mod|Mux8~0_combout\ = ((\U1|sel_vitesse_s\(0) & (\U1|sel_vitesse_s\(1))) # (!\U1|sel_vitesse_s\(0) & ((\U1|sel_vitesse_s\(2)) # (!\U1|sel_vitesse_s\(1)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "fc33",
+	lut_mask => "f3c3",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -1178,13 +1172,13 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datab => \U1|sel_vitesse_s\(0),
-	datac => \U1|sel_vitesse_s\(2),
-	datad => \U1|sel_vitesse_s\(1),
+	datac => \U1|sel_vitesse_s\(1),
+	datad => \U1|sel_vitesse_s\(2),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \U1|div_clk_mod|Mux8~0_combout\);
 
--- Location: LC_X11_Y3_N0
+-- Location: LC_X6_Y6_N0
 \U1|div_clk_mod|cpt_now[9]\ : maxv_lcell
 -- Equation(s):
 -- \U1|div_clk_mod|cpt_now\(9) = DFFEAS((\U1|div_clk_mod|cpt_now\(9) $ ((!\U1|div_clk_mod|cpt_now[8]~23\))), GLOBAL(\Clk_Main_i~combout\), VCC, , , \U1|div_clk_mod|Mux8~0_combout\, !GLOBAL(\nReset_i~combout\), , \U1|div_clk_mod|Equal0~5_combout\)
@@ -1215,7 +1209,7 @@ PORT MAP (
 	cout0 => \U1|div_clk_mod|cpt_now[9]~25\,
 	cout1 => \U1|div_clk_mod|cpt_now[9]~25COUT1_69\);
 
--- Location: LC_X11_Y3_N1
+-- Location: LC_X6_Y6_N1
 \U1|div_clk_mod|cpt_now[10]\ : maxv_lcell
 -- Equation(s):
 -- \U1|div_clk_mod|cpt_now\(10) = DFFEAS((\U1|div_clk_mod|cpt_now\(10) $ (((!\U1|div_clk_mod|cpt_now[8]~23\ & \U1|div_clk_mod|cpt_now[9]~25\) # (\U1|div_clk_mod|cpt_now[8]~23\ & \U1|div_clk_mod|cpt_now[9]~25COUT1_69\)))), GLOBAL(\Clk_Main_i~combout\), VCC, , 
@@ -1251,7 +1245,7 @@ PORT MAP (
 	cout0 => \U1|div_clk_mod|cpt_now[10]~27\,
 	cout1 => \U1|div_clk_mod|cpt_now[10]~27COUT1_71\);
 
--- Location: LC_X11_Y3_N2
+-- Location: LC_X6_Y6_N2
 \U1|div_clk_mod|cpt_now[11]\ : maxv_lcell
 -- Equation(s):
 -- \U1|div_clk_mod|cpt_now\(11) = DFFEAS((\U1|div_clk_mod|cpt_now\(11) $ ((!(!\U1|div_clk_mod|cpt_now[8]~23\ & \U1|div_clk_mod|cpt_now[10]~27\) # (\U1|div_clk_mod|cpt_now[8]~23\ & \U1|div_clk_mod|cpt_now[10]~27COUT1_71\)))), GLOBAL(\Clk_Main_i~combout\), 
@@ -1287,7 +1281,7 @@ PORT MAP (
 	cout0 => \U1|div_clk_mod|cpt_now[11]~29\,
 	cout1 => \U1|div_clk_mod|cpt_now[11]~29COUT1_73\);
 
--- Location: LC_X11_Y3_N3
+-- Location: LC_X6_Y6_N3
 \U1|div_clk_mod|cpt_now[12]\ : maxv_lcell
 -- Equation(s):
 -- \U1|div_clk_mod|cpt_now\(12) = DFFEAS(\U1|div_clk_mod|cpt_now\(12) $ (((((!\U1|div_clk_mod|cpt_now[8]~23\ & \U1|div_clk_mod|cpt_now[11]~29\) # (\U1|div_clk_mod|cpt_now[8]~23\ & \U1|div_clk_mod|cpt_now[11]~29COUT1_73\))))), GLOBAL(\Clk_Main_i~combout\), 
@@ -1323,7 +1317,7 @@ PORT MAP (
 	cout0 => \U1|div_clk_mod|cpt_now[12]~31\,
 	cout1 => \U1|div_clk_mod|cpt_now[12]~31COUT1_75\);
 
--- Location: LC_X11_Y3_N4
+-- Location: LC_X6_Y6_N4
 \U1|div_clk_mod|cpt_now[13]\ : maxv_lcell
 -- Equation(s):
 -- \U1|div_clk_mod|cpt_now\(13) = DFFEAS(\U1|div_clk_mod|cpt_now\(13) $ ((((!(!\U1|div_clk_mod|cpt_now[8]~23\ & \U1|div_clk_mod|cpt_now[12]~31\) # (\U1|div_clk_mod|cpt_now[8]~23\ & \U1|div_clk_mod|cpt_now[12]~31COUT1_75\))))), GLOBAL(\Clk_Main_i~combout\), 
@@ -1357,14 +1351,14 @@ PORT MAP (
 	regout => \U1|div_clk_mod|cpt_now\(13),
 	cout => \U1|div_clk_mod|cpt_now[13]~33\);
 
--- Location: LC_X12_Y3_N0
-\U1|div_clk_mod|Mux2~0\ : maxv_lcell
+-- Location: LC_X5_Y5_N0
+\U1|div_clk_mod|Mux1~0\ : maxv_lcell
 -- Equation(s):
--- \U1|div_clk_mod|Mux2~0_combout\ = ((\U1|sel_vitesse_s\(2) & ((!\U1|sel_vitesse_s\(1)))) # (!\U1|sel_vitesse_s\(2) & (\U1|sel_vitesse_s\(0))))
+-- \U1|div_clk_mod|Mux1~0_combout\ = ((!\U1|sel_vitesse_s\(2) & ((!\U1|sel_vitesse_s\(1)) # (!\U1|sel_vitesse_s\(0)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0cfc",
+	lut_mask => "003f",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -1373,20 +1367,62 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	datab => \U1|sel_vitesse_s\(0),
+	datac => \U1|sel_vitesse_s\(1),
+	datad => \U1|sel_vitesse_s\(2),
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \U1|div_clk_mod|Mux1~0_combout\);
+
+-- Location: LC_X4_Y6_N4
+\U1|sel_vitesse_s[2]~_wirecell\ : maxv_lcell
+-- Equation(s):
+-- \U1|sel_vitesse_s[2]~_wirecell_combout\ = (((!\U1|sel_vitesse_s\(2))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0f0f",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
 	datac => \U1|sel_vitesse_s\(2),
-	datad => \U1|sel_vitesse_s\(1),
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \U1|sel_vitesse_s[2]~_wirecell_combout\);
+
+-- Location: LC_X4_Y6_N3
+\U1|div_clk_mod|Mux2~0\ : maxv_lcell
+-- Equation(s):
+-- \U1|div_clk_mod|Mux2~0_combout\ = (\U1|sel_vitesse_s\(2) & (!\U1|sel_vitesse_s\(1))) # (!\U1|sel_vitesse_s\(2) & (((\U1|sel_vitesse_s\(0)))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "7272",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \U1|sel_vitesse_s\(2),
+	datab => \U1|sel_vitesse_s\(1),
+	datac => \U1|sel_vitesse_s\(0),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \U1|div_clk_mod|Mux2~0_combout\);
 
--- Location: LC_X12_Y3_N5
+-- Location: LC_X4_Y6_N6
 \U1|div_clk_mod|Mux3~0\ : maxv_lcell
 -- Equation(s):
--- \U1|div_clk_mod|Mux3~0_combout\ = ((!\U1|sel_vitesse_s\(0) & ((\U1|sel_vitesse_s\(2)) # (!\U1|sel_vitesse_s\(1)))))
+-- \U1|div_clk_mod|Mux3~0_combout\ = (!\U1|sel_vitesse_s\(0) & ((\U1|sel_vitesse_s\(2)) # ((!\U1|sel_vitesse_s\(1)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "3033",
+	lut_mask => "0b0b",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -1394,14 +1430,14 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \U1|sel_vitesse_s\(0),
-	datac => \U1|sel_vitesse_s\(2),
-	datad => \U1|sel_vitesse_s\(1),
+	dataa => \U1|sel_vitesse_s\(2),
+	datab => \U1|sel_vitesse_s\(1),
+	datac => \U1|sel_vitesse_s\(0),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \U1|div_clk_mod|Mux3~0_combout\);
 
--- Location: LC_X11_Y3_N5
+-- Location: LC_X6_Y6_N5
 \U1|div_clk_mod|cpt_now[14]\ : maxv_lcell
 -- Equation(s):
 -- \U1|div_clk_mod|cpt_now\(14) = DFFEAS(\U1|div_clk_mod|cpt_now\(14) $ ((((\U1|div_clk_mod|cpt_now[13]~33\)))), GLOBAL(\Clk_Main_i~combout\), VCC, , , \U1|div_clk_mod|Mux3~0_combout\, !GLOBAL(\nReset_i~combout\), , \U1|div_clk_mod|Equal0~5_combout\)
@@ -1432,7 +1468,7 @@ PORT MAP (
 	cout0 => \U1|div_clk_mod|cpt_now[14]~35\,
 	cout1 => \U1|div_clk_mod|cpt_now[14]~35COUT1_77\);
 
--- Location: LC_X11_Y3_N6
+-- Location: LC_X6_Y6_N6
 \U1|div_clk_mod|cpt_now[15]\ : maxv_lcell
 -- Equation(s):
 -- \U1|div_clk_mod|cpt_now\(15) = DFFEAS(\U1|div_clk_mod|cpt_now\(15) $ ((((!(!\U1|div_clk_mod|cpt_now[13]~33\ & \U1|div_clk_mod|cpt_now[14]~35\) # (\U1|div_clk_mod|cpt_now[13]~33\ & \U1|div_clk_mod|cpt_now[14]~35COUT1_77\))))), GLOBAL(\Clk_Main_i~combout\), 
@@ -1468,7 +1504,7 @@ PORT MAP (
 	cout0 => \U1|div_clk_mod|cpt_now[15]~37\,
 	cout1 => \U1|div_clk_mod|cpt_now[15]~37COUT1_79\);
 
--- Location: LC_X11_Y3_N7
+-- Location: LC_X6_Y6_N7
 \U1|div_clk_mod|cpt_now[16]\ : maxv_lcell
 -- Equation(s):
 -- \U1|div_clk_mod|cpt_now\(16) = DFFEAS((\U1|div_clk_mod|cpt_now\(16) $ (((!\U1|div_clk_mod|cpt_now[13]~33\ & \U1|div_clk_mod|cpt_now[15]~37\) # (\U1|div_clk_mod|cpt_now[13]~33\ & \U1|div_clk_mod|cpt_now[15]~37COUT1_79\)))), GLOBAL(\Clk_Main_i~combout\), 
@@ -1504,50 +1540,7 @@ PORT MAP (
 	cout0 => \U1|div_clk_mod|cpt_now[16]~1\,
 	cout1 => \U1|div_clk_mod|cpt_now[16]~1COUT1_81\);
 
--- Location: LC_X11_Y4_N6
-\U1|div_clk_mod|Mux0~0\ : maxv_lcell
--- Equation(s):
--- \U1|div_clk_mod|Mux0~0_combout\ = (!\U1|sel_vitesse_s\(1) & (((!\U1|sel_vitesse_s\(2)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0505",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \U1|sel_vitesse_s\(1),
-	datac => \U1|sel_vitesse_s\(2),
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \U1|div_clk_mod|Mux0~0_combout\);
-
--- Location: LC_X12_Y3_N6
-\U1|div_clk_mod|Mux1~0\ : maxv_lcell
--- Equation(s):
--- \U1|div_clk_mod|Mux1~0_combout\ = ((!\U1|sel_vitesse_s\(2) & ((!\U1|sel_vitesse_s\(1)) # (!\U1|sel_vitesse_s\(0)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "030f",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	datab => \U1|sel_vitesse_s\(0),
-	datac => \U1|sel_vitesse_s\(2),
-	datad => \U1|sel_vitesse_s\(1),
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \U1|div_clk_mod|Mux1~0_combout\);
-
--- Location: LC_X11_Y3_N8
+-- Location: LC_X6_Y6_N8
 \U1|div_clk_mod|cpt_now[17]\ : maxv_lcell
 -- Equation(s):
 -- \U1|div_clk_mod|cpt_now\(17) = DFFEAS(\U1|div_clk_mod|cpt_now\(17) $ ((((!(!\U1|div_clk_mod|cpt_now[13]~33\ & \U1|div_clk_mod|cpt_now[16]~1\) # (\U1|div_clk_mod|cpt_now[13]~33\ & \U1|div_clk_mod|cpt_now[16]~1COUT1_81\))))), GLOBAL(\Clk_Main_i~combout\), 
@@ -1583,7 +1576,7 @@ PORT MAP (
 	cout0 => \U1|div_clk_mod|cpt_now[17]~3\,
 	cout1 => \U1|div_clk_mod|cpt_now[17]~3COUT1_83\);
 
--- Location: LC_X11_Y3_N9
+-- Location: LC_X6_Y6_N9
 \U1|div_clk_mod|cpt_now[18]\ : maxv_lcell
 -- Equation(s):
 -- \U1|div_clk_mod|cpt_now\(18) = DFFEAS((((!\U1|div_clk_mod|cpt_now[13]~33\ & \U1|div_clk_mod|cpt_now[17]~3\) # (\U1|div_clk_mod|cpt_now[13]~33\ & \U1|div_clk_mod|cpt_now[17]~3COUT1_83\) $ (\U1|div_clk_mod|cpt_now\(18)))), GLOBAL(\Clk_Main_i~combout\), VCC, 
@@ -1615,10 +1608,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \U1|div_clk_mod|cpt_now\(18));
 
--- Location: LC_X11_Y2_N8
+-- Location: LC_X7_Y6_N6
 \U1|div_clk_mod|Equal0~2\ : maxv_lcell
 -- Equation(s):
--- \U1|div_clk_mod|Equal0~2_combout\ = (\U1|div_clk_mod|cpt_now\(10)) # ((\U1|div_clk_mod|cpt_now\(11)) # ((\U1|div_clk_mod|cpt_now\(9)) # (\U1|div_clk_mod|cpt_now\(8))))
+-- \U1|div_clk_mod|Equal0~2_combout\ = (\U1|div_clk_mod|cpt_now\(9)) # ((\U1|div_clk_mod|cpt_now\(8)) # ((\U1|div_clk_mod|cpt_now\(10)) # (\U1|div_clk_mod|cpt_now\(11))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1630,15 +1623,38 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \U1|div_clk_mod|cpt_now\(10),
-	datab => \U1|div_clk_mod|cpt_now\(11),
-	datac => \U1|div_clk_mod|cpt_now\(9),
-	datad => \U1|div_clk_mod|cpt_now\(8),
+	dataa => \U1|div_clk_mod|cpt_now\(9),
+	datab => \U1|div_clk_mod|cpt_now\(8),
+	datac => \U1|div_clk_mod|cpt_now\(10),
+	datad => \U1|div_clk_mod|cpt_now\(11),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \U1|div_clk_mod|Equal0~2_combout\);
 
--- Location: LC_X10_Y3_N0
+-- Location: LC_X7_Y6_N2
+\U1|div_clk_mod|Equal0~3\ : maxv_lcell
+-- Equation(s):
+-- \U1|div_clk_mod|Equal0~3_combout\ = (\U1|div_clk_mod|cpt_now\(14)) # ((\U1|div_clk_mod|cpt_now\(13)) # ((\U1|div_clk_mod|cpt_now\(15)) # (\U1|div_clk_mod|cpt_now\(12))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "fffe",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \U1|div_clk_mod|cpt_now\(14),
+	datab => \U1|div_clk_mod|cpt_now\(13),
+	datac => \U1|div_clk_mod|cpt_now\(15),
+	datad => \U1|div_clk_mod|cpt_now\(12),
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \U1|div_clk_mod|Equal0~3_combout\);
+
+-- Location: LC_X5_Y6_N0
 \U1|div_clk_mod|Equal0~0\ : maxv_lcell
 -- Equation(s):
 -- \U1|div_clk_mod|Equal0~0_combout\ = (\U1|div_clk_mod|cpt_now\(2)) # ((\U1|div_clk_mod|cpt_now\(1)) # ((\U1|div_clk_mod|cpt_now\(3)) # (\U1|div_clk_mod|cpt_now\(0))))
@@ -1661,33 +1677,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	combout => \U1|div_clk_mod|Equal0~0_combout\);
 
--- Location: LC_X11_Y2_N6
-\U1|div_clk_mod|Equal0~3\ : maxv_lcell
--- Equation(s):
--- \U1|div_clk_mod|Equal0~3_combout\ = (\U1|div_clk_mod|cpt_now\(13)) # ((\U1|div_clk_mod|cpt_now\(14)) # ((\U1|div_clk_mod|cpt_now\(15)) # (\U1|div_clk_mod|cpt_now\(12))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "fffe",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \U1|div_clk_mod|cpt_now\(13),
-	datab => \U1|div_clk_mod|cpt_now\(14),
-	datac => \U1|div_clk_mod|cpt_now\(15),
-	datad => \U1|div_clk_mod|cpt_now\(12),
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \U1|div_clk_mod|Equal0~3_combout\);
-
--- Location: LC_X11_Y2_N2
+-- Location: LC_X7_Y6_N3
 \U1|div_clk_mod|Equal0~1\ : maxv_lcell
 -- Equation(s):
--- \U1|div_clk_mod|Equal0~1_combout\ = (\U1|div_clk_mod|cpt_now\(4)) # ((\U1|div_clk_mod|cpt_now\(6)) # ((\U1|div_clk_mod|cpt_now\(7)) # (\U1|div_clk_mod|cpt_now\(5))))
+-- \U1|div_clk_mod|Equal0~1_combout\ = (\U1|div_clk_mod|cpt_now\(7)) # ((\U1|div_clk_mod|cpt_now\(6)) # ((\U1|div_clk_mod|cpt_now\(5)) # (\U1|div_clk_mod|cpt_now\(4))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1699,18 +1692,18 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \U1|div_clk_mod|cpt_now\(4),
+	dataa => \U1|div_clk_mod|cpt_now\(7),
 	datab => \U1|div_clk_mod|cpt_now\(6),
-	datac => \U1|div_clk_mod|cpt_now\(7),
-	datad => \U1|div_clk_mod|cpt_now\(5),
+	datac => \U1|div_clk_mod|cpt_now\(5),
+	datad => \U1|div_clk_mod|cpt_now\(4),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \U1|div_clk_mod|Equal0~1_combout\);
 
--- Location: LC_X11_Y2_N5
+-- Location: LC_X7_Y6_N8
 \U1|div_clk_mod|Equal0~4\ : maxv_lcell
 -- Equation(s):
--- \U1|div_clk_mod|Equal0~4_combout\ = (\U1|div_clk_mod|Equal0~2_combout\) # ((\U1|div_clk_mod|Equal0~0_combout\) # ((\U1|div_clk_mod|Equal0~3_combout\) # (\U1|div_clk_mod|Equal0~1_combout\)))
+-- \U1|div_clk_mod|Equal0~4_combout\ = (\U1|div_clk_mod|Equal0~2_combout\) # ((\U1|div_clk_mod|Equal0~3_combout\) # ((\U1|div_clk_mod|Equal0~0_combout\) # (\U1|div_clk_mod|Equal0~1_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1723,17 +1716,17 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \U1|div_clk_mod|Equal0~2_combout\,
-	datab => \U1|div_clk_mod|Equal0~0_combout\,
-	datac => \U1|div_clk_mod|Equal0~3_combout\,
+	datab => \U1|div_clk_mod|Equal0~3_combout\,
+	datac => \U1|div_clk_mod|Equal0~0_combout\,
 	datad => \U1|div_clk_mod|Equal0~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \U1|div_clk_mod|Equal0~4_combout\);
 
--- Location: LC_X11_Y2_N4
+-- Location: LC_X7_Y6_N5
 \U1|div_clk_mod|Equal0~5\ : maxv_lcell
 -- Equation(s):
--- \U1|div_clk_mod|Equal0~5_combout\ = (!\U1|div_clk_mod|cpt_now\(16) & (!\U1|div_clk_mod|cpt_now\(18) & (!\U1|div_clk_mod|Equal0~4_combout\ & !\U1|div_clk_mod|cpt_now\(17))))
+-- \U1|div_clk_mod|Equal0~5_combout\ = (!\U1|div_clk_mod|cpt_now\(18) & (!\U1|div_clk_mod|cpt_now\(16) & (!\U1|div_clk_mod|cpt_now\(17) & !\U1|div_clk_mod|Equal0~4_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1745,10 +1738,10 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \U1|div_clk_mod|cpt_now\(16),
-	datab => \U1|div_clk_mod|cpt_now\(18),
-	datac => \U1|div_clk_mod|Equal0~4_combout\,
-	datad => \U1|div_clk_mod|cpt_now\(17),
+	dataa => \U1|div_clk_mod|cpt_now\(18),
+	datab => \U1|div_clk_mod|cpt_now\(16),
+	datac => \U1|div_clk_mod|cpt_now\(17),
+	datad => \U1|div_clk_mod|Equal0~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \U1|div_clk_mod|Equal0~5_combout\);
@@ -1764,14 +1757,14 @@ PORT MAP (
 	padio => ww_nButton_i(1),
 	combout => \nButton_i~combout\(1));
 
--- Location: LC_X3_Y7_N8
+-- Location: LC_X2_Y7_N0
 \U1|start_s\ : maxv_lcell
 -- Equation(s):
 -- \U1|start_s~regout\ = DFFEAS((((!\nButton_i~combout\(1)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0f0f",
+	lut_mask => "00ff",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -1780,7 +1773,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	datac => \nButton_i~combout\(1),
+	datad => \nButton_i~combout\(1),
 	aclr => \ALT_INV_nReset_i~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -1797,97 +1790,10 @@ PORT MAP (
 	padio => ww_Switch_i(4),
 	combout => \Switch_i~combout\(4));
 
--- Location: LC_X1_Y4_N2
+-- Location: LC_X4_Y5_N2
 \U1|dist_x_s[4]\ : maxv_lcell
 -- Equation(s):
--- \U1|dist_x_s\(4) = DFFEAS((((\Switch_i~combout\(4)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "ff00",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	clk => \Clk_Main_i~combout\,
-	datad => \Switch_i~combout\(4),
-	aclr => \ALT_INV_nReset_i~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \U1|dist_x_s\(4));
-
--- Location: LC_X3_Y7_N6
-\U1|cpt_pas|cpt_now[2]~20\ : maxv_lcell
--- Equation(s):
--- \U1|cpt_pas|cpt_now[2]~20_combout\ = (\U1|start_s~regout\) # (((\U1|div_clk_mod|Equal0~5_combout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "ffaa",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \U1|start_s~regout\,
-	datad => \U1|div_clk_mod|Equal0~5_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \U1|cpt_pas|cpt_now[2]~20_combout\);
-
--- Location: PIN_L2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\Switch_i[1]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_Switch_i(1),
-	combout => \Switch_i~combout\(1));
-
--- Location: LC_X2_Y4_N2
-\U1|dist_x_s[1]\ : maxv_lcell
--- Equation(s):
--- \U1|dist_x_s\(1) = DFFEAS((((\Switch_i~combout\(1)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "ff00",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	clk => \Clk_Main_i~combout\,
-	datad => \Switch_i~combout\(1),
-	aclr => \ALT_INV_nReset_i~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \U1|dist_x_s\(1));
-
--- Location: PIN_L3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\Switch_i[0]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_Switch_i(0),
-	combout => \Switch_i~combout\(0));
-
--- Location: LC_X2_Y5_N2
-\U1|dist_x_s[0]\ : maxv_lcell
--- Equation(s):
--- \U1|dist_x_s\(0) = DFFEAS(GND, GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , \Switch_i~combout\(0), , , VCC)
+-- \U1|dist_x_s\(4) = DFFEAS(GND, GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , \Switch_i~combout\(4), , , VCC)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -1900,171 +1806,33 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	datac => \Switch_i~combout\(0),
+	datac => \Switch_i~combout\(4),
 	aclr => \ALT_INV_nReset_i~combout\,
 	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \U1|dist_x_s\(0));
+	regout => \U1|dist_x_s\(4));
 
--- Location: LC_X3_Y6_N0
-\U1|cpt_pas|cpt_now[0]\ : maxv_lcell
+-- Location: LC_X3_Y5_N9
+\U1|cpt_pas|cpt_now[5]~14\ : maxv_lcell
 -- Equation(s):
--- \U1|cpt_pas|cpt_now\(0) = DFFEAS(((!\U1|cpt_pas|cpt_now\(0))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , \U1|cpt_pas|cpt_now[2]~20_combout\, \~GND~combout\, , , \U1|start_s~regout\)
--- \U1|cpt_pas|cpt_now[0]~1\ = CARRY(((\U1|cpt_pas|cpt_now\(0))))
--- \U1|cpt_pas|cpt_now[0]~1COUT1_31\ = CARRY(((\U1|cpt_pas|cpt_now\(0))))
+-- \U1|cpt_pas|cpt_now[5]~14_combout\ = ((\U1|start_s~regout\) # ((\U1|div_clk_mod|Equal0~5_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "33cc",
-	operation_mode => "arithmetic",
-	output_mode => "reg_only",
+	lut_mask => "fcfc",
+	operation_mode => "normal",
+	output_mode => "comb_only",
 	register_cascade_mode => "off",
 	sum_lutc_input => "datac",
-	synch_mode => "on")
+	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	clk => \Clk_Main_i~combout\,
-	datab => \U1|cpt_pas|cpt_now\(0),
-	datac => \~GND~combout\,
-	aclr => \ALT_INV_nReset_i~combout\,
-	sload => \U1|start_s~regout\,
-	ena => \U1|cpt_pas|cpt_now[2]~20_combout\,
+	datab => \U1|start_s~regout\,
+	datac => \U1|div_clk_mod|Equal0~5_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \U1|cpt_pas|cpt_now\(0),
-	cout0 => \U1|cpt_pas|cpt_now[0]~1\,
-	cout1 => \U1|cpt_pas|cpt_now[0]~1COUT1_31\);
-
--- Location: LC_X3_Y6_N1
-\U1|cpt_pas|cpt_now[1]\ : maxv_lcell
--- Equation(s):
--- \U1|cpt_pas|cpt_now\(1) = DFFEAS((\U1|cpt_pas|cpt_now\(1) $ ((!\U1|cpt_pas|cpt_now[0]~1\))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , \U1|cpt_pas|cpt_now[2]~20_combout\, \~GND~combout\, , , \U1|start_s~regout\)
--- \U1|cpt_pas|cpt_now[1]~3\ = CARRY(((!\U1|cpt_pas|cpt_now\(1) & !\U1|cpt_pas|cpt_now[0]~1\)))
--- \U1|cpt_pas|cpt_now[1]~3COUT1_33\ = CARRY(((!\U1|cpt_pas|cpt_now\(1) & !\U1|cpt_pas|cpt_now[0]~1COUT1_31\)))
-
--- pragma translate_off
-GENERIC MAP (
-	cin0_used => "true",
-	cin1_used => "true",
-	lut_mask => "c303",
-	operation_mode => "arithmetic",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "cin",
-	synch_mode => "on")
--- pragma translate_on
-PORT MAP (
-	clk => \Clk_Main_i~combout\,
-	datab => \U1|cpt_pas|cpt_now\(1),
-	datac => \~GND~combout\,
-	aclr => \ALT_INV_nReset_i~combout\,
-	sload => \U1|start_s~regout\,
-	ena => \U1|cpt_pas|cpt_now[2]~20_combout\,
-	cin0 => \U1|cpt_pas|cpt_now[0]~1\,
-	cin1 => \U1|cpt_pas|cpt_now[0]~1COUT1_31\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \U1|cpt_pas|cpt_now\(1),
-	cout0 => \U1|cpt_pas|cpt_now[1]~3\,
-	cout1 => \U1|cpt_pas|cpt_now[1]~3COUT1_33\);
-
--- Location: LC_X3_Y6_N2
-\U1|cpt_pas|cpt_now[2]\ : maxv_lcell
--- Equation(s):
--- \U1|cpt_pas|cpt_now\(2) = DFFEAS((\U1|cpt_pas|cpt_now\(2) $ ((\U1|cpt_pas|cpt_now[1]~3\))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , \U1|cpt_pas|cpt_now[2]~20_combout\, \~GND~combout\, , , \U1|start_s~regout\)
--- \U1|cpt_pas|cpt_now[2]~5\ = CARRY(((\U1|cpt_pas|cpt_now\(2)) # (!\U1|cpt_pas|cpt_now[1]~3\)))
--- \U1|cpt_pas|cpt_now[2]~5COUT1_35\ = CARRY(((\U1|cpt_pas|cpt_now\(2)) # (!\U1|cpt_pas|cpt_now[1]~3COUT1_33\)))
-
--- pragma translate_off
-GENERIC MAP (
-	cin0_used => "true",
-	cin1_used => "true",
-	lut_mask => "3ccf",
-	operation_mode => "arithmetic",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "cin",
-	synch_mode => "on")
--- pragma translate_on
-PORT MAP (
-	clk => \Clk_Main_i~combout\,
-	datab => \U1|cpt_pas|cpt_now\(2),
-	datac => \~GND~combout\,
-	aclr => \ALT_INV_nReset_i~combout\,
-	sload => \U1|start_s~regout\,
-	ena => \U1|cpt_pas|cpt_now[2]~20_combout\,
-	cin0 => \U1|cpt_pas|cpt_now[1]~3\,
-	cin1 => \U1|cpt_pas|cpt_now[1]~3COUT1_33\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \U1|cpt_pas|cpt_now\(2),
-	cout0 => \U1|cpt_pas|cpt_now[2]~5\,
-	cout1 => \U1|cpt_pas|cpt_now[2]~5COUT1_35\);
-
--- Location: LC_X3_Y6_N3
-\U1|cpt_pas|cpt_now[3]\ : maxv_lcell
--- Equation(s):
--- \U1|cpt_pas|cpt_now\(3) = DFFEAS(\U1|cpt_pas|cpt_now\(3) $ ((((!\U1|cpt_pas|cpt_now[2]~5\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , \U1|cpt_pas|cpt_now[2]~20_combout\, \U1|dist_x_s\(0), , , \U1|start_s~regout\)
--- \U1|cpt_pas|cpt_now[3]~7\ = CARRY((!\U1|cpt_pas|cpt_now\(3) & ((!\U1|cpt_pas|cpt_now[2]~5\))))
--- \U1|cpt_pas|cpt_now[3]~7COUT1_37\ = CARRY((!\U1|cpt_pas|cpt_now\(3) & ((!\U1|cpt_pas|cpt_now[2]~5COUT1_35\))))
-
--- pragma translate_off
-GENERIC MAP (
-	cin0_used => "true",
-	cin1_used => "true",
-	lut_mask => "a505",
-	operation_mode => "arithmetic",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "cin",
-	synch_mode => "on")
--- pragma translate_on
-PORT MAP (
-	clk => \Clk_Main_i~combout\,
-	dataa => \U1|cpt_pas|cpt_now\(3),
-	datac => \U1|dist_x_s\(0),
-	aclr => \ALT_INV_nReset_i~combout\,
-	sload => \U1|start_s~regout\,
-	ena => \U1|cpt_pas|cpt_now[2]~20_combout\,
-	cin0 => \U1|cpt_pas|cpt_now[2]~5\,
-	cin1 => \U1|cpt_pas|cpt_now[2]~5COUT1_35\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \U1|cpt_pas|cpt_now\(3),
-	cout0 => \U1|cpt_pas|cpt_now[3]~7\,
-	cout1 => \U1|cpt_pas|cpt_now[3]~7COUT1_37\);
-
--- Location: LC_X3_Y6_N4
-\U1|cpt_pas|cpt_now[4]\ : maxv_lcell
--- Equation(s):
--- \U1|cpt_pas|cpt_now\(4) = DFFEAS(\U1|cpt_pas|cpt_now\(4) $ ((((\U1|cpt_pas|cpt_now[3]~7\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , \U1|cpt_pas|cpt_now[2]~20_combout\, \U1|dist_x_s\(1), , , \U1|start_s~regout\)
--- \U1|cpt_pas|cpt_now[4]~9\ = CARRY((\U1|cpt_pas|cpt_now\(4)) # ((!\U1|cpt_pas|cpt_now[3]~7COUT1_37\)))
-
--- pragma translate_off
-GENERIC MAP (
-	cin0_used => "true",
-	cin1_used => "true",
-	lut_mask => "5aaf",
-	operation_mode => "arithmetic",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "cin",
-	synch_mode => "on")
--- pragma translate_on
-PORT MAP (
-	clk => \Clk_Main_i~combout\,
-	dataa => \U1|cpt_pas|cpt_now\(4),
-	datac => \U1|dist_x_s\(1),
-	aclr => \ALT_INV_nReset_i~combout\,
-	sload => \U1|start_s~regout\,
-	ena => \U1|cpt_pas|cpt_now[2]~20_combout\,
-	cin0 => \U1|cpt_pas|cpt_now[3]~7\,
-	cin1 => \U1|cpt_pas|cpt_now[3]~7COUT1_37\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \U1|cpt_pas|cpt_now\(4),
-	cout => \U1|cpt_pas|cpt_now[4]~9\);
+	combout => \U1|cpt_pas|cpt_now[5]~14_combout\);
 
 -- Location: PIN_K3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 \Switch_i[3]~I\ : maxv_io
@@ -2077,7 +1845,7 @@ PORT MAP (
 	padio => ww_Switch_i(3),
 	combout => \Switch_i~combout\(3));
 
--- Location: LC_X1_Y5_N0
+-- Location: LC_X7_Y5_N2
 \U1|dist_x_s[3]\ : maxv_lcell
 -- Equation(s):
 -- \U1|dist_x_s\(3) = DFFEAS(GND, GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , \Switch_i~combout\(3), , , VCC)
@@ -2111,10 +1879,43 @@ PORT MAP (
 	padio => ww_Switch_i(2),
 	combout => \Switch_i~combout\(2));
 
--- Location: LC_X3_Y4_N8
+-- Location: LC_X8_Y6_N2
 \U1|dist_x_s[2]\ : maxv_lcell
 -- Equation(s):
--- \U1|dist_x_s\(2) = DFFEAS(GND, GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , \Switch_i~combout\(2), , , VCC)
+-- \U1|dist_x_s\(2) = DFFEAS((((\Switch_i~combout\(2)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "ff00",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	clk => \Clk_Main_i~combout\,
+	datad => \Switch_i~combout\(2),
+	aclr => \ALT_INV_nReset_i~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \U1|dist_x_s\(2));
+
+-- Location: PIN_L2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\Switch_i[1]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_Switch_i(1),
+	combout => \Switch_i~combout\(1));
+
+-- Location: LC_X2_Y5_N9
+\U1|dist_x_s[1]\ : maxv_lcell
+-- Equation(s):
+-- \U1|dist_x_s\(1) = DFFEAS(GND, GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , \Switch_i~combout\(1), , , VCC)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2127,23 +1928,152 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	datac => \Switch_i~combout\(2),
+	datac => \Switch_i~combout\(1),
 	aclr => \ALT_INV_nReset_i~combout\,
 	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \U1|dist_x_s\(2));
+	regout => \U1|dist_x_s\(1));
 
--- Location: LC_X3_Y6_N5
-\U1|cpt_pas|cpt_now[5]\ : maxv_lcell
+-- Location: PIN_L3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\Switch_i[0]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_Switch_i(0),
+	combout => \Switch_i~combout\(0));
+
+-- Location: LC_X4_Y7_N3
+\U1|dist_x_s[0]\ : maxv_lcell
 -- Equation(s):
--- \U1|cpt_pas|cpt_now\(5) = DFFEAS(\U1|cpt_pas|cpt_now\(5) $ ((((!\U1|cpt_pas|cpt_now[4]~9\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , \U1|cpt_pas|cpt_now[2]~20_combout\, \U1|dist_x_s\(2), , , \U1|start_s~regout\)
--- \U1|cpt_pas|cpt_now[5]~11\ = CARRY((!\U1|cpt_pas|cpt_now\(5) & ((!\U1|cpt_pas|cpt_now[4]~9\))))
--- \U1|cpt_pas|cpt_now[5]~11COUT1_39\ = CARRY((!\U1|cpt_pas|cpt_now\(5) & ((!\U1|cpt_pas|cpt_now[4]~9\))))
+-- \U1|dist_x_s\(0) = DFFEAS(GND, GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , \Switch_i~combout\(0), , , VCC)
 
 -- pragma translate_off
 GENERIC MAP (
-	cin_used => "true",
+	lut_mask => "0000",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "on")
+-- pragma translate_on
+PORT MAP (
+	clk => \Clk_Main_i~combout\,
+	datac => \Switch_i~combout\(0),
+	aclr => \ALT_INV_nReset_i~combout\,
+	sload => VCC,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \U1|dist_x_s\(0));
+
+-- Location: LC_X3_Y5_N1
+\U1|cpt_pas|cpt_now[0]\ : maxv_lcell
+-- Equation(s):
+-- \U1|cpt_pas|cpt_now\(0) = DFFEAS(((!\U1|cpt_pas|cpt_now\(0))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , \U1|cpt_pas|cpt_now[5]~14_combout\, \U1|dist_x_s\(0), , , \U1|start_s~regout\)
+-- \U1|cpt_pas|cpt_now[0]~1\ = CARRY(((\U1|cpt_pas|cpt_now\(0))))
+-- \U1|cpt_pas|cpt_now[0]~1COUT1_22\ = CARRY(((\U1|cpt_pas|cpt_now\(0))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "33cc",
+	operation_mode => "arithmetic",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "on")
+-- pragma translate_on
+PORT MAP (
+	clk => \Clk_Main_i~combout\,
+	datab => \U1|cpt_pas|cpt_now\(0),
+	datac => \U1|dist_x_s\(0),
+	aclr => \ALT_INV_nReset_i~combout\,
+	sload => \U1|start_s~regout\,
+	ena => \U1|cpt_pas|cpt_now[5]~14_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \U1|cpt_pas|cpt_now\(0),
+	cout0 => \U1|cpt_pas|cpt_now[0]~1\,
+	cout1 => \U1|cpt_pas|cpt_now[0]~1COUT1_22\);
+
+-- Location: LC_X3_Y5_N2
+\U1|cpt_pas|cpt_now[1]\ : maxv_lcell
+-- Equation(s):
+-- \U1|cpt_pas|cpt_now\(1) = DFFEAS((\U1|cpt_pas|cpt_now\(1) $ ((!\U1|cpt_pas|cpt_now[0]~1\))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , \U1|cpt_pas|cpt_now[5]~14_combout\, \U1|dist_x_s\(1), , , \U1|start_s~regout\)
+-- \U1|cpt_pas|cpt_now[1]~3\ = CARRY(((!\U1|cpt_pas|cpt_now\(1) & !\U1|cpt_pas|cpt_now[0]~1\)))
+-- \U1|cpt_pas|cpt_now[1]~3COUT1_24\ = CARRY(((!\U1|cpt_pas|cpt_now\(1) & !\U1|cpt_pas|cpt_now[0]~1COUT1_22\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	cin0_used => "true",
+	cin1_used => "true",
+	lut_mask => "c303",
+	operation_mode => "arithmetic",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "cin",
+	synch_mode => "on")
+-- pragma translate_on
+PORT MAP (
+	clk => \Clk_Main_i~combout\,
+	datab => \U1|cpt_pas|cpt_now\(1),
+	datac => \U1|dist_x_s\(1),
+	aclr => \ALT_INV_nReset_i~combout\,
+	sload => \U1|start_s~regout\,
+	ena => \U1|cpt_pas|cpt_now[5]~14_combout\,
+	cin0 => \U1|cpt_pas|cpt_now[0]~1\,
+	cin1 => \U1|cpt_pas|cpt_now[0]~1COUT1_22\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \U1|cpt_pas|cpt_now\(1),
+	cout0 => \U1|cpt_pas|cpt_now[1]~3\,
+	cout1 => \U1|cpt_pas|cpt_now[1]~3COUT1_24\);
+
+-- Location: LC_X3_Y5_N3
+\U1|cpt_pas|cpt_now[2]\ : maxv_lcell
+-- Equation(s):
+-- \U1|cpt_pas|cpt_now\(2) = DFFEAS(\U1|cpt_pas|cpt_now\(2) $ ((((\U1|cpt_pas|cpt_now[1]~3\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , \U1|cpt_pas|cpt_now[5]~14_combout\, \U1|dist_x_s\(2), , , \U1|start_s~regout\)
+-- \U1|cpt_pas|cpt_now[2]~5\ = CARRY((\U1|cpt_pas|cpt_now\(2)) # ((!\U1|cpt_pas|cpt_now[1]~3\)))
+-- \U1|cpt_pas|cpt_now[2]~5COUT1_26\ = CARRY((\U1|cpt_pas|cpt_now\(2)) # ((!\U1|cpt_pas|cpt_now[1]~3COUT1_24\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	cin0_used => "true",
+	cin1_used => "true",
+	lut_mask => "5aaf",
+	operation_mode => "arithmetic",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "cin",
+	synch_mode => "on")
+-- pragma translate_on
+PORT MAP (
+	clk => \Clk_Main_i~combout\,
+	dataa => \U1|cpt_pas|cpt_now\(2),
+	datac => \U1|dist_x_s\(2),
+	aclr => \ALT_INV_nReset_i~combout\,
+	sload => \U1|start_s~regout\,
+	ena => \U1|cpt_pas|cpt_now[5]~14_combout\,
+	cin0 => \U1|cpt_pas|cpt_now[1]~3\,
+	cin1 => \U1|cpt_pas|cpt_now[1]~3COUT1_24\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \U1|cpt_pas|cpt_now\(2),
+	cout0 => \U1|cpt_pas|cpt_now[2]~5\,
+	cout1 => \U1|cpt_pas|cpt_now[2]~5COUT1_26\);
+
+-- Location: LC_X3_Y5_N4
+\U1|cpt_pas|cpt_now[3]\ : maxv_lcell
+-- Equation(s):
+-- \U1|cpt_pas|cpt_now\(3) = DFFEAS(\U1|cpt_pas|cpt_now\(3) $ ((((!\U1|cpt_pas|cpt_now[2]~5\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , \U1|cpt_pas|cpt_now[5]~14_combout\, \U1|dist_x_s\(3), , , \U1|start_s~regout\)
+-- \U1|cpt_pas|cpt_now[3]~7\ = CARRY((!\U1|cpt_pas|cpt_now\(3) & ((!\U1|cpt_pas|cpt_now[2]~5COUT1_26\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	cin0_used => "true",
+	cin1_used => "true",
 	lut_mask => "a505",
 	operation_mode => "arithmetic",
 	output_mode => "reg_only",
@@ -2153,30 +2083,27 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	dataa => \U1|cpt_pas|cpt_now\(5),
-	datac => \U1|dist_x_s\(2),
+	dataa => \U1|cpt_pas|cpt_now\(3),
+	datac => \U1|dist_x_s\(3),
 	aclr => \ALT_INV_nReset_i~combout\,
 	sload => \U1|start_s~regout\,
-	ena => \U1|cpt_pas|cpt_now[2]~20_combout\,
-	cin => \U1|cpt_pas|cpt_now[4]~9\,
+	ena => \U1|cpt_pas|cpt_now[5]~14_combout\,
+	cin0 => \U1|cpt_pas|cpt_now[2]~5\,
+	cin1 => \U1|cpt_pas|cpt_now[2]~5COUT1_26\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \U1|cpt_pas|cpt_now\(5),
-	cout0 => \U1|cpt_pas|cpt_now[5]~11\,
-	cout1 => \U1|cpt_pas|cpt_now[5]~11COUT1_39\);
+	regout => \U1|cpt_pas|cpt_now\(3),
+	cout => \U1|cpt_pas|cpt_now[3]~7\);
 
--- Location: LC_X3_Y6_N6
-\U1|cpt_pas|cpt_now[6]\ : maxv_lcell
+-- Location: LC_X3_Y5_N5
+\U1|cpt_pas|cpt_now[4]\ : maxv_lcell
 -- Equation(s):
--- \U1|cpt_pas|cpt_now\(6) = DFFEAS(\U1|cpt_pas|cpt_now\(6) $ (((((!\U1|cpt_pas|cpt_now[4]~9\ & \U1|cpt_pas|cpt_now[5]~11\) # (\U1|cpt_pas|cpt_now[4]~9\ & \U1|cpt_pas|cpt_now[5]~11COUT1_39\))))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , 
--- \U1|cpt_pas|cpt_now[2]~20_combout\, \U1|dist_x_s\(3), , , \U1|start_s~regout\)
--- \U1|cpt_pas|cpt_now[6]~13\ = CARRY((\U1|cpt_pas|cpt_now\(6)) # ((!\U1|cpt_pas|cpt_now[5]~11\)))
--- \U1|cpt_pas|cpt_now[6]~13COUT1_41\ = CARRY((\U1|cpt_pas|cpt_now\(6)) # ((!\U1|cpt_pas|cpt_now[5]~11COUT1_39\)))
+-- \U1|cpt_pas|cpt_now\(4) = DFFEAS(\U1|cpt_pas|cpt_now\(4) $ ((((\U1|cpt_pas|cpt_now[3]~7\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , \U1|cpt_pas|cpt_now[5]~14_combout\, \U1|dist_x_s\(4), , , \U1|start_s~regout\)
+-- \U1|cpt_pas|cpt_now[4]~9\ = CARRY((\U1|cpt_pas|cpt_now\(4)) # ((!\U1|cpt_pas|cpt_now[3]~7\)))
+-- \U1|cpt_pas|cpt_now[4]~9COUT1_28\ = CARRY((\U1|cpt_pas|cpt_now\(4)) # ((!\U1|cpt_pas|cpt_now[3]~7\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	cin0_used => "true",
-	cin1_used => "true",
 	cin_used => "true",
 	lut_mask => "5aaf",
 	operation_mode => "arithmetic",
@@ -2187,27 +2114,58 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	dataa => \U1|cpt_pas|cpt_now\(6),
-	datac => \U1|dist_x_s\(3),
+	dataa => \U1|cpt_pas|cpt_now\(4),
+	datac => \U1|dist_x_s\(4),
 	aclr => \ALT_INV_nReset_i~combout\,
 	sload => \U1|start_s~regout\,
-	ena => \U1|cpt_pas|cpt_now[2]~20_combout\,
-	cin => \U1|cpt_pas|cpt_now[4]~9\,
-	cin0 => \U1|cpt_pas|cpt_now[5]~11\,
-	cin1 => \U1|cpt_pas|cpt_now[5]~11COUT1_39\,
+	ena => \U1|cpt_pas|cpt_now[5]~14_combout\,
+	cin => \U1|cpt_pas|cpt_now[3]~7\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \U1|cpt_pas|cpt_now\(6),
-	cout0 => \U1|cpt_pas|cpt_now[6]~13\,
-	cout1 => \U1|cpt_pas|cpt_now[6]~13COUT1_41\);
+	regout => \U1|cpt_pas|cpt_now\(4),
+	cout0 => \U1|cpt_pas|cpt_now[4]~9\,
+	cout1 => \U1|cpt_pas|cpt_now[4]~9COUT1_28\);
 
--- Location: LC_X3_Y6_N7
-\U1|cpt_pas|cpt_now[7]\ : maxv_lcell
+-- Location: PIN_K1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\Switch_i[5]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_Switch_i(5),
+	combout => \Switch_i~combout\(5));
+
+-- Location: LC_X1_Y5_N8
+\U1|dist_x_s[5]\ : maxv_lcell
 -- Equation(s):
--- \U1|cpt_pas|cpt_now\(7) = DFFEAS((\U1|cpt_pas|cpt_now\(7) $ ((!(!\U1|cpt_pas|cpt_now[4]~9\ & \U1|cpt_pas|cpt_now[6]~13\) # (\U1|cpt_pas|cpt_now[4]~9\ & \U1|cpt_pas|cpt_now[6]~13COUT1_41\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , 
--- \U1|cpt_pas|cpt_now[2]~20_combout\, \U1|dist_x_s\(4), , , \U1|start_s~regout\)
--- \U1|cpt_pas|cpt_now[7]~15\ = CARRY(((!\U1|cpt_pas|cpt_now\(7) & !\U1|cpt_pas|cpt_now[6]~13\)))
--- \U1|cpt_pas|cpt_now[7]~15COUT1_43\ = CARRY(((!\U1|cpt_pas|cpt_now\(7) & !\U1|cpt_pas|cpt_now[6]~13COUT1_41\)))
+-- \U1|dist_x_s\(5) = DFFEAS((((\Switch_i~combout\(5)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "ff00",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	clk => \Clk_Main_i~combout\,
+	datad => \Switch_i~combout\(5),
+	aclr => \ALT_INV_nReset_i~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \U1|dist_x_s\(5));
+
+-- Location: LC_X3_Y5_N6
+\U1|cpt_pas|cpt_now[5]\ : maxv_lcell
+-- Equation(s):
+-- \U1|cpt_pas|cpt_now\(5) = DFFEAS((\U1|cpt_pas|cpt_now\(5) $ ((!(!\U1|cpt_pas|cpt_now[3]~7\ & \U1|cpt_pas|cpt_now[4]~9\) # (\U1|cpt_pas|cpt_now[3]~7\ & \U1|cpt_pas|cpt_now[4]~9COUT1_28\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , 
+-- \U1|cpt_pas|cpt_now[5]~14_combout\, \U1|dist_x_s\(5), , , \U1|start_s~regout\)
+-- \U1|cpt_pas|cpt_now[5]~11\ = CARRY(((!\U1|cpt_pas|cpt_now\(5) & !\U1|cpt_pas|cpt_now[4]~9\)))
+-- \U1|cpt_pas|cpt_now[5]~11COUT1_30\ = CARRY(((!\U1|cpt_pas|cpt_now\(5) & !\U1|cpt_pas|cpt_now[4]~9COUT1_28\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2223,112 +2181,19 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	datab => \U1|cpt_pas|cpt_now\(7),
-	datac => \U1|dist_x_s\(4),
-	aclr => \ALT_INV_nReset_i~combout\,
-	sload => \U1|start_s~regout\,
-	ena => \U1|cpt_pas|cpt_now[2]~20_combout\,
-	cin => \U1|cpt_pas|cpt_now[4]~9\,
-	cin0 => \U1|cpt_pas|cpt_now[6]~13\,
-	cin1 => \U1|cpt_pas|cpt_now[6]~13COUT1_41\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \U1|cpt_pas|cpt_now\(7),
-	cout0 => \U1|cpt_pas|cpt_now[7]~15\,
-	cout1 => \U1|cpt_pas|cpt_now[7]~15COUT1_43\);
-
--- Location: LC_X3_Y7_N5
-\U1|cpt_pas|Equal0~1\ : maxv_lcell
--- Equation(s):
--- \U1|cpt_pas|Equal0~1_combout\ = (!\U1|cpt_pas|cpt_now\(7) & (!\U1|cpt_pas|cpt_now\(5) & (!\U1|cpt_pas|cpt_now\(6) & !\U1|cpt_pas|cpt_now\(4))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0001",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \U1|cpt_pas|cpt_now\(7),
 	datab => \U1|cpt_pas|cpt_now\(5),
-	datac => \U1|cpt_pas|cpt_now\(6),
-	datad => \U1|cpt_pas|cpt_now\(4),
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \U1|cpt_pas|Equal0~1_combout\);
-
--- Location: PIN_K1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\Switch_i[5]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_Switch_i(5),
-	combout => \Switch_i~combout\(5));
-
--- Location: LC_X3_Y5_N2
-\U1|dist_x_s[5]\ : maxv_lcell
--- Equation(s):
--- \U1|dist_x_s\(5) = DFFEAS(GND, GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , \Switch_i~combout\(5), , , VCC)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "on")
--- pragma translate_on
-PORT MAP (
-	clk => \Clk_Main_i~combout\,
-	datac => \Switch_i~combout\(5),
-	aclr => \ALT_INV_nReset_i~combout\,
-	sload => VCC,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \U1|dist_x_s\(5));
-
--- Location: LC_X3_Y6_N8
-\U1|cpt_pas|cpt_now[8]\ : maxv_lcell
--- Equation(s):
--- \U1|cpt_pas|cpt_now\(8) = DFFEAS(\U1|cpt_pas|cpt_now\(8) $ (((((!\U1|cpt_pas|cpt_now[4]~9\ & \U1|cpt_pas|cpt_now[7]~15\) # (\U1|cpt_pas|cpt_now[4]~9\ & \U1|cpt_pas|cpt_now[7]~15COUT1_43\))))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , 
--- \U1|cpt_pas|cpt_now[2]~20_combout\, \U1|dist_x_s\(5), , , \U1|start_s~regout\)
--- \U1|cpt_pas|cpt_now[8]~17\ = CARRY((\U1|cpt_pas|cpt_now\(8)) # ((!\U1|cpt_pas|cpt_now[7]~15\)))
--- \U1|cpt_pas|cpt_now[8]~17COUT1_45\ = CARRY((\U1|cpt_pas|cpt_now\(8)) # ((!\U1|cpt_pas|cpt_now[7]~15COUT1_43\)))
-
--- pragma translate_off
-GENERIC MAP (
-	cin0_used => "true",
-	cin1_used => "true",
-	cin_used => "true",
-	lut_mask => "5aaf",
-	operation_mode => "arithmetic",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "cin",
-	synch_mode => "on")
--- pragma translate_on
-PORT MAP (
-	clk => \Clk_Main_i~combout\,
-	dataa => \U1|cpt_pas|cpt_now\(8),
 	datac => \U1|dist_x_s\(5),
 	aclr => \ALT_INV_nReset_i~combout\,
 	sload => \U1|start_s~regout\,
-	ena => \U1|cpt_pas|cpt_now[2]~20_combout\,
-	cin => \U1|cpt_pas|cpt_now[4]~9\,
-	cin0 => \U1|cpt_pas|cpt_now[7]~15\,
-	cin1 => \U1|cpt_pas|cpt_now[7]~15COUT1_43\,
+	ena => \U1|cpt_pas|cpt_now[5]~14_combout\,
+	cin => \U1|cpt_pas|cpt_now[3]~7\,
+	cin0 => \U1|cpt_pas|cpt_now[4]~9\,
+	cin1 => \U1|cpt_pas|cpt_now[4]~9COUT1_28\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \U1|cpt_pas|cpt_now\(8),
-	cout0 => \U1|cpt_pas|cpt_now[8]~17\,
-	cout1 => \U1|cpt_pas|cpt_now[8]~17COUT1_45\);
+	regout => \U1|cpt_pas|cpt_now\(5),
+	cout0 => \U1|cpt_pas|cpt_now[5]~11\,
+	cout1 => \U1|cpt_pas|cpt_now[5]~11COUT1_30\);
 
 -- Location: PIN_J3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 \Switch_i[6]~I\ : maxv_io
@@ -2341,7 +2206,7 @@ PORT MAP (
 	padio => ww_Switch_i(6),
 	combout => \Switch_i~combout\(6));
 
--- Location: LC_X1_Y6_N2
+-- Location: LC_X1_Y6_N5
 \U1|dist_x_s[6]\ : maxv_lcell
 -- Equation(s):
 -- \U1|dist_x_s\(6) = DFFEAS((((\Switch_i~combout\(6)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -2363,18 +2228,18 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \U1|dist_x_s\(6));
 
--- Location: LC_X3_Y6_N9
-\U1|cpt_pas|cpt_now[9]\ : maxv_lcell
+-- Location: LC_X3_Y5_N7
+\U1|cpt_pas|cpt_now[6]\ : maxv_lcell
 -- Equation(s):
--- \U1|cpt_pas|cpt_now\(9) = DFFEAS((((!\U1|cpt_pas|cpt_now[4]~9\ & \U1|cpt_pas|cpt_now[8]~17\) # (\U1|cpt_pas|cpt_now[4]~9\ & \U1|cpt_pas|cpt_now[8]~17COUT1_45\) $ (!\U1|cpt_pas|cpt_now\(9)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , 
--- \U1|cpt_pas|cpt_now[2]~20_combout\, \U1|dist_x_s\(6), , , \U1|start_s~regout\)
+-- \U1|cpt_pas|cpt_now\(6) = DFFEAS((\U1|cpt_pas|cpt_now\(6) $ (((!\U1|cpt_pas|cpt_now[3]~7\ & \U1|cpt_pas|cpt_now[5]~11\) # (\U1|cpt_pas|cpt_now[3]~7\ & \U1|cpt_pas|cpt_now[5]~11COUT1_30\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , 
+-- \U1|cpt_pas|cpt_now[5]~14_combout\, \U1|dist_x_s\(6), , , \U1|start_s~regout\)
 
 -- pragma translate_off
 GENERIC MAP (
 	cin0_used => "true",
 	cin1_used => "true",
 	cin_used => "true",
-	lut_mask => "f00f",
+	lut_mask => "3c3c",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -2383,22 +2248,68 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
+	datab => \U1|cpt_pas|cpt_now\(6),
 	datac => \U1|dist_x_s\(6),
-	datad => \U1|cpt_pas|cpt_now\(9),
 	aclr => \ALT_INV_nReset_i~combout\,
 	sload => \U1|start_s~regout\,
-	ena => \U1|cpt_pas|cpt_now[2]~20_combout\,
-	cin => \U1|cpt_pas|cpt_now[4]~9\,
-	cin0 => \U1|cpt_pas|cpt_now[8]~17\,
-	cin1 => \U1|cpt_pas|cpt_now[8]~17COUT1_45\,
+	ena => \U1|cpt_pas|cpt_now[5]~14_combout\,
+	cin => \U1|cpt_pas|cpt_now[3]~7\,
+	cin0 => \U1|cpt_pas|cpt_now[5]~11\,
+	cin1 => \U1|cpt_pas|cpt_now[5]~11COUT1_30\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \U1|cpt_pas|cpt_now\(9));
+	regout => \U1|cpt_pas|cpt_now\(6));
 
--- Location: LC_X3_Y7_N0
+-- Location: LC_X3_Y5_N8
+\U1|cpt_pas|Equal0~0\ : maxv_lcell
+-- Equation(s):
+-- \U1|cpt_pas|Equal0~0_combout\ = (!\U1|cpt_pas|cpt_now\(2) & (!\U1|cpt_pas|cpt_now\(0) & (!\U1|cpt_pas|cpt_now\(3) & !\U1|cpt_pas|cpt_now\(1))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0001",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \U1|cpt_pas|cpt_now\(2),
+	datab => \U1|cpt_pas|cpt_now\(0),
+	datac => \U1|cpt_pas|cpt_now\(3),
+	datad => \U1|cpt_pas|cpt_now\(1),
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \U1|cpt_pas|Equal0~0_combout\);
+
+-- Location: LC_X3_Y5_N0
+\U1|cpt_pas|Equal0~1\ : maxv_lcell
+-- Equation(s):
+-- \U1|cpt_pas|Equal0~1_combout\ = (!\U1|cpt_pas|cpt_now\(4) & (!\U1|cpt_pas|cpt_now\(5) & (!\U1|cpt_pas|cpt_now\(6) & \U1|cpt_pas|Equal0~0_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0100",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \U1|cpt_pas|cpt_now\(4),
+	datab => \U1|cpt_pas|cpt_now\(5),
+	datac => \U1|cpt_pas|cpt_now\(6),
+	datad => \U1|cpt_pas|Equal0~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \U1|cpt_pas|Equal0~1_combout\);
+
+-- Location: LC_X3_Y6_N2
 \U1|cpt_pas|Equal0~2\ : maxv_lcell
 -- Equation(s):
--- \U1|cpt_pas|Equal0~2_combout\ = (((!\U1|cpt_pas|cpt_now\(8) & !\U1|cpt_pas|cpt_now\(9))))
+-- \U1|cpt_pas|Equal0~2_combout\ = (((!\U1|cpt_pas|cpt_now\(6) & !\U1|cpt_pas|cpt_now\(5))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2410,8 +2321,8 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	datac => \U1|cpt_pas|cpt_now\(8),
-	datad => \U1|cpt_pas|cpt_now\(9),
+	datac => \U1|cpt_pas|cpt_now\(6),
+	datad => \U1|cpt_pas|cpt_now\(5),
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \U1|cpt_pas|Equal0~2_combout\);
@@ -2427,38 +2338,15 @@ PORT MAP (
 	padio => ww_Switch_i(7),
 	combout => \Switch_i~combout\(7));
 
--- Location: LC_X3_Y7_N3
-\U1|cpt_pas|Equal0~0\ : maxv_lcell
--- Equation(s):
--- \U1|cpt_pas|Equal0~0_combout\ = (!\U1|cpt_pas|cpt_now\(0) & (!\U1|cpt_pas|cpt_now\(1) & (!\U1|cpt_pas|cpt_now\(3) & !\U1|cpt_pas|cpt_now\(2))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0001",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \U1|cpt_pas|cpt_now\(0),
-	datab => \U1|cpt_pas|cpt_now\(1),
-	datac => \U1|cpt_pas|cpt_now\(3),
-	datad => \U1|cpt_pas|cpt_now\(2),
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \U1|cpt_pas|Equal0~0_combout\);
-
--- Location: LC_X3_Y7_N2
+-- Location: LC_X3_Y7_N8
 \U1|m_auto_s\ : maxv_lcell
 -- Equation(s):
--- \U1|mss|Mux0~0\ = (C1_m_auto_s & (((!\U1|cpt_pas|Equal0~0_combout\) # (!\U1|cpt_pas|Equal0~2_combout\)) # (!\U1|cpt_pas|Equal0~1_combout\)))
--- \U1|m_auto_s~regout\ = DFFEAS(\U1|mss|Mux0~0\, GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , \Switch_i~combout\(7), , , VCC)
+-- \U1|mss|Fut~0\ = (C1_m_auto_s & (((\U1|cpt_pas|cpt_now\(4)) # (!\U1|cpt_pas|Equal0~0_combout\)) # (!\U1|cpt_pas|Equal0~2_combout\)))
+-- \U1|m_auto_s~regout\ = DFFEAS(\U1|mss|Fut~0\, GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , \Switch_i~combout\(7), , , VCC)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "70f0",
+	lut_mask => "f070",
 	operation_mode => "normal",
 	output_mode => "reg_and_comb",
 	register_cascade_mode => "off",
@@ -2467,25 +2355,25 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	dataa => \U1|cpt_pas|Equal0~1_combout\,
-	datab => \U1|cpt_pas|Equal0~2_combout\,
+	dataa => \U1|cpt_pas|Equal0~2_combout\,
+	datab => \U1|cpt_pas|Equal0~0_combout\,
 	datac => \Switch_i~combout\(7),
-	datad => \U1|cpt_pas|Equal0~0_combout\,
+	datad => \U1|cpt_pas|cpt_now\(4),
 	aclr => \ALT_INV_nReset_i~combout\,
 	sload => VCC,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	combout => \U1|mss|Mux0~0\,
+	combout => \U1|mss|Fut~0\,
 	regout => \U1|m_auto_s~regout\);
 
--- Location: LC_X3_Y7_N7
-\U1|mss|Mux0~1\ : maxv_lcell
+-- Location: LC_X3_Y7_N0
+\U1|mss|Mux0~2\ : maxv_lcell
 -- Equation(s):
--- \U1|mss|Mux0~1_combout\ = ((\U1|mss|Mux0~0\ & ((\U1|start_s~regout\) # (\U1|mss|Etat_Pres\(2)))))
+-- \U1|mss|Mux0~2_combout\ = (\U1|start_s~regout\ & (((!\U1|m_auto_s~regout\)) # (!\U1|cpt_pas|Equal0~1_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "fa00",
+	lut_mask => "2a2a",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -2494,42 +2382,21 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \U1|start_s~regout\,
-	datac => \U1|mss|Etat_Pres\(2),
-	datad => \U1|mss|Mux0~0\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \U1|mss|Mux0~1_combout\);
-
--- Location: LC_X3_Y7_N1
-\U1|mss|Fut~0\ : maxv_lcell
--- Equation(s):
--- \U1|mss|Fut~0_combout\ = (((!\U1|m_auto_s~regout\ & \U1|start_s~regout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0f00",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
+	datab => \U1|cpt_pas|Equal0~1_combout\,
 	datac => \U1|m_auto_s~regout\,
-	datad => \U1|start_s~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	combout => \U1|mss|Fut~0_combout\);
+	combout => \U1|mss|Mux0~2_combout\);
 
 -- Location: LC_X3_Y7_N4
 \U1|mss|Etat_Pres[2]\ : maxv_lcell
 -- Equation(s):
--- \U1|mss|Etat_Pres\(2) = DFFEAS((\U1|div_clk_mod|Equal0~5_combout\ & (((\U1|mss|Mux0~1_combout\) # (\U1|mss|Fut~0_combout\)))) # (!\U1|div_clk_mod|Equal0~5_combout\ & (\U1|mss|Etat_Pres\(2))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , 
--- , , )
+-- \U1|mss|Etat_Pres\(2) = DFFEAS((\U1|div_clk_mod|Equal0~5_combout\ & ((\U1|mss|Mux0~2_combout\) # ((\U1|mss|Etat_Pres\(2) & \U1|mss|Fut~0\)))) # (!\U1|div_clk_mod|Equal0~5_combout\ & (\U1|mss|Etat_Pres\(2))), GLOBAL(\Clk_Main_i~combout\), 
+-- GLOBAL(\nReset_i~combout\), , , , , , )
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "eee2",
+	lut_mask => "eae2",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -2540,8 +2407,8 @@ PORT MAP (
 	clk => \Clk_Main_i~combout\,
 	dataa => \U1|mss|Etat_Pres\(2),
 	datab => \U1|div_clk_mod|Equal0~5_combout\,
-	datac => \U1|mss|Mux0~1_combout\,
-	datad => \U1|mss|Fut~0_combout\,
+	datac => \U1|mss|Mux0~2_combout\,
+	datad => \U1|mss|Fut~0\,
 	aclr => \ALT_INV_nReset_i~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -2558,7 +2425,7 @@ PORT MAP (
 	padio => ww_nButton_i(3),
 	combout => \nButton_i~combout\(3));
 
--- Location: LC_X4_Y6_N2
+-- Location: LC_X3_Y7_N1
 \U1|dir_s\ : maxv_lcell
 -- Equation(s):
 -- \U1|dir_s~regout\ = DFFEAS((((!\nButton_i~combout\(3)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -2580,60 +2447,14 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \U1|dir_s~regout\);
 
--- Location: LC_X4_Y7_N3
-\U1|mss|Mux2~5\ : maxv_lcell
+-- Location: LC_X3_Y7_N3
+\U1|mss|Mux2~0\ : maxv_lcell
 -- Equation(s):
--- \U1|mss|Mux2~5_combout\ = (!\U1|dir_s~regout\ & (\U1|mss|Mux0~0\ & ((\U1|start_s~regout\) # (\U1|mss|Etat_Pres\(2)))))
+-- \U1|mss|Mux2~0_combout\ = ((!\U1|mss|Fut~0\ & ((\U1|m_auto_s~regout\) # (!\U1|start_s~regout\)))) # (!\U1|dir_s~regout\)
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "4440",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \U1|dir_s~regout\,
-	datab => \U1|mss|Mux0~0\,
-	datac => \U1|start_s~regout\,
-	datad => \U1|mss|Etat_Pres\(2),
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \U1|mss|Mux2~5_combout\);
-
--- Location: LC_X4_Y7_N6
-\U1|mss|Mux2~6\ : maxv_lcell
--- Equation(s):
--- \U1|mss|Mux2~6_combout\ = (\U1|div_clk_mod|Equal0~5_combout\ & ((\U1|mss|Mux2~5_combout\) # ((!\U1|dir_s~regout\ & \U1|mss|Fut~0_combout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "cc40",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \U1|dir_s~regout\,
-	datab => \U1|div_clk_mod|Equal0~5_combout\,
-	datac => \U1|mss|Fut~0_combout\,
-	datad => \U1|mss|Mux2~5_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \U1|mss|Mux2~6_combout\);
-
--- Location: LC_X4_Y7_N0
-\U1|mss|Mux2~1\ : maxv_lcell
--- Equation(s):
--- \U1|mss|Mux2~1_combout\ = ((!\U1|mss|Mux0~0\ & ((\U1|m_auto_s~regout\) # (!\U1|start_s~regout\)))) # (!\U1|dir_s~regout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "31ff",
+	lut_mask => "33f7",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -2642,67 +2463,44 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \U1|start_s~regout\,
-	datab => \U1|mss|Mux0~0\,
+	datab => \U1|dir_s~regout\,
+	datac => \U1|m_auto_s~regout\,
+	datad => \U1|mss|Fut~0\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \U1|mss|Mux2~0_combout\);
+
+-- Location: LC_X3_Y7_N2
+\U1|mss|Mux2~1\ : maxv_lcell
+-- Equation(s):
+-- \U1|mss|Mux2~1_combout\ = (((\U1|cpt_pas|Equal0~1_combout\ & \U1|m_auto_s~regout\)) # (!\U1|dir_s~regout\)) # (!\U1|start_s~regout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "d5ff",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \U1|start_s~regout\,
+	datab => \U1|cpt_pas|Equal0~1_combout\,
 	datac => \U1|m_auto_s~regout\,
 	datad => \U1|dir_s~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \U1|mss|Mux2~1_combout\);
 
--- Location: LC_X4_Y7_N8
-\U1|mss|Mux2~0\ : maxv_lcell
+-- Location: LC_X3_Y7_N5
+\U1|mss|Mux2~4\ : maxv_lcell
 -- Equation(s):
--- \U1|mss|Mux2~0_combout\ = (((!\U1|mss|Mux0~0\ & \U1|m_auto_s~regout\)) # (!\U1|dir_s~regout\)) # (!\U1|start_s~regout\)
+-- \U1|mss|Mux2~4_combout\ = (\U1|div_clk_mod|Equal0~5_combout\ & ((\U1|mss|Etat_Pres\(2) & (!\U1|mss|Mux2~0_combout\)) # (!\U1|mss|Etat_Pres\(2) & ((!\U1|mss|Mux2~1_combout\)))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "75ff",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \U1|start_s~regout\,
-	datab => \U1|mss|Mux0~0\,
-	datac => \U1|m_auto_s~regout\,
-	datad => \U1|dir_s~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \U1|mss|Mux2~0_combout\);
-
--- Location: LC_X4_Y7_N1
-\U1|mss|Mux2~2\ : maxv_lcell
--- Equation(s):
--- \U1|mss|Mux2~2_combout\ = (\U1|div_clk_mod|Equal0~5_combout\ & ((\U1|mss|Etat_Pres\(2) & (!\U1|mss|Mux2~1_combout\)) # (!\U1|mss|Etat_Pres\(2) & ((!\U1|mss|Mux2~0_combout\)))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "084c",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \U1|mss|Etat_Pres\(2),
-	datab => \U1|div_clk_mod|Equal0~5_combout\,
-	datac => \U1|mss|Mux2~1_combout\,
-	datad => \U1|mss|Mux2~0_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \U1|mss|Mux2~2_combout\);
-
--- Location: LC_X4_Y7_N7
-\U1|mss|Mux2~3\ : maxv_lcell
--- Equation(s):
--- \U1|mss|Mux2~3_combout\ = ((\U1|mss|Etat_Pres\(2) & ((\U1|mss|Mux2~1_combout\))) # (!\U1|mss|Etat_Pres\(2) & (\U1|mss|Mux2~0_combout\))) # (!\U1|div_clk_mod|Equal0~5_combout\)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "e2ff",
+	lut_mask => "404c",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -2711,21 +2509,89 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \U1|mss|Mux2~0_combout\,
-	datab => \U1|mss|Etat_Pres\(2),
-	datac => \U1|mss|Mux2~1_combout\,
-	datad => \U1|div_clk_mod|Equal0~5_combout\,
+	datab => \U1|div_clk_mod|Equal0~5_combout\,
+	datac => \U1|mss|Etat_Pres\(2),
+	datad => \U1|mss|Mux2~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	combout => \U1|mss|Mux2~3_combout\);
+	combout => \U1|mss|Mux2~4_combout\);
 
--- Location: LC_X4_Y7_N4
-\U1|mss|Mux1~0\ : maxv_lcell
+-- Location: LC_X3_Y7_N7
+\U1|mss|Mux2~6\ : maxv_lcell
 -- Equation(s):
--- \U1|mss|Mux1~0_combout\ = (\U1|mss|Etat_Pres\(1) & (((\U1|mss|Mux2~3_combout\ & \U1|mss|Etat_Pres\(0))))) # (!\U1|mss|Etat_Pres\(1) & (\U1|mss|Mux2~2_combout\ & ((!\U1|mss|Etat_Pres\(0)))))
+-- \U1|mss|Mux2~6_combout\ = (\U1|start_s~regout\ & (((\U1|mss|Fut~0\)) # (!\U1|m_auto_s~regout\))) # (!\U1|start_s~regout\ & (((\U1|mss|Etat_Pres\(2) & \U1|mss|Fut~0\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "a044",
+	lut_mask => "fa22",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \U1|start_s~regout\,
+	datab => \U1|m_auto_s~regout\,
+	datac => \U1|mss|Etat_Pres\(2),
+	datad => \U1|mss|Fut~0\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \U1|mss|Mux2~6_combout\);
+
+-- Location: LC_X3_Y7_N6
+\U1|mss|Mux2~7\ : maxv_lcell
+-- Equation(s):
+-- \U1|mss|Mux2~7_combout\ = ((!\U1|dir_s~regout\ & (\U1|mss|Mux2~6_combout\ & \U1|div_clk_mod|Equal0~5_combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "3000",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	datab => \U1|dir_s~regout\,
+	datac => \U1|mss|Mux2~6_combout\,
+	datad => \U1|div_clk_mod|Equal0~5_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \U1|mss|Mux2~7_combout\);
+
+-- Location: LC_X3_Y7_N9
+\U1|mss|Mux2~2\ : maxv_lcell
+-- Equation(s):
+-- \U1|mss|Mux2~2_combout\ = ((\U1|mss|Etat_Pres\(2) & ((\U1|mss|Mux2~0_combout\))) # (!\U1|mss|Etat_Pres\(2) & (\U1|mss|Mux2~1_combout\))) # (!\U1|div_clk_mod|Equal0~5_combout\)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "ef4f",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \U1|mss|Etat_Pres\(2),
+	datab => \U1|mss|Mux2~1_combout\,
+	datac => \U1|div_clk_mod|Equal0~5_combout\,
+	datad => \U1|mss|Mux2~0_combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \U1|mss|Mux2~2_combout\);
+
+-- Location: LC_X2_Y6_N9
+\U1|mss|Mux1~0\ : maxv_lcell
+-- Equation(s):
+-- \U1|mss|Mux1~0_combout\ = (\U1|mss|Etat_Pres\(1) & ((\U1|mss|Etat_Pres\(0) & ((\U1|mss|Mux2~2_combout\))) # (!\U1|mss|Etat_Pres\(0) & (!\U1|mss|Mux2~7_combout\)))) # (!\U1|mss|Etat_Pres\(1) & (\U1|mss|Mux2~7_combout\ & (\U1|mss|Etat_Pres\(0))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "e242",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -2734,22 +2600,21 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \U1|mss|Etat_Pres\(1),
-	datab => \U1|mss|Mux2~2_combout\,
-	datac => \U1|mss|Mux2~3_combout\,
-	datad => \U1|mss|Etat_Pres\(0),
+	datab => \U1|mss|Mux2~7_combout\,
+	datac => \U1|mss|Etat_Pres\(0),
+	datad => \U1|mss|Mux2~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \U1|mss|Mux1~0_combout\);
 
--- Location: LC_X4_Y7_N5
+-- Location: LC_X2_Y6_N3
 \U1|mss|Etat_Pres[1]\ : maxv_lcell
 -- Equation(s):
--- \U1|mss|Etat_Pres\(1) = DFFEAS((\U1|mss|Mux1~0_combout\) # ((\U1|mss|Etat_Pres\(1) & (!\U1|mss|Etat_Pres\(0) & !\U1|mss|Mux2~6_combout\)) # (!\U1|mss|Etat_Pres\(1) & (\U1|mss|Etat_Pres\(0) & \U1|mss|Mux2~6_combout\))), GLOBAL(\Clk_Main_i~combout\), 
--- GLOBAL(\nReset_i~combout\), , , , , , )
+-- \U1|mss|Etat_Pres\(1) = DFFEAS((\U1|mss|Mux1~0_combout\) # ((!\U1|mss|Etat_Pres\(1) & (\U1|mss|Mux2~4_combout\ & !\U1|mss|Etat_Pres\(0)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "ff42",
+	lut_mask => "ff04",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -2759,22 +2624,22 @@ GENERIC MAP (
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
 	dataa => \U1|mss|Etat_Pres\(1),
-	datab => \U1|mss|Etat_Pres\(0),
-	datac => \U1|mss|Mux2~6_combout\,
+	datab => \U1|mss|Mux2~4_combout\,
+	datac => \U1|mss|Etat_Pres\(0),
 	datad => \U1|mss|Mux1~0_combout\,
 	aclr => \ALT_INV_nReset_i~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \U1|mss|Etat_Pres\(1));
 
--- Location: LC_X4_Y7_N2
-\U1|mss|Mux2~4\ : maxv_lcell
+-- Location: LC_X2_Y6_N1
+\U1|mss|Mux2~3\ : maxv_lcell
 -- Equation(s):
--- \U1|mss|Mux2~4_combout\ = (\U1|mss|Etat_Pres\(1) & (!\U1|mss|Etat_Pres\(0) & ((\U1|mss|Mux2~2_combout\)))) # (!\U1|mss|Etat_Pres\(1) & (\U1|mss|Etat_Pres\(0) & (\U1|mss|Mux2~3_combout\)))
+-- \U1|mss|Mux2~3_combout\ = (\U1|mss|Etat_Pres\(1) & (!\U1|mss|Mux2~7_combout\ & (\U1|mss|Etat_Pres\(0)))) # (!\U1|mss|Etat_Pres\(1) & ((\U1|mss|Etat_Pres\(0) & ((\U1|mss|Mux2~2_combout\))) # (!\U1|mss|Etat_Pres\(0) & (\U1|mss|Mux2~7_combout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "6240",
+	lut_mask => "7424",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -2783,22 +2648,21 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	dataa => \U1|mss|Etat_Pres\(1),
-	datab => \U1|mss|Etat_Pres\(0),
-	datac => \U1|mss|Mux2~3_combout\,
+	datab => \U1|mss|Mux2~7_combout\,
+	datac => \U1|mss|Etat_Pres\(0),
 	datad => \U1|mss|Mux2~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	combout => \U1|mss|Mux2~4_combout\);
+	combout => \U1|mss|Mux2~3_combout\);
 
--- Location: LC_X4_Y7_N9
+-- Location: LC_X2_Y6_N4
 \U1|mss|Etat_Pres[0]\ : maxv_lcell
 -- Equation(s):
--- \U1|mss|Etat_Pres\(0) = DFFEAS((\U1|mss|Mux2~4_combout\) # ((\U1|mss|Etat_Pres\(1) & (\U1|mss|Etat_Pres\(0) & !\U1|mss|Mux2~6_combout\)) # (!\U1|mss|Etat_Pres\(1) & (!\U1|mss|Etat_Pres\(0) & \U1|mss|Mux2~6_combout\))), GLOBAL(\Clk_Main_i~combout\), 
--- GLOBAL(\nReset_i~combout\), , , , , , )
+-- \U1|mss|Etat_Pres\(0) = DFFEAS((\U1|mss|Mux2~3_combout\) # ((\U1|mss|Etat_Pres\(1) & (\U1|mss|Mux2~4_combout\ & !\U1|mss|Etat_Pres\(0)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "ff18",
+	lut_mask => "ff08",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -2808,9 +2672,9 @@ GENERIC MAP (
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
 	dataa => \U1|mss|Etat_Pres\(1),
-	datab => \U1|mss|Etat_Pres\(0),
-	datac => \U1|mss|Mux2~6_combout\,
-	datad => \U1|mss|Mux2~4_combout\,
+	datab => \U1|mss|Mux2~4_combout\,
+	datac => \U1|mss|Etat_Pres\(0),
+	datad => \U1|mss|Mux2~3_combout\,
 	aclr => \ALT_INV_nReset_i~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -2827,7 +2691,7 @@ PORT MAP (
 	padio => ww_nButton_i(8),
 	combout => \nButton_i~combout\(8));
 
--- Location: LC_X1_Y7_N0
+-- Location: LC_X1_Y4_N0
 \Cpt_s[0]\ : maxv_lcell
 -- Equation(s):
 -- Cpt_s(0) = DFFEAS((((!Cpt_s(0)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -2849,12 +2713,12 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => Cpt_s(0));
 
--- Location: LC_X1_Y7_N1
+-- Location: LC_X1_Y4_N1
 \Cpt_s[1]\ : maxv_lcell
 -- Equation(s):
--- Cpt_s(1) = DFFEAS(Cpt_s(1) $ ((Cpt_s(0))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
--- \Cpt_s[1]~37\ = CARRY((Cpt_s(1) & (Cpt_s(0))))
--- \Cpt_s[1]~37COUT1_56\ = CARRY((Cpt_s(1) & (Cpt_s(0))))
+-- Cpt_s(1) = DFFEAS(Cpt_s(0) $ ((Cpt_s(1))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
+-- \Cpt_s[1]~37\ = CARRY((Cpt_s(0) & (Cpt_s(1))))
+-- \Cpt_s[1]~37COUT1_56\ = CARRY((Cpt_s(0) & (Cpt_s(1))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -2867,8 +2731,8 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	dataa => Cpt_s(1),
-	datab => Cpt_s(0),
+	dataa => Cpt_s(0),
+	datab => Cpt_s(1),
 	aclr => \ALT_INV_nReset_i~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
@@ -2876,7 +2740,7 @@ PORT MAP (
 	cout0 => \Cpt_s[1]~37\,
 	cout1 => \Cpt_s[1]~37COUT1_56\);
 
--- Location: LC_X1_Y7_N2
+-- Location: LC_X1_Y4_N2
 \Cpt_s[2]\ : maxv_lcell
 -- Equation(s):
 -- Cpt_s(2) = DFFEAS((Cpt_s(2) $ ((\Cpt_s[1]~37\))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -2906,7 +2770,7 @@ PORT MAP (
 	cout0 => \Cpt_s[2]~35\,
 	cout1 => \Cpt_s[2]~35COUT1_58\);
 
--- Location: LC_X1_Y7_N3
+-- Location: LC_X1_Y4_N3
 \Cpt_s[3]\ : maxv_lcell
 -- Equation(s):
 -- Cpt_s(3) = DFFEAS(Cpt_s(3) $ ((((!\Cpt_s[2]~35\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -2936,7 +2800,7 @@ PORT MAP (
 	cout0 => \Cpt_s[3]~33\,
 	cout1 => \Cpt_s[3]~33COUT1_60\);
 
--- Location: LC_X1_Y7_N4
+-- Location: LC_X1_Y4_N4
 \Cpt_s[4]\ : maxv_lcell
 -- Equation(s):
 -- Cpt_s(4) = DFFEAS(Cpt_s(4) $ ((((\Cpt_s[3]~33\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -2964,7 +2828,7 @@ PORT MAP (
 	regout => Cpt_s(4),
 	cout => \Cpt_s[4]~31\);
 
--- Location: LC_X1_Y7_N5
+-- Location: LC_X1_Y4_N5
 \Cpt_s[5]\ : maxv_lcell
 -- Equation(s):
 -- Cpt_s(5) = DFFEAS(Cpt_s(5) $ ((((!\Cpt_s[4]~31\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -2992,7 +2856,7 @@ PORT MAP (
 	cout0 => \Cpt_s[5]~29\,
 	cout1 => \Cpt_s[5]~29COUT1_62\);
 
--- Location: LC_X1_Y7_N6
+-- Location: LC_X1_Y4_N6
 \Cpt_s[6]\ : maxv_lcell
 -- Equation(s):
 -- Cpt_s(6) = DFFEAS(Cpt_s(6) $ (((((!\Cpt_s[4]~31\ & \Cpt_s[5]~29\) # (\Cpt_s[4]~31\ & \Cpt_s[5]~29COUT1_62\))))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -3024,7 +2888,7 @@ PORT MAP (
 	cout0 => \Cpt_s[6]~27\,
 	cout1 => \Cpt_s[6]~27COUT1_64\);
 
--- Location: LC_X1_Y7_N7
+-- Location: LC_X1_Y4_N7
 \Cpt_s[7]\ : maxv_lcell
 -- Equation(s):
 -- Cpt_s(7) = DFFEAS((Cpt_s(7) $ ((!(!\Cpt_s[4]~31\ & \Cpt_s[6]~27\) # (\Cpt_s[4]~31\ & \Cpt_s[6]~27COUT1_64\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -3056,7 +2920,7 @@ PORT MAP (
 	cout0 => \Cpt_s[7]~25\,
 	cout1 => \Cpt_s[7]~25COUT1_66\);
 
--- Location: LC_X1_Y7_N8
+-- Location: LC_X1_Y4_N8
 \Cpt_s[8]\ : maxv_lcell
 -- Equation(s):
 -- Cpt_s(8) = DFFEAS(Cpt_s(8) $ (((((!\Cpt_s[4]~31\ & \Cpt_s[7]~25\) # (\Cpt_s[4]~31\ & \Cpt_s[7]~25COUT1_66\))))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -3088,7 +2952,7 @@ PORT MAP (
 	cout0 => \Cpt_s[8]~23\,
 	cout1 => \Cpt_s[8]~23COUT1_68\);
 
--- Location: LC_X1_Y7_N9
+-- Location: LC_X1_Y4_N9
 \Cpt_s[9]\ : maxv_lcell
 -- Equation(s):
 -- Cpt_s(9) = DFFEAS((Cpt_s(9) $ ((!(!\Cpt_s[4]~31\ & \Cpt_s[8]~23\) # (\Cpt_s[4]~31\ & \Cpt_s[8]~23COUT1_68\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -3118,7 +2982,7 @@ PORT MAP (
 	regout => Cpt_s(9),
 	cout => \Cpt_s[9]~21\);
 
--- Location: LC_X2_Y7_N0
+-- Location: LC_X2_Y4_N0
 \Cpt_s[10]\ : maxv_lcell
 -- Equation(s):
 -- Cpt_s(10) = DFFEAS((Cpt_s(10) $ ((\Cpt_s[9]~21\))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -3146,7 +3010,7 @@ PORT MAP (
 	cout0 => \Cpt_s[10]~19\,
 	cout1 => \Cpt_s[10]~19COUT1_70\);
 
--- Location: LC_X2_Y7_N1
+-- Location: LC_X2_Y4_N1
 \Cpt_s[11]\ : maxv_lcell
 -- Equation(s):
 -- Cpt_s(11) = DFFEAS((Cpt_s(11) $ ((!(!\Cpt_s[9]~21\ & \Cpt_s[10]~19\) # (\Cpt_s[9]~21\ & \Cpt_s[10]~19COUT1_70\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -3178,7 +3042,7 @@ PORT MAP (
 	cout0 => \Cpt_s[11]~17\,
 	cout1 => \Cpt_s[11]~17COUT1_72\);
 
--- Location: LC_X2_Y7_N2
+-- Location: LC_X2_Y4_N2
 \Cpt_s[12]\ : maxv_lcell
 -- Equation(s):
 -- Cpt_s(12) = DFFEAS((Cpt_s(12) $ (((!\Cpt_s[9]~21\ & \Cpt_s[11]~17\) # (\Cpt_s[9]~21\ & \Cpt_s[11]~17COUT1_72\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -3210,7 +3074,7 @@ PORT MAP (
 	cout0 => \Cpt_s[12]~15\,
 	cout1 => \Cpt_s[12]~15COUT1_74\);
 
--- Location: LC_X2_Y7_N3
+-- Location: LC_X2_Y4_N3
 \Cpt_s[13]\ : maxv_lcell
 -- Equation(s):
 -- Cpt_s(13) = DFFEAS(Cpt_s(13) $ ((((!(!\Cpt_s[9]~21\ & \Cpt_s[12]~15\) # (\Cpt_s[9]~21\ & \Cpt_s[12]~15COUT1_74\))))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -3242,7 +3106,7 @@ PORT MAP (
 	cout0 => \Cpt_s[13]~13\,
 	cout1 => \Cpt_s[13]~13COUT1_76\);
 
--- Location: LC_X2_Y7_N4
+-- Location: LC_X2_Y4_N4
 \Cpt_s[14]\ : maxv_lcell
 -- Equation(s):
 -- Cpt_s(14) = DFFEAS(Cpt_s(14) $ (((((!\Cpt_s[9]~21\ & \Cpt_s[13]~13\) # (\Cpt_s[9]~21\ & \Cpt_s[13]~13COUT1_76\))))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -3272,7 +3136,7 @@ PORT MAP (
 	regout => Cpt_s(14),
 	cout => \Cpt_s[14]~11\);
 
--- Location: LC_X2_Y7_N5
+-- Location: LC_X2_Y4_N5
 \Cpt_s[15]\ : maxv_lcell
 -- Equation(s):
 -- Cpt_s(15) = DFFEAS(Cpt_s(15) $ ((((!\Cpt_s[14]~11\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -3300,7 +3164,7 @@ PORT MAP (
 	cout0 => \Cpt_s[15]~9\,
 	cout1 => \Cpt_s[15]~9COUT1_78\);
 
--- Location: LC_X2_Y7_N6
+-- Location: LC_X2_Y4_N6
 \Cpt_s[16]\ : maxv_lcell
 -- Equation(s):
 -- Cpt_s(16) = DFFEAS(Cpt_s(16) $ (((((!\Cpt_s[14]~11\ & \Cpt_s[15]~9\) # (\Cpt_s[14]~11\ & \Cpt_s[15]~9COUT1_78\))))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -3332,7 +3196,7 @@ PORT MAP (
 	cout0 => \Cpt_s[16]~7\,
 	cout1 => \Cpt_s[16]~7COUT1_80\);
 
--- Location: LC_X2_Y7_N7
+-- Location: LC_X2_Y4_N7
 \Cpt_s[17]\ : maxv_lcell
 -- Equation(s):
 -- Cpt_s(17) = DFFEAS((Cpt_s(17) $ ((!(!\Cpt_s[14]~11\ & \Cpt_s[16]~7\) # (\Cpt_s[14]~11\ & \Cpt_s[16]~7COUT1_80\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -3364,7 +3228,7 @@ PORT MAP (
 	cout0 => \Cpt_s[17]~5\,
 	cout1 => \Cpt_s[17]~5COUT1_82\);
 
--- Location: LC_X2_Y7_N8
+-- Location: LC_X2_Y4_N8
 \Cpt_s[18]\ : maxv_lcell
 -- Equation(s):
 -- Cpt_s(18) = DFFEAS(Cpt_s(18) $ (((((!\Cpt_s[14]~11\ & \Cpt_s[17]~5\) # (\Cpt_s[14]~11\ & \Cpt_s[17]~5COUT1_82\))))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -3396,7 +3260,7 @@ PORT MAP (
 	cout0 => \Cpt_s[18]~3\,
 	cout1 => \Cpt_s[18]~3COUT1_84\);
 
--- Location: LC_X2_Y7_N9
+-- Location: LC_X2_Y4_N9
 \Cpt_s[19]\ : maxv_lcell
 -- Equation(s):
 -- Cpt_s(19) = DFFEAS((((!\Cpt_s[14]~11\ & \Cpt_s[18]~3\) # (\Cpt_s[14]~11\ & \Cpt_s[18]~3COUT1_84\) $ (!Cpt_s(19)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -3424,7 +3288,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => Cpt_s(19));
 
--- Location: LC_X5_Y5_N6
+-- Location: LC_X10_Y3_N4
 \U1|init_s\ : maxv_lcell
 -- Equation(s):
 -- \U1|acqu_pos|reset_pos_s\ = (((C1_init_s)) # (!\nReset_i~combout\))
@@ -3450,36 +3314,15 @@ PORT MAP (
 	combout => \U1|acqu_pos|reset_pos_s\,
 	regout => \U1|init_s~regout\);
 
--- Location: LC_X7_Y4_N9
-\U1|acqu_pos|Bloc_MSS|Fut~3\ : maxv_lcell
+-- Location: LC_X9_Y5_N0
+\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW0\ : maxv_lcell
 -- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Fut~3_combout\ = ((\U1|capt_b_s~regout\ & ((\U1|capt_a_s~regout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "cc00",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	datab => \U1|capt_b_s~regout\,
-	datad => \U1|capt_a_s~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \U1|acqu_pos|Bloc_MSS|Fut~3_combout\);
-
--- Location: LC_X6_Y5_N4
-\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2\ : maxv_lcell
--- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW3~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2~regout\ & (!\U1|capt_b_s~regout\ & \U1|capt_a_s~regout\))), GLOBAL(\Clk_Main_i~combout\), 
+-- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW0~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW2~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW0~regout\ & (!\U1|capt_b_s~regout\ & !\U1|capt_a_s~regout\))), GLOBAL(\Clk_Main_i~combout\), 
 -- GLOBAL(\nReset_i~combout\), , , , , \U1|init_s~regout\, )
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "f2f0",
+	lut_mask => "aaae",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -3488,17 +3331,134 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2~regout\,
-	datab => \U1|capt_b_s~regout\,
-	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW3~regout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW2~regout\,
+	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW0~regout\,
+	datac => \U1|capt_b_s~regout\,
 	datad => \U1|capt_a_s~regout\,
 	aclr => \ALT_INV_nReset_i~combout\,
 	sclr => \U1|init_s~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2~regout\);
+	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW0~regout\);
 
--- Location: LC_X7_Y5_N8
+-- Location: LC_X9_Y4_N6
+\U1|acqu_pos|Bloc_MSS|Fut~1\ : maxv_lcell
+-- Equation(s):
+-- \U1|acqu_pos|Bloc_MSS|Fut~1_combout\ = (((\U1|capt_a_s~regout\) # (\U1|capt_b_s~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "fff0",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	datac => \U1|capt_a_s~regout\,
+	datad => \U1|capt_b_s~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \U1|acqu_pos|Bloc_MSS|Fut~1_combout\);
+
+-- Location: LC_X9_Y4_N3
+\U1|acqu_pos|Bloc_MSS|Fut~0\ : maxv_lcell
+-- Equation(s):
+-- \U1|acqu_pos|Bloc_MSS|Fut~0_combout\ = (((!\U1|capt_a_s~regout\ & \U1|capt_b_s~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0f00",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	datac => \U1|capt_a_s~regout\,
+	datad => \U1|capt_b_s~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \U1|acqu_pos|Bloc_MSS|Fut~0_combout\);
+
+-- Location: LC_X10_Y5_N8
+\U1|acqu_pos|Bloc_MSS|Etat_Pres~39\ : maxv_lcell
+-- Equation(s):
+-- \U1|acqu_pos|Bloc_MSS|Etat_Pres~39_combout\ = (!\U1|init_s~regout\ & (((\U1|capt_a_s~regout\ & \U1|capt_b_s~regout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "5000",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \U1|init_s~regout\,
+	datac => \U1|capt_a_s~regout\,
+	datad => \U1|capt_b_s~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \U1|acqu_pos|Bloc_MSS|Etat_Pres~39_combout\);
+
+-- Location: LC_X10_Y5_N6
+\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW1\ : maxv_lcell
+-- Equation(s):
+-- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW1~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres~39_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1~regout\) # 
+-- (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW1~regout\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "fe00",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	clk => \Clk_Main_i~combout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1~regout\,
+	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1~regout\,
+	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW1~regout\,
+	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres~39_combout\,
+	aclr => \ALT_INV_nReset_i~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW1~regout\);
+
+-- Location: LC_X9_Y5_N3
+\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3\ : maxv_lcell
+-- Equation(s):
+-- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW1~regout\) # ((\U1|capt_a_s~regout\ & (\U1|capt_b_s~regout\ & \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3~regout\))), GLOBAL(\Clk_Main_i~combout\), 
+-- GLOBAL(\nReset_i~combout\), , , , , \U1|init_s~regout\, )
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "eaaa",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "on")
+-- pragma translate_on
+PORT MAP (
+	clk => \Clk_Main_i~combout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW1~regout\,
+	datab => \U1|capt_a_s~regout\,
+	datac => \U1|capt_b_s~regout\,
+	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3~regout\,
+	aclr => \ALT_INV_nReset_i~combout\,
+	sclr => \U1|init_s~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3~regout\);
+
+-- Location: LC_X10_Y5_N2
 \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Init\ : maxv_lcell
 -- Equation(s):
 -- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Init~regout\ = DFFEAS((((!\U1|init_s~regout\))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
@@ -3520,88 +3480,14 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Init~regout\);
 
--- Location: LC_X7_Y4_N8
-\U1|acqu_pos|Bloc_MSS|Etat_Pres~38\ : maxv_lcell
--- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Etat_Pres~38_combout\ = ((\U1|capt_b_s~regout\ & (!\U1|init_s~regout\ & !\U1|capt_a_s~regout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "000c",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	datab => \U1|capt_b_s~regout\,
-	datac => \U1|init_s~regout\,
-	datad => \U1|capt_a_s~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \U1|acqu_pos|Bloc_MSS|Etat_Pres~38_combout\);
-
--- Location: LC_X7_Y5_N7
-\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1\ : maxv_lcell
--- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres~38_combout\ & (((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2~regout\) # (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1~regout\)) # 
--- (!\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Init~regout\))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "fd00",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Init~regout\,
-	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2~regout\,
-	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1~regout\,
-	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres~38_combout\,
-	aclr => \ALT_INV_nReset_i~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1~regout\);
-
--- Location: LC_X7_Y5_N9
-\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2\ : maxv_lcell
--- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres~41_combout\ & (((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2~regout\) # (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1~regout\)) # 
--- (!\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Init~regout\))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "fd00",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Init~regout\,
-	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2~regout\,
-	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1~regout\,
-	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres~41_combout\,
-	aclr => \ALT_INV_nReset_i~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2~regout\);
-
--- Location: LC_X7_Y4_N5
+-- Location: LC_X10_Y5_N0
 \U1|acqu_pos|Bloc_MSS|Etat_Pres~40\ : maxv_lcell
 -- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Etat_Pres~40_combout\ = ((!\U1|capt_b_s~regout\ & (!\U1|init_s~regout\ & !\U1|capt_a_s~regout\)))
+-- \U1|acqu_pos|Bloc_MSS|Etat_Pres~40_combout\ = (!\U1|init_s~regout\ & (((!\U1|capt_a_s~regout\ & !\U1|capt_b_s~regout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0003",
+	lut_mask => "0005",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -3609,18 +3495,277 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \U1|capt_b_s~regout\,
-	datac => \U1|init_s~regout\,
-	datad => \U1|capt_a_s~regout\,
+	dataa => \U1|init_s~regout\,
+	datac => \U1|capt_a_s~regout\,
+	datad => \U1|capt_b_s~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \U1|acqu_pos|Bloc_MSS|Etat_Pres~40_combout\);
 
--- Location: LC_X7_Y5_N4
-\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW2\ : maxv_lcell
+-- Location: LC_X10_Y5_N1
+\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start0\ : maxv_lcell
 -- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW2~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres~40_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2~regout\) # 
--- (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2~regout\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
+-- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start0~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres~40_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start0~regout\) # 
+-- (!\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Init~regout\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "f0b0",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	clk => \Clk_Main_i~combout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3~regout\,
+	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Init~regout\,
+	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres~40_combout\,
+	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start0~regout\,
+	aclr => \ALT_INV_nReset_i~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start0~regout\);
+
+-- Location: LC_X10_Y5_N7
+\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3\ : maxv_lcell
+-- Equation(s):
+-- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres~39_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start0~regout\) # 
+-- (!\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Init~regout\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "ef00",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	clk => \Clk_Main_i~combout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3~regout\,
+	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start0~regout\,
+	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Init~regout\,
+	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres~39_combout\,
+	aclr => \ALT_INV_nReset_i~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3~regout\);
+
+-- Location: LC_X9_Y5_N1
+\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW3\ : maxv_lcell
+-- Equation(s):
+-- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW3~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres~38_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW3~regout\) # 
+-- (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3~regout\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "f0e0",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	clk => \Clk_Main_i~combout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3~regout\,
+	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW3~regout\,
+	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres~38_combout\,
+	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3~regout\,
+	aclr => \ALT_INV_nReset_i~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW3~regout\);
+
+-- Location: LC_X10_Y4_N5
+\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1\ : maxv_lcell
+-- Equation(s):
+-- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW3~regout\) # ((\U1|acqu_pos|Bloc_MSS|Fut~0_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1~regout\) # (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\)))), 
+-- GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , \U1|init_s~regout\, )
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "ffc8",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "on")
+-- pragma translate_on
+PORT MAP (
+	clk => \Clk_Main_i~combout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1~regout\,
+	datab => \U1|acqu_pos|Bloc_MSS|Fut~0_combout\,
+	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\,
+	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW3~regout\,
+	aclr => \ALT_INV_nReset_i~combout\,
+	sclr => \U1|init_s~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1~regout\);
+
+-- Location: LC_X10_Y5_N9
+\U1|capt_b_s\ : maxv_lcell
+-- Equation(s):
+-- \U1|acqu_pos|Bloc_MSS|Selector21~2\ = (\U1|capt_a_s~regout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW1~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1~regout\) # (C1_capt_b_s))))
+-- \U1|capt_b_s~regout\ = DFFEAS(\U1|acqu_pos|Bloc_MSS|Selector21~2\, GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , \Con_80p_io[40]~42\, , , VCC)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "fe00",
+	operation_mode => "normal",
+	output_mode => "reg_and_comb",
+	register_cascade_mode => "off",
+	sum_lutc_input => "qfbk",
+	synch_mode => "on")
+-- pragma translate_on
+PORT MAP (
+	clk => \Clk_Main_i~combout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW1~regout\,
+	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1~regout\,
+	datac => \Con_80p_io[40]~42\,
+	datad => \U1|capt_a_s~regout\,
+	aclr => \ALT_INV_nReset_i~combout\,
+	sload => VCC,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \U1|acqu_pos|Bloc_MSS|Selector21~2\,
+	regout => \U1|capt_b_s~regout\);
+
+-- Location: LC_X9_Y5_N5
+\U1|acqu_pos|Bloc_MSS|Selector21~3\ : maxv_lcell
+-- Equation(s):
+-- \U1|acqu_pos|Bloc_MSS|Selector21~3_combout\ = (\U1|acqu_pos|Bloc_MSS|Selector21~2\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW0~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW0~regout\) # (!\U1|capt_b_s~regout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "ef00",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW0~regout\,
+	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW0~regout\,
+	datac => \U1|capt_b_s~regout\,
+	datad => \U1|acqu_pos|Bloc_MSS|Selector21~2\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \U1|acqu_pos|Bloc_MSS|Selector21~3_combout\);
+
+-- Location: LC_X9_Y4_N5
+\U1|capt_a_s\ : maxv_lcell
+-- Equation(s):
+-- \U1|acqu_pos|Bloc_MSS|Selector21~0\ = (!C1_capt_a_s & (!\U1|capt_b_s~regout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW3~regout\) # (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3~regout\))))
+-- \U1|capt_a_s~regout\ = DFFEAS(\U1|acqu_pos|Bloc_MSS|Selector21~0\, GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , \Con_80p_io[39]~41\, , , VCC)
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "000e",
+	operation_mode => "normal",
+	output_mode => "reg_and_comb",
+	register_cascade_mode => "off",
+	sum_lutc_input => "qfbk",
+	synch_mode => "on")
+-- pragma translate_on
+PORT MAP (
+	clk => \Clk_Main_i~combout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW3~regout\,
+	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3~regout\,
+	datac => \Con_80p_io[39]~41\,
+	datad => \U1|capt_b_s~regout\,
+	aclr => \ALT_INV_nReset_i~combout\,
+	sload => VCC,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \U1|acqu_pos|Bloc_MSS|Selector21~0\,
+	regout => \U1|capt_a_s~regout\);
+
+-- Location: LC_X9_Y4_N7
+\U1|acqu_pos|Bloc_MSS|Etat_Pres~41\ : maxv_lcell
+-- Equation(s):
+-- \U1|acqu_pos|Bloc_MSS|Etat_Pres~41_combout\ = ((!\U1|init_s~regout\ & (\U1|capt_a_s~regout\ & !\U1|capt_b_s~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "0030",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	datab => \U1|init_s~regout\,
+	datac => \U1|capt_a_s~regout\,
+	datad => \U1|capt_b_s~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \U1|acqu_pos|Bloc_MSS|Etat_Pres~41_combout\);
+
+-- Location: LC_X9_Y5_N4
+\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW3\ : maxv_lcell
+-- Equation(s):
+-- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW3~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres~41_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW3~regout\) # 
+-- (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3~regout\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "f0e0",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	clk => \Clk_Main_i~combout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3~regout\,
+	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW3~regout\,
+	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres~41_combout\,
+	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3~regout\,
+	aclr => \ALT_INV_nReset_i~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW3~regout\);
+
+-- Location: LC_X9_Y5_N7
+\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2\ : maxv_lcell
+-- Equation(s):
+-- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW3~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2~regout\ & (!\U1|capt_b_s~regout\ & \U1|capt_a_s~regout\))), GLOBAL(\Clk_Main_i~combout\), 
+-- GLOBAL(\nReset_i~combout\), , , , , \U1|init_s~regout\, )
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "aeaa",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "on")
+-- pragma translate_on
+PORT MAP (
+	clk => \Clk_Main_i~combout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW3~regout\,
+	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2~regout\,
+	datac => \U1|capt_b_s~regout\,
+	datad => \U1|capt_a_s~regout\,
+	aclr => \ALT_INV_nReset_i~combout\,
+	sclr => \U1|init_s~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2~regout\);
+
+-- Location: LC_X9_Y5_N2
+\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW0\ : maxv_lcell
+-- Equation(s):
+-- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW0~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres~41_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start0~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW0~regout\) # 
+-- (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW0~regout\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3633,24 +3778,45 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2~regout\,
-	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2~regout\,
-	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2~regout\,
-	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres~40_combout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start0~regout\,
+	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW0~regout\,
+	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW0~regout\,
+	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres~41_combout\,
 	aclr => \ALT_INV_nReset_i~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW2~regout\);
+	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW0~regout\);
 
--- Location: LC_X6_Y5_N7
-\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW0\ : maxv_lcell
+-- Location: LC_X9_Y4_N4
+\U1|acqu_pos|Bloc_MSS|Fut~2\ : maxv_lcell
 -- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW0~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW2~regout\) # ((!\U1|capt_a_s~regout\ & (!\U1|capt_b_s~regout\ & \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW0~regout\))), GLOBAL(\Clk_Main_i~combout\), 
--- GLOBAL(\nReset_i~combout\), , , , , \U1|init_s~regout\, )
+-- \U1|acqu_pos|Bloc_MSS|Fut~2_combout\ = (((\U1|capt_a_s~regout\ & !\U1|capt_b_s~regout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "ff10",
+	lut_mask => "00f0",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	datac => \U1|capt_a_s~regout\,
+	datad => \U1|capt_b_s~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \U1|acqu_pos|Bloc_MSS|Fut~2_combout\);
+
+-- Location: LC_X10_Y4_N8
+\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2\ : maxv_lcell
+-- Equation(s):
+-- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW0~regout\) # ((\U1|acqu_pos|Bloc_MSS|Fut~2_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\) # (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2~regout\)))), 
+-- GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , \U1|init_s~regout\, )
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "faea",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -3659,24 +3825,24 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	dataa => \U1|capt_a_s~regout\,
-	datab => \U1|capt_b_s~regout\,
-	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW0~regout\,
-	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW2~regout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW0~regout\,
+	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\,
+	datac => \U1|acqu_pos|Bloc_MSS|Fut~2_combout\,
+	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2~regout\,
 	aclr => \ALT_INV_nReset_i~combout\,
 	sclr => \U1|init_s~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW0~regout\);
+	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2~regout\);
 
--- Location: LC_X7_Y4_N0
-\U1|acqu_pos|Bloc_MSS|Etat_Pres~39\ : maxv_lcell
+-- Location: LC_X10_Y4_N1
+\U1|acqu_pos|Bloc_MSS|WideOr8~0\ : maxv_lcell
 -- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Etat_Pres~39_combout\ = ((\U1|capt_b_s~regout\ & (!\U1|init_s~regout\ & \U1|capt_a_s~regout\)))
+-- \U1|acqu_pos|Bloc_MSS|WideOr8~0_combout\ = ((!\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2~regout\ & ((!\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2~regout\))))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0c00",
+	lut_mask => "0033",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -3684,22 +3850,48 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \U1|capt_b_s~regout\,
-	datac => \U1|init_s~regout\,
-	datad => \U1|capt_a_s~regout\,
+	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2~regout\,
+	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	combout => \U1|acqu_pos|Bloc_MSS|Etat_Pres~39_combout\);
+	combout => \U1|acqu_pos|Bloc_MSS|WideOr8~0_combout\);
 
--- Location: LC_X7_Y5_N2
-\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3\ : maxv_lcell
+-- Location: LC_X10_Y4_N0
+\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR\ : maxv_lcell
 -- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres~39_combout\ & (((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3~regout\) # (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start0~regout\)) # 
--- (!\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Init~regout\))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
+-- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Selector21~3_combout\) # ((\U1|acqu_pos|Bloc_MSS|Selector21~0\) # ((\U1|acqu_pos|Bloc_MSS|Fut~0_combout\ & !\U1|acqu_pos|Bloc_MSS|WideOr8~0_combout\))), 
+-- GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , \U1|init_s~regout\, )
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "f0d0",
+	lut_mask => "fafe",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "on")
+-- pragma translate_on
+PORT MAP (
+	clk => \Clk_Main_i~combout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Selector21~3_combout\,
+	datab => \U1|acqu_pos|Bloc_MSS|Fut~0_combout\,
+	datac => \U1|acqu_pos|Bloc_MSS|Selector21~0\,
+	datad => \U1|acqu_pos|Bloc_MSS|WideOr8~0_combout\,
+	aclr => \ALT_INV_nReset_i~combout\,
+	sclr => \U1|init_s~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\);
+
+-- Location: LC_X10_Y5_N5
+\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW1\ : maxv_lcell
+-- Equation(s):
+-- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW1~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres~40_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1~regout\) # 
+-- (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW1~regout\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "fe00",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -3708,42 +3900,43 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Init~regout\,
-	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3~regout\,
-	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres~39_combout\,
-	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start0~regout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1~regout\,
+	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1~regout\,
+	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW1~regout\,
+	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres~40_combout\,
 	aclr => \ALT_INV_nReset_i~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3~regout\);
+	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW1~regout\);
 
--- Location: LC_X7_Y5_N1
-\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start0\ : maxv_lcell
+-- Location: LC_X10_Y4_N3
+\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW0\ : maxv_lcell
 -- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start0~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres~40_combout\ & (((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3~regout\) # (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start0~regout\)) # 
--- (!\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Init~regout\))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
+-- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW0~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW1~regout\) # ((!\U1|acqu_pos|Bloc_MSS|Fut~1_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW0~regout\) # (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\)))), 
+-- GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , \U1|init_s~regout\, )
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "ccc4",
+	lut_mask => "ff32",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
 	sum_lutc_input => "datac",
-	synch_mode => "off")
+	synch_mode => "on")
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Init~regout\,
-	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres~40_combout\,
-	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3~regout\,
-	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start0~regout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW0~regout\,
+	datab => \U1|acqu_pos|Bloc_MSS|Fut~1_combout\,
+	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\,
+	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW1~regout\,
 	aclr => \ALT_INV_nReset_i~combout\,
+	sclr => \U1|init_s~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start0~regout\);
+	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW0~regout\);
 
--- Location: LC_X6_Y5_N9
+-- Location: LC_X9_Y5_N6
 \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW0\ : maxv_lcell
 -- Equation(s):
 -- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW0~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres~38_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW0~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW0~regout\) # 
@@ -3769,7 +3962,7 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW0~regout\);
 
--- Location: LC_X6_Y5_N0
+-- Location: LC_X9_Y5_N9
 \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW1\ : maxv_lcell
 -- Equation(s):
 -- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW1~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW0~regout\) # ((!\U1|capt_a_s~regout\ & (\U1|capt_b_s~regout\ & \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW1~regout\))), GLOBAL(\Clk_Main_i~combout\), 
@@ -3777,7 +3970,7 @@ PORT MAP (
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "ff40",
+	lut_mask => "baaa",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -3786,50 +3979,24 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	dataa => \U1|capt_a_s~regout\,
-	datab => \U1|capt_b_s~regout\,
-	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW1~regout\,
-	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW0~regout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW0~regout\,
+	datab => \U1|capt_a_s~regout\,
+	datac => \U1|capt_b_s~regout\,
+	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW1~regout\,
 	aclr => \ALT_INV_nReset_i~combout\,
 	sclr => \U1|init_s~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW1~regout\);
 
--- Location: LC_X6_Y4_N7
-\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW1\ : maxv_lcell
+-- Location: LC_X9_Y4_N8
+\U1|acqu_pos|Bloc_MSS|Fut~3\ : maxv_lcell
 -- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW1~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres~40_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW1~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1~regout\) # 
--- (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1~regout\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
+-- \U1|acqu_pos|Bloc_MSS|Fut~3_combout\ = (((\U1|capt_a_s~regout\ & \U1|capt_b_s~regout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "ccc8",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW1~regout\,
-	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres~40_combout\,
-	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1~regout\,
-	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1~regout\,
-	aclr => \ALT_INV_nReset_i~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW1~regout\);
-
--- Location: LC_X7_Y4_N2
-\U1|acqu_pos|Bloc_MSS|Fut~1\ : maxv_lcell
--- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Fut~1_combout\ = ((\U1|capt_b_s~regout\) # ((\U1|capt_a_s~regout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "ffcc",
+	lut_mask => "f000",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -3837,118 +4004,17 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \U1|capt_b_s~regout\,
-	datad => \U1|capt_a_s~regout\,
+	datac => \U1|capt_a_s~regout\,
+	datad => \U1|capt_b_s~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	combout => \U1|acqu_pos|Bloc_MSS|Fut~1_combout\);
+	combout => \U1|acqu_pos|Bloc_MSS|Fut~3_combout\);
 
--- Location: LC_X6_Y4_N3
-\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW0\ : maxv_lcell
--- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW0~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW1~regout\) # ((!\U1|acqu_pos|Bloc_MSS|Fut~1_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW0~regout\) # (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\)))), 
--- GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , \U1|init_s~regout\, )
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "f0fe",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "on")
--- pragma translate_on
-PORT MAP (
-	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW0~regout\,
-	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\,
-	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW1~regout\,
-	datad => \U1|acqu_pos|Bloc_MSS|Fut~1_combout\,
-	aclr => \ALT_INV_nReset_i~combout\,
-	sclr => \U1|init_s~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW0~regout\);
-
--- Location: LC_X6_Y5_N8
-\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW0\ : maxv_lcell
--- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW0~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres~41_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW0~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW0~regout\) # 
--- (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start0~regout\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "aaa8",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres~41_combout\,
-	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW0~regout\,
-	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW0~regout\,
-	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start0~regout\,
-	aclr => \ALT_INV_nReset_i~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW0~regout\);
-
--- Location: LC_X7_Y4_N4
-\U1|acqu_pos|Bloc_MSS|Fut~2\ : maxv_lcell
--- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Fut~2_combout\ = ((!\U1|capt_b_s~regout\ & ((\U1|capt_a_s~regout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "3300",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	datab => \U1|capt_b_s~regout\,
-	datad => \U1|capt_a_s~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \U1|acqu_pos|Bloc_MSS|Fut~2_combout\);
-
--- Location: LC_X6_Y4_N2
-\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2\ : maxv_lcell
--- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW0~regout\) # ((\U1|acqu_pos|Bloc_MSS|Fut~2_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2~regout\) # (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\)))), 
--- GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , \U1|init_s~regout\, )
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "fef0",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "on")
--- pragma translate_on
-PORT MAP (
-	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2~regout\,
-	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\,
-	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW0~regout\,
-	datad => \U1|acqu_pos|Bloc_MSS|Fut~2_combout\,
-	aclr => \ALT_INV_nReset_i~combout\,
-	sclr => \U1|init_s~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2~regout\);
-
--- Location: LC_X7_Y5_N6
+-- Location: LC_X10_Y4_N9
 \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW2\ : maxv_lcell
 -- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW2~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres~39_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2~regout\) # 
--- (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2~regout\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
+-- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW2~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres~39_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2~regout\) # 
+-- (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2~regout\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
 
 -- pragma translate_off
 GENERIC MAP (
@@ -3961,24 +4027,24 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2~regout\,
-	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2~regout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2~regout\,
+	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2~regout\,
 	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres~39_combout\,
-	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2~regout\,
+	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2~regout\,
 	aclr => \ALT_INV_nReset_i~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW2~regout\);
 
--- Location: LC_X6_Y4_N4
+-- Location: LC_X10_Y4_N4
 \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW3\ : maxv_lcell
 -- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW3~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW2~regout\) # ((\U1|acqu_pos|Bloc_MSS|Fut~3_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\) # (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW3~regout\)))), 
+-- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW3~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW2~regout\) # ((\U1|acqu_pos|Bloc_MSS|Fut~3_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW3~regout\) # (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\)))), 
 -- GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , \U1|init_s~regout\, )
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "ffa8",
+	lut_mask => "ffc8",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -3987,9 +4053,9 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|Fut~3_combout\,
-	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\,
-	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW3~regout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW3~regout\,
+	datab => \U1|acqu_pos|Bloc_MSS|Fut~3_combout\,
+	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\,
 	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW2~regout\,
 	aclr => \ALT_INV_nReset_i~combout\,
 	sclr => \U1|init_s~regout\,
@@ -3997,264 +4063,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW3~regout\);
 
--- Location: LC_X7_Y4_N3
-\U1|capt_a_s\ : maxv_lcell
+-- Location: LC_X9_Y4_N9
+\U1|acqu_pos|Bloc_MSS|Etat_Pres~38\ : maxv_lcell
 -- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Selector21~0\ = (!C1_capt_a_s & (!\U1|capt_b_s~regout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3~regout\) # (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW3~regout\))))
--- \U1|capt_a_s~regout\ = DFFEAS(\U1|acqu_pos|Bloc_MSS|Selector21~0\, GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , \Con_80p_io[39]~41\, , , VCC)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "000e",
-	operation_mode => "normal",
-	output_mode => "reg_and_comb",
-	register_cascade_mode => "off",
-	sum_lutc_input => "qfbk",
-	synch_mode => "on")
--- pragma translate_on
-PORT MAP (
-	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3~regout\,
-	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW3~regout\,
-	datac => \Con_80p_io[39]~41\,
-	datad => \U1|capt_b_s~regout\,
-	aclr => \ALT_INV_nReset_i~combout\,
-	sload => VCC,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \U1|acqu_pos|Bloc_MSS|Selector21~0\,
-	regout => \U1|capt_a_s~regout\);
-
--- Location: LC_X7_Y5_N3
-\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW1\ : maxv_lcell
--- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW1~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres~39_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW1~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1~regout\) # 
--- (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1~regout\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "ccc8",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW1~regout\,
-	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres~39_combout\,
-	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1~regout\,
-	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1~regout\,
-	aclr => \ALT_INV_nReset_i~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW1~regout\);
-
--- Location: LC_X6_Y5_N2
-\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3\ : maxv_lcell
--- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW1~regout\) # ((\U1|capt_a_s~regout\ & (\U1|capt_b_s~regout\ & \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3~regout\))), GLOBAL(\Clk_Main_i~combout\), 
--- GLOBAL(\nReset_i~combout\), , , , , \U1|init_s~regout\, )
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "f8f0",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "on")
--- pragma translate_on
-PORT MAP (
-	clk => \Clk_Main_i~combout\,
-	dataa => \U1|capt_a_s~regout\,
-	datab => \U1|capt_b_s~regout\,
-	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW1~regout\,
-	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3~regout\,
-	aclr => \ALT_INV_nReset_i~combout\,
-	sclr => \U1|init_s~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3~regout\);
-
--- Location: LC_X7_Y4_N1
-\U1|capt_b_s\ : maxv_lcell
--- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Selector21~2\ = (\U1|capt_a_s~regout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW1~regout\) # (C1_capt_b_s))))
--- \U1|capt_b_s~regout\ = DFFEAS(\U1|acqu_pos|Bloc_MSS|Selector21~2\, GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , \Con_80p_io[40]~42\, , , VCC)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "fe00",
-	operation_mode => "normal",
-	output_mode => "reg_and_comb",
-	register_cascade_mode => "off",
-	sum_lutc_input => "qfbk",
-	synch_mode => "on")
--- pragma translate_on
-PORT MAP (
-	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1~regout\,
-	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW1~regout\,
-	datac => \Con_80p_io[40]~42\,
-	datad => \U1|capt_a_s~regout\,
-	aclr => \ALT_INV_nReset_i~combout\,
-	sload => VCC,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \U1|acqu_pos|Bloc_MSS|Selector21~2\,
-	regout => \U1|capt_b_s~regout\);
-
--- Location: LC_X6_Y5_N3
-\U1|acqu_pos|Bloc_MSS|Selector21~3\ : maxv_lcell
--- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Selector21~3_combout\ = (\U1|acqu_pos|Bloc_MSS|Selector21~2\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW0~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW0~regout\) # (!\U1|capt_b_s~regout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "a8aa",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	dataa => \U1|acqu_pos|Bloc_MSS|Selector21~2\,
-	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW0~regout\,
-	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW0~regout\,
-	datad => \U1|capt_b_s~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \U1|acqu_pos|Bloc_MSS|Selector21~3_combout\);
-
--- Location: LC_X7_Y4_N6
-\U1|acqu_pos|Bloc_MSS|Fut~0\ : maxv_lcell
--- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Fut~0_combout\ = ((\U1|capt_b_s~regout\ & ((!\U1|capt_a_s~regout\))))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "00cc",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	datab => \U1|capt_b_s~regout\,
-	datad => \U1|capt_a_s~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \U1|acqu_pos|Bloc_MSS|Fut~0_combout\);
-
--- Location: LC_X7_Y5_N5
-\U1|acqu_pos|Bloc_MSS|WideOr8~0\ : maxv_lcell
--- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|WideOr8~0_combout\ = (((!\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2~regout\ & !\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2~regout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "000f",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2~regout\,
-	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \U1|acqu_pos|Bloc_MSS|WideOr8~0_combout\);
-
--- Location: LC_X6_Y4_N9
-\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR\ : maxv_lcell
--- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Selector21~0\) # ((\U1|acqu_pos|Bloc_MSS|Selector21~3_combout\) # ((\U1|acqu_pos|Bloc_MSS|Fut~0_combout\ & !\U1|acqu_pos|Bloc_MSS|WideOr8~0_combout\))), 
--- GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , \U1|init_s~regout\, )
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "eefe",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "on")
--- pragma translate_on
-PORT MAP (
-	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|Selector21~0\,
-	datab => \U1|acqu_pos|Bloc_MSS|Selector21~3_combout\,
-	datac => \U1|acqu_pos|Bloc_MSS|Fut~0_combout\,
-	datad => \U1|acqu_pos|Bloc_MSS|WideOr8~0_combout\,
-	aclr => \ALT_INV_nReset_i~combout\,
-	sclr => \U1|init_s~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\);
-
--- Location: LC_X6_Y4_N0
-\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW3\ : maxv_lcell
--- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW3~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres~38_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3~regout\) # 
--- (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW3~regout\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "fe00",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3~regout\,
-	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3~regout\,
-	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW3~regout\,
-	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres~38_combout\,
-	aclr => \ALT_INV_nReset_i~combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW3~regout\);
-
--- Location: LC_X6_Y4_N5
-\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1\ : maxv_lcell
--- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW3~regout\) # ((\U1|acqu_pos|Bloc_MSS|Fut~0_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1~regout\) # (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\)))), 
--- GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , \U1|init_s~regout\, )
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "ffe0",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "on")
--- pragma translate_on
-PORT MAP (
-	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1~regout\,
-	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\,
-	datac => \U1|acqu_pos|Bloc_MSS|Fut~0_combout\,
-	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW3~regout\,
-	aclr => \ALT_INV_nReset_i~combout\,
-	sclr => \U1|init_s~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1~regout\);
-
--- Location: LC_X7_Y4_N7
-\U1|acqu_pos|Bloc_MSS|Etat_Pres~41\ : maxv_lcell
--- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Etat_Pres~41_combout\ = ((!\U1|capt_b_s~regout\ & (!\U1|init_s~regout\ & \U1|capt_a_s~regout\)))
+-- \U1|acqu_pos|Bloc_MSS|Etat_Pres~38_combout\ = ((!\U1|init_s~regout\ & (!\U1|capt_a_s~regout\ & \U1|capt_b_s~regout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4266,22 +4078,22 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \U1|capt_b_s~regout\,
-	datac => \U1|init_s~regout\,
-	datad => \U1|capt_a_s~regout\,
+	datab => \U1|init_s~regout\,
+	datac => \U1|capt_a_s~regout\,
+	datad => \U1|capt_b_s~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	combout => \U1|acqu_pos|Bloc_MSS|Etat_Pres~41_combout\);
+	combout => \U1|acqu_pos|Bloc_MSS|Etat_Pres~38_combout\);
 
--- Location: LC_X6_Y5_N6
-\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW3\ : maxv_lcell
+-- Location: LC_X10_Y5_N4
+\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1\ : maxv_lcell
 -- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW3~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres~41_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3~regout\) # 
--- (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW3~regout\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
+-- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres~38_combout\ & (((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1~regout\) # (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2~regout\)) # 
+-- (!\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Init~regout\))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "aaa8",
+	lut_mask => "aaa2",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -4290,19 +4102,92 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres~41_combout\,
-	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW3~regout\,
-	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start3~regout\,
-	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW3~regout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres~38_combout\,
+	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Init~regout\,
+	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1~regout\,
+	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2~regout\,
 	aclr => \ALT_INV_nReset_i~combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW3~regout\);
+	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1~regout\);
 
--- Location: LC_X6_Y4_N8
+-- Location: LC_X10_Y5_N3
+\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2\ : maxv_lcell
+-- Equation(s):
+-- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres~41_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2~regout\) # 
+-- (!\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Init~regout\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "f0b0",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	clk => \Clk_Main_i~combout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start1~regout\,
+	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Init~regout\,
+	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres~41_combout\,
+	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2~regout\,
+	aclr => \ALT_INV_nReset_i~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2~regout\);
+
+-- Location: LC_X10_Y4_N2
+\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW2\ : maxv_lcell
+-- Equation(s):
+-- \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW2~regout\ = DFFEAS((\U1|acqu_pos|Bloc_MSS|Etat_Pres~40_combout\ & ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2~regout\) # 
+-- (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2~regout\)))), GLOBAL(\Clk_Main_i~combout\), GLOBAL(\nReset_i~combout\), , , , , , )
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "f0e0",
+	operation_mode => "normal",
+	output_mode => "reg_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	clk => \Clk_Main_i~combout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_Start2~regout\,
+	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CCW2~regout\,
+	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres~40_combout\,
+	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2~regout\,
+	aclr => \ALT_INV_nReset_i~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	regout => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW2~regout\);
+
+-- Location: LC_X9_Y5_N8
+\U1|acqu_pos|Bloc_MSS|WideOr15~0\ : maxv_lcell
+-- Equation(s):
+-- \U1|acqu_pos|Bloc_MSS|WideOr15~0_combout\ = (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW1~regout\) # (((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW0~regout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "fafa",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW1~regout\,
+	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW0~regout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \U1|acqu_pos|Bloc_MSS|WideOr15~0_combout\);
+
+-- Location: LC_X10_Y4_N7
 \U1|acqu_pos|Bloc_MSS|WideOr15~1\ : maxv_lcell
 -- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|WideOr15~1_combout\ = (!\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW3~regout\ & (!\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW1~regout\ & (!\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW0~regout\ & !\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW2~regout\)))
+-- \U1|acqu_pos|Bloc_MSS|WideOr15~1_combout\ = (!\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW0~regout\ & (!\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW2~regout\ & (!\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW3~regout\ & !\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW1~regout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4314,43 +4199,22 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW3~regout\,
-	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW1~regout\,
-	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW0~regout\,
-	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW2~regout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW0~regout\,
+	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW2~regout\,
+	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW3~regout\,
+	datad => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CW1~regout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \U1|acqu_pos|Bloc_MSS|WideOr15~1_combout\);
 
--- Location: LC_X6_Y5_N1
-\U1|acqu_pos|Bloc_MSS|WideOr15~0\ : maxv_lcell
--- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|WideOr15~0_combout\ = ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW0~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW1~regout\)))
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "fcfc",
-	operation_mode => "normal",
-	output_mode => "comb_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW0~regout\,
-	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW1~regout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	combout => \U1|acqu_pos|Bloc_MSS|WideOr15~0_combout\);
-
--- Location: LC_X6_Y5_N5
+-- Location: LC_X8_Y7_N0
 \U1|acqu_pos|Bloc_MSS|WideOr15\ : maxv_lcell
 -- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|WideOr15~combout\ = (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW3~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW2~regout\) # ((\U1|acqu_pos|Bloc_MSS|WideOr15~0_combout\) # (!\U1|acqu_pos|Bloc_MSS|WideOr15~1_combout\)))
+-- \U1|acqu_pos|Bloc_MSS|WideOr15~combout\ = (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW2~regout\) # ((\U1|acqu_pos|Bloc_MSS|WideOr15~0_combout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW3~regout\) # (!\U1|acqu_pos|Bloc_MSS|WideOr15~1_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "ffef",
+	lut_mask => "feff",
 	operation_mode => "normal",
 	output_mode => "comb_only",
 	register_cascade_mode => "off",
@@ -4358,24 +4222,24 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW3~regout\,
-	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW2~regout\,
-	datac => \U1|acqu_pos|Bloc_MSS|WideOr15~1_combout\,
-	datad => \U1|acqu_pos|Bloc_MSS|WideOr15~0_combout\,
+	dataa => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW2~regout\,
+	datab => \U1|acqu_pos|Bloc_MSS|WideOr15~0_combout\,
+	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_T_CCW3~regout\,
+	datad => \U1|acqu_pos|Bloc_MSS|WideOr15~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \U1|acqu_pos|Bloc_MSS|WideOr15~combout\);
 
--- Location: LC_X7_Y7_N2
+-- Location: LC_X8_Y7_N2
 \U1|acqu_pos|Bloc_position|cpt_pres[0]\ : maxv_lcell
 -- Equation(s):
--- \U1|acqu_pos|Bloc_position|cpt_pres\(0) = DFFEAS(((!\U1|acqu_pos|Bloc_position|cpt_pres\(0))), GLOBAL(\Clk_Main_i~combout\), !GLOBAL(\U1|acqu_pos|reset_pos_s\), , \U1|acqu_pos|Bloc_MSS|WideOr15~combout\, , , , )
--- \U1|acqu_pos|Bloc_position|cpt_pres[0]~1\ = CARRY(((\U1|acqu_pos|Bloc_position|cpt_pres\(0))))
--- \U1|acqu_pos|Bloc_position|cpt_pres[0]~1COUT1_46\ = CARRY(((\U1|acqu_pos|Bloc_position|cpt_pres\(0))))
+-- \U1|acqu_pos|Bloc_position|cpt_pres\(0) = DFFEAS((!\U1|acqu_pos|Bloc_position|cpt_pres\(0)), GLOBAL(\Clk_Main_i~combout\), !GLOBAL(\U1|acqu_pos|reset_pos_s\), , \U1|acqu_pos|Bloc_MSS|WideOr15~combout\, , , , )
+-- \U1|acqu_pos|Bloc_position|cpt_pres[0]~1\ = CARRY((\U1|acqu_pos|Bloc_position|cpt_pres\(0)))
+-- \U1|acqu_pos|Bloc_position|cpt_pres[0]~1COUT1_46\ = CARRY((\U1|acqu_pos|Bloc_position|cpt_pres\(0)))
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "33cc",
+	lut_mask => "55aa",
 	operation_mode => "arithmetic",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -4384,7 +4248,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	datab => \U1|acqu_pos|Bloc_position|cpt_pres\(0),
+	dataa => \U1|acqu_pos|Bloc_position|cpt_pres\(0),
 	aclr => \U1|acqu_pos|reset_pos_s\,
 	ena => \U1|acqu_pos|Bloc_MSS|WideOr15~combout\,
 	devclrn => ww_devclrn,
@@ -4393,7 +4257,7 @@ PORT MAP (
 	cout0 => \U1|acqu_pos|Bloc_position|cpt_pres[0]~1\,
 	cout1 => \U1|acqu_pos|Bloc_position|cpt_pres[0]~1COUT1_46\);
 
--- Location: LC_X6_Y4_N6
+-- Location: LC_X10_Y4_N6
 \U1|acqu_pos|Bloc_MSS|WideOr16~0\ : maxv_lcell
 -- Equation(s):
 -- \U1|acqu_pos|Bloc_MSS|WideOr16~0_combout\ = (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW1~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW2~regout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW3~regout\) # (\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_CW0~regout\)))
@@ -4416,10 +4280,10 @@ PORT MAP (
 	devpor => ww_devpor,
 	combout => \U1|acqu_pos|Bloc_MSS|WideOr16~0_combout\);
 
--- Location: LC_X6_Y4_N1
+-- Location: LC_X8_Y7_N1
 \U1|acqu_pos|Bloc_MSS|WideOr16~1\ : maxv_lcell
 -- Equation(s):
--- \U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ = ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\) # ((\U1|acqu_pos|Bloc_MSS|WideOr16~0_combout\) # (!\U1|acqu_pos|Bloc_MSS|WideOr15~1_combout\)))
+-- \U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ = ((\U1|acqu_pos|Bloc_MSS|WideOr16~0_combout\) # ((\U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\) # (!\U1|acqu_pos|Bloc_MSS|WideOr15~1_combout\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -4431,14 +4295,14 @@ GENERIC MAP (
 	synch_mode => "off")
 -- pragma translate_on
 PORT MAP (
-	datab => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\,
-	datac => \U1|acqu_pos|Bloc_MSS|WideOr16~0_combout\,
+	datab => \U1|acqu_pos|Bloc_MSS|WideOr16~0_combout\,
+	datac => \U1|acqu_pos|Bloc_MSS|Etat_Pres.E_ERR~regout\,
 	datad => \U1|acqu_pos|Bloc_MSS|WideOr15~1_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	combout => \U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\);
 
--- Location: LC_X7_Y7_N3
+-- Location: LC_X8_Y7_N3
 \U1|acqu_pos|Bloc_position|cpt_pres[1]\ : maxv_lcell
 -- Equation(s):
 -- \U1|acqu_pos|Bloc_position|cpt_pres\(1) = DFFEAS(\U1|acqu_pos|Bloc_position|cpt_pres\(1) $ (\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ $ ((!\U1|acqu_pos|Bloc_position|cpt_pres[0]~1\))), GLOBAL(\Clk_Main_i~combout\), !GLOBAL(\U1|acqu_pos|reset_pos_s\), , 
@@ -4473,7 +4337,7 @@ PORT MAP (
 	cout0 => \U1|acqu_pos|Bloc_position|cpt_pres[1]~3\,
 	cout1 => \U1|acqu_pos|Bloc_position|cpt_pres[1]~3COUT1_48\);
 
--- Location: LC_X7_Y7_N4
+-- Location: LC_X8_Y7_N4
 \U1|acqu_pos|Bloc_position|cpt_pres[2]\ : maxv_lcell
 -- Equation(s):
 -- \U1|acqu_pos|Bloc_position|cpt_pres\(2) = DFFEAS(\U1|acqu_pos|Bloc_position|cpt_pres\(2) $ (\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ $ ((\U1|acqu_pos|Bloc_position|cpt_pres[1]~3\))), GLOBAL(\Clk_Main_i~combout\), !GLOBAL(\U1|acqu_pos|reset_pos_s\), , 
@@ -4505,20 +4369,20 @@ PORT MAP (
 	regout => \U1|acqu_pos|Bloc_position|cpt_pres\(2),
 	cout => \U1|acqu_pos|Bloc_position|cpt_pres[2]~5\);
 
--- Location: LC_X7_Y7_N5
+-- Location: LC_X8_Y7_N5
 \U1|acqu_pos|Bloc_position|cpt_pres[3]\ : maxv_lcell
 -- Equation(s):
--- \U1|acqu_pos|Bloc_position|cpt_pres\(3) = DFFEAS(\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ $ (\U1|acqu_pos|Bloc_position|cpt_pres\(3) $ ((!\U1|acqu_pos|Bloc_position|cpt_pres[2]~5\))), GLOBAL(\Clk_Main_i~combout\), !GLOBAL(\U1|acqu_pos|reset_pos_s\), , 
+-- \U1|acqu_pos|Bloc_position|cpt_pres\(3) = DFFEAS(\U1|acqu_pos|Bloc_position|cpt_pres\(3) $ (\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ $ ((!\U1|acqu_pos|Bloc_position|cpt_pres[2]~5\))), GLOBAL(\Clk_Main_i~combout\), !GLOBAL(\U1|acqu_pos|reset_pos_s\), , 
 -- \U1|acqu_pos|Bloc_MSS|WideOr15~combout\, , , , )
--- \U1|acqu_pos|Bloc_position|cpt_pres[3]~7\ = CARRY((\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & ((!\U1|acqu_pos|Bloc_position|cpt_pres[2]~5\) # (!\U1|acqu_pos|Bloc_position|cpt_pres\(3)))) # (!\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & 
--- (!\U1|acqu_pos|Bloc_position|cpt_pres\(3) & !\U1|acqu_pos|Bloc_position|cpt_pres[2]~5\)))
--- \U1|acqu_pos|Bloc_position|cpt_pres[3]~7COUT1_50\ = CARRY((\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & ((!\U1|acqu_pos|Bloc_position|cpt_pres[2]~5\) # (!\U1|acqu_pos|Bloc_position|cpt_pres\(3)))) # (!\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & 
--- (!\U1|acqu_pos|Bloc_position|cpt_pres\(3) & !\U1|acqu_pos|Bloc_position|cpt_pres[2]~5\)))
+-- \U1|acqu_pos|Bloc_position|cpt_pres[3]~7\ = CARRY((\U1|acqu_pos|Bloc_position|cpt_pres\(3) & (\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & !\U1|acqu_pos|Bloc_position|cpt_pres[2]~5\)) # (!\U1|acqu_pos|Bloc_position|cpt_pres\(3) & 
+-- ((\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\) # (!\U1|acqu_pos|Bloc_position|cpt_pres[2]~5\))))
+-- \U1|acqu_pos|Bloc_position|cpt_pres[3]~7COUT1_50\ = CARRY((\U1|acqu_pos|Bloc_position|cpt_pres\(3) & (\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & !\U1|acqu_pos|Bloc_position|cpt_pres[2]~5\)) # (!\U1|acqu_pos|Bloc_position|cpt_pres\(3) & 
+-- ((\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\) # (!\U1|acqu_pos|Bloc_position|cpt_pres[2]~5\))))
 
 -- pragma translate_off
 GENERIC MAP (
 	cin_used => "true",
-	lut_mask => "692b",
+	lut_mask => "694d",
 	operation_mode => "arithmetic",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -4527,8 +4391,8 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\,
-	datab => \U1|acqu_pos|Bloc_position|cpt_pres\(3),
+	dataa => \U1|acqu_pos|Bloc_position|cpt_pres\(3),
+	datab => \U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\,
 	aclr => \U1|acqu_pos|reset_pos_s\,
 	ena => \U1|acqu_pos|Bloc_MSS|WideOr15~combout\,
 	cin => \U1|acqu_pos|Bloc_position|cpt_pres[2]~5\,
@@ -4538,7 +4402,7 @@ PORT MAP (
 	cout0 => \U1|acqu_pos|Bloc_position|cpt_pres[3]~7\,
 	cout1 => \U1|acqu_pos|Bloc_position|cpt_pres[3]~7COUT1_50\);
 
--- Location: LC_X7_Y7_N6
+-- Location: LC_X8_Y7_N6
 \U1|acqu_pos|Bloc_position|cpt_pres[4]\ : maxv_lcell
 -- Equation(s):
 -- \U1|acqu_pos|Bloc_position|cpt_pres\(4) = DFFEAS(\U1|acqu_pos|Bloc_position|cpt_pres\(4) $ (\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ $ (((!\U1|acqu_pos|Bloc_position|cpt_pres[2]~5\ & \U1|acqu_pos|Bloc_position|cpt_pres[3]~7\) # 
@@ -4575,22 +4439,22 @@ PORT MAP (
 	cout0 => \U1|acqu_pos|Bloc_position|cpt_pres[4]~9\,
 	cout1 => \U1|acqu_pos|Bloc_position|cpt_pres[4]~9COUT1_52\);
 
--- Location: LC_X7_Y7_N7
+-- Location: LC_X8_Y7_N7
 \U1|acqu_pos|Bloc_position|cpt_pres[5]\ : maxv_lcell
 -- Equation(s):
--- \U1|acqu_pos|Bloc_position|cpt_pres\(5) = DFFEAS(\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ $ (\U1|acqu_pos|Bloc_position|cpt_pres\(5) $ ((!(!\U1|acqu_pos|Bloc_position|cpt_pres[2]~5\ & \U1|acqu_pos|Bloc_position|cpt_pres[4]~9\) # 
+-- \U1|acqu_pos|Bloc_position|cpt_pres\(5) = DFFEAS(\U1|acqu_pos|Bloc_position|cpt_pres\(5) $ (\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ $ ((!(!\U1|acqu_pos|Bloc_position|cpt_pres[2]~5\ & \U1|acqu_pos|Bloc_position|cpt_pres[4]~9\) # 
 -- (\U1|acqu_pos|Bloc_position|cpt_pres[2]~5\ & \U1|acqu_pos|Bloc_position|cpt_pres[4]~9COUT1_52\)))), GLOBAL(\Clk_Main_i~combout\), !GLOBAL(\U1|acqu_pos|reset_pos_s\), , \U1|acqu_pos|Bloc_MSS|WideOr15~combout\, , , , )
--- \U1|acqu_pos|Bloc_position|cpt_pres[5]~11\ = CARRY((\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & ((!\U1|acqu_pos|Bloc_position|cpt_pres[4]~9\) # (!\U1|acqu_pos|Bloc_position|cpt_pres\(5)))) # (!\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & 
--- (!\U1|acqu_pos|Bloc_position|cpt_pres\(5) & !\U1|acqu_pos|Bloc_position|cpt_pres[4]~9\)))
--- \U1|acqu_pos|Bloc_position|cpt_pres[5]~11COUT1_54\ = CARRY((\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & ((!\U1|acqu_pos|Bloc_position|cpt_pres[4]~9COUT1_52\) # (!\U1|acqu_pos|Bloc_position|cpt_pres\(5)))) # (!\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & 
--- (!\U1|acqu_pos|Bloc_position|cpt_pres\(5) & !\U1|acqu_pos|Bloc_position|cpt_pres[4]~9COUT1_52\)))
+-- \U1|acqu_pos|Bloc_position|cpt_pres[5]~11\ = CARRY((\U1|acqu_pos|Bloc_position|cpt_pres\(5) & (\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & !\U1|acqu_pos|Bloc_position|cpt_pres[4]~9\)) # (!\U1|acqu_pos|Bloc_position|cpt_pres\(5) & 
+-- ((\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\) # (!\U1|acqu_pos|Bloc_position|cpt_pres[4]~9\))))
+-- \U1|acqu_pos|Bloc_position|cpt_pres[5]~11COUT1_54\ = CARRY((\U1|acqu_pos|Bloc_position|cpt_pres\(5) & (\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & !\U1|acqu_pos|Bloc_position|cpt_pres[4]~9COUT1_52\)) # (!\U1|acqu_pos|Bloc_position|cpt_pres\(5) & 
+-- ((\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\) # (!\U1|acqu_pos|Bloc_position|cpt_pres[4]~9COUT1_52\))))
 
 -- pragma translate_off
 GENERIC MAP (
 	cin0_used => "true",
 	cin1_used => "true",
 	cin_used => "true",
-	lut_mask => "692b",
+	lut_mask => "694d",
 	operation_mode => "arithmetic",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -4599,8 +4463,8 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\,
-	datab => \U1|acqu_pos|Bloc_position|cpt_pres\(5),
+	dataa => \U1|acqu_pos|Bloc_position|cpt_pres\(5),
+	datab => \U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\,
 	aclr => \U1|acqu_pos|reset_pos_s\,
 	ena => \U1|acqu_pos|Bloc_MSS|WideOr15~combout\,
 	cin => \U1|acqu_pos|Bloc_position|cpt_pres[2]~5\,
@@ -4612,22 +4476,22 @@ PORT MAP (
 	cout0 => \U1|acqu_pos|Bloc_position|cpt_pres[5]~11\,
 	cout1 => \U1|acqu_pos|Bloc_position|cpt_pres[5]~11COUT1_54\);
 
--- Location: LC_X7_Y7_N8
+-- Location: LC_X8_Y7_N8
 \U1|acqu_pos|Bloc_position|cpt_pres[6]\ : maxv_lcell
 -- Equation(s):
--- \U1|acqu_pos|Bloc_position|cpt_pres\(6) = DFFEAS(\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ $ (\U1|acqu_pos|Bloc_position|cpt_pres\(6) $ (((!\U1|acqu_pos|Bloc_position|cpt_pres[2]~5\ & \U1|acqu_pos|Bloc_position|cpt_pres[5]~11\) # 
+-- \U1|acqu_pos|Bloc_position|cpt_pres\(6) = DFFEAS(\U1|acqu_pos|Bloc_position|cpt_pres\(6) $ (\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ $ (((!\U1|acqu_pos|Bloc_position|cpt_pres[2]~5\ & \U1|acqu_pos|Bloc_position|cpt_pres[5]~11\) # 
 -- (\U1|acqu_pos|Bloc_position|cpt_pres[2]~5\ & \U1|acqu_pos|Bloc_position|cpt_pres[5]~11COUT1_54\)))), GLOBAL(\Clk_Main_i~combout\), !GLOBAL(\U1|acqu_pos|reset_pos_s\), , \U1|acqu_pos|Bloc_MSS|WideOr15~combout\, , , , )
--- \U1|acqu_pos|Bloc_position|cpt_pres[6]~13\ = CARRY((\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & (\U1|acqu_pos|Bloc_position|cpt_pres\(6) & !\U1|acqu_pos|Bloc_position|cpt_pres[5]~11\)) # (!\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & 
--- ((\U1|acqu_pos|Bloc_position|cpt_pres\(6)) # (!\U1|acqu_pos|Bloc_position|cpt_pres[5]~11\))))
--- \U1|acqu_pos|Bloc_position|cpt_pres[6]~13COUT1_56\ = CARRY((\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & (\U1|acqu_pos|Bloc_position|cpt_pres\(6) & !\U1|acqu_pos|Bloc_position|cpt_pres[5]~11COUT1_54\)) # (!\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & 
--- ((\U1|acqu_pos|Bloc_position|cpt_pres\(6)) # (!\U1|acqu_pos|Bloc_position|cpt_pres[5]~11COUT1_54\))))
+-- \U1|acqu_pos|Bloc_position|cpt_pres[6]~13\ = CARRY((\U1|acqu_pos|Bloc_position|cpt_pres\(6) & ((!\U1|acqu_pos|Bloc_position|cpt_pres[5]~11\) # (!\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\))) # (!\U1|acqu_pos|Bloc_position|cpt_pres\(6) & 
+-- (!\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & !\U1|acqu_pos|Bloc_position|cpt_pres[5]~11\)))
+-- \U1|acqu_pos|Bloc_position|cpt_pres[6]~13COUT1_56\ = CARRY((\U1|acqu_pos|Bloc_position|cpt_pres\(6) & ((!\U1|acqu_pos|Bloc_position|cpt_pres[5]~11COUT1_54\) # (!\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\))) # (!\U1|acqu_pos|Bloc_position|cpt_pres\(6) & 
+-- (!\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & !\U1|acqu_pos|Bloc_position|cpt_pres[5]~11COUT1_54\)))
 
 -- pragma translate_off
 GENERIC MAP (
 	cin0_used => "true",
 	cin1_used => "true",
 	cin_used => "true",
-	lut_mask => "964d",
+	lut_mask => "962b",
 	operation_mode => "arithmetic",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -4636,8 +4500,8 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\,
-	datab => \U1|acqu_pos|Bloc_position|cpt_pres\(6),
+	dataa => \U1|acqu_pos|Bloc_position|cpt_pres\(6),
+	datab => \U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\,
 	aclr => \U1|acqu_pos|reset_pos_s\,
 	ena => \U1|acqu_pos|Bloc_MSS|WideOr15~combout\,
 	cin => \U1|acqu_pos|Bloc_position|cpt_pres[2]~5\,
@@ -4649,20 +4513,20 @@ PORT MAP (
 	cout0 => \U1|acqu_pos|Bloc_position|cpt_pres[6]~13\,
 	cout1 => \U1|acqu_pos|Bloc_position|cpt_pres[6]~13COUT1_56\);
 
--- Location: LC_X7_Y7_N9
+-- Location: LC_X8_Y7_N9
 \U1|acqu_pos|Bloc_position|cpt_pres[7]\ : maxv_lcell
 -- Equation(s):
--- \U1|acqu_pos|Bloc_position|cpt_pres\(7) = DFFEAS(\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ $ (\U1|acqu_pos|Bloc_position|cpt_pres\(7) $ ((!(!\U1|acqu_pos|Bloc_position|cpt_pres[2]~5\ & \U1|acqu_pos|Bloc_position|cpt_pres[6]~13\) # 
+-- \U1|acqu_pos|Bloc_position|cpt_pres\(7) = DFFEAS(\U1|acqu_pos|Bloc_position|cpt_pres\(7) $ (\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ $ ((!(!\U1|acqu_pos|Bloc_position|cpt_pres[2]~5\ & \U1|acqu_pos|Bloc_position|cpt_pres[6]~13\) # 
 -- (\U1|acqu_pos|Bloc_position|cpt_pres[2]~5\ & \U1|acqu_pos|Bloc_position|cpt_pres[6]~13COUT1_56\)))), GLOBAL(\Clk_Main_i~combout\), !GLOBAL(\U1|acqu_pos|reset_pos_s\), , \U1|acqu_pos|Bloc_MSS|WideOr15~combout\, , , , )
--- \U1|acqu_pos|Bloc_position|cpt_pres[7]~15\ = CARRY((\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & ((!\U1|acqu_pos|Bloc_position|cpt_pres[6]~13COUT1_56\) # (!\U1|acqu_pos|Bloc_position|cpt_pres\(7)))) # (!\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & 
--- (!\U1|acqu_pos|Bloc_position|cpt_pres\(7) & !\U1|acqu_pos|Bloc_position|cpt_pres[6]~13COUT1_56\)))
+-- \U1|acqu_pos|Bloc_position|cpt_pres[7]~15\ = CARRY((\U1|acqu_pos|Bloc_position|cpt_pres\(7) & (\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & !\U1|acqu_pos|Bloc_position|cpt_pres[6]~13COUT1_56\)) # (!\U1|acqu_pos|Bloc_position|cpt_pres\(7) & 
+-- ((\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\) # (!\U1|acqu_pos|Bloc_position|cpt_pres[6]~13COUT1_56\))))
 
 -- pragma translate_off
 GENERIC MAP (
 	cin0_used => "true",
 	cin1_used => "true",
 	cin_used => "true",
-	lut_mask => "692b",
+	lut_mask => "694d",
 	operation_mode => "arithmetic",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -4671,8 +4535,8 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\,
-	datab => \U1|acqu_pos|Bloc_position|cpt_pres\(7),
+	dataa => \U1|acqu_pos|Bloc_position|cpt_pres\(7),
+	datab => \U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\,
 	aclr => \U1|acqu_pos|reset_pos_s\,
 	ena => \U1|acqu_pos|Bloc_MSS|WideOr15~combout\,
 	cin => \U1|acqu_pos|Bloc_position|cpt_pres[2]~5\,
@@ -4683,20 +4547,20 @@ PORT MAP (
 	regout => \U1|acqu_pos|Bloc_position|cpt_pres\(7),
 	cout => \U1|acqu_pos|Bloc_position|cpt_pres[7]~15\);
 
--- Location: LC_X8_Y7_N0
+-- Location: LC_X9_Y7_N0
 \U1|acqu_pos|Bloc_position|cpt_pres[8]\ : maxv_lcell
 -- Equation(s):
--- \U1|acqu_pos|Bloc_position|cpt_pres\(8) = DFFEAS(\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ $ (\U1|acqu_pos|Bloc_position|cpt_pres\(8) $ ((\U1|acqu_pos|Bloc_position|cpt_pres[7]~15\))), GLOBAL(\Clk_Main_i~combout\), !GLOBAL(\U1|acqu_pos|reset_pos_s\), , 
+-- \U1|acqu_pos|Bloc_position|cpt_pres\(8) = DFFEAS(\U1|acqu_pos|Bloc_position|cpt_pres\(8) $ (\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ $ ((\U1|acqu_pos|Bloc_position|cpt_pres[7]~15\))), GLOBAL(\Clk_Main_i~combout\), !GLOBAL(\U1|acqu_pos|reset_pos_s\), , 
 -- \U1|acqu_pos|Bloc_MSS|WideOr15~combout\, , , , )
--- \U1|acqu_pos|Bloc_position|cpt_pres[8]~17\ = CARRY((\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & (\U1|acqu_pos|Bloc_position|cpt_pres\(8) & !\U1|acqu_pos|Bloc_position|cpt_pres[7]~15\)) # (!\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & 
--- ((\U1|acqu_pos|Bloc_position|cpt_pres\(8)) # (!\U1|acqu_pos|Bloc_position|cpt_pres[7]~15\))))
--- \U1|acqu_pos|Bloc_position|cpt_pres[8]~17COUT1_58\ = CARRY((\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & (\U1|acqu_pos|Bloc_position|cpt_pres\(8) & !\U1|acqu_pos|Bloc_position|cpt_pres[7]~15\)) # (!\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & 
--- ((\U1|acqu_pos|Bloc_position|cpt_pres\(8)) # (!\U1|acqu_pos|Bloc_position|cpt_pres[7]~15\))))
+-- \U1|acqu_pos|Bloc_position|cpt_pres[8]~17\ = CARRY((\U1|acqu_pos|Bloc_position|cpt_pres\(8) & ((!\U1|acqu_pos|Bloc_position|cpt_pres[7]~15\) # (!\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\))) # (!\U1|acqu_pos|Bloc_position|cpt_pres\(8) & 
+-- (!\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & !\U1|acqu_pos|Bloc_position|cpt_pres[7]~15\)))
+-- \U1|acqu_pos|Bloc_position|cpt_pres[8]~17COUT1_58\ = CARRY((\U1|acqu_pos|Bloc_position|cpt_pres\(8) & ((!\U1|acqu_pos|Bloc_position|cpt_pres[7]~15\) # (!\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\))) # (!\U1|acqu_pos|Bloc_position|cpt_pres\(8) & 
+-- (!\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & !\U1|acqu_pos|Bloc_position|cpt_pres[7]~15\)))
 
 -- pragma translate_off
 GENERIC MAP (
 	cin_used => "true",
-	lut_mask => "964d",
+	lut_mask => "962b",
 	operation_mode => "arithmetic",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -4705,8 +4569,8 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\,
-	datab => \U1|acqu_pos|Bloc_position|cpt_pres\(8),
+	dataa => \U1|acqu_pos|Bloc_position|cpt_pres\(8),
+	datab => \U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\,
 	aclr => \U1|acqu_pos|reset_pos_s\,
 	ena => \U1|acqu_pos|Bloc_MSS|WideOr15~combout\,
 	cin => \U1|acqu_pos|Bloc_position|cpt_pres[7]~15\,
@@ -4716,22 +4580,22 @@ PORT MAP (
 	cout0 => \U1|acqu_pos|Bloc_position|cpt_pres[8]~17\,
 	cout1 => \U1|acqu_pos|Bloc_position|cpt_pres[8]~17COUT1_58\);
 
--- Location: LC_X8_Y7_N1
+-- Location: LC_X9_Y7_N1
 \U1|acqu_pos|Bloc_position|cpt_pres[9]\ : maxv_lcell
 -- Equation(s):
--- \U1|acqu_pos|Bloc_position|cpt_pres\(9) = DFFEAS(\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ $ (\U1|acqu_pos|Bloc_position|cpt_pres\(9) $ ((!(!\U1|acqu_pos|Bloc_position|cpt_pres[7]~15\ & \U1|acqu_pos|Bloc_position|cpt_pres[8]~17\) # 
+-- \U1|acqu_pos|Bloc_position|cpt_pres\(9) = DFFEAS(\U1|acqu_pos|Bloc_position|cpt_pres\(9) $ (\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ $ ((!(!\U1|acqu_pos|Bloc_position|cpt_pres[7]~15\ & \U1|acqu_pos|Bloc_position|cpt_pres[8]~17\) # 
 -- (\U1|acqu_pos|Bloc_position|cpt_pres[7]~15\ & \U1|acqu_pos|Bloc_position|cpt_pres[8]~17COUT1_58\)))), GLOBAL(\Clk_Main_i~combout\), !GLOBAL(\U1|acqu_pos|reset_pos_s\), , \U1|acqu_pos|Bloc_MSS|WideOr15~combout\, , , , )
--- \U1|acqu_pos|Bloc_position|cpt_pres[9]~19\ = CARRY((\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & ((!\U1|acqu_pos|Bloc_position|cpt_pres[8]~17\) # (!\U1|acqu_pos|Bloc_position|cpt_pres\(9)))) # (!\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & 
--- (!\U1|acqu_pos|Bloc_position|cpt_pres\(9) & !\U1|acqu_pos|Bloc_position|cpt_pres[8]~17\)))
--- \U1|acqu_pos|Bloc_position|cpt_pres[9]~19COUT1_60\ = CARRY((\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & ((!\U1|acqu_pos|Bloc_position|cpt_pres[8]~17COUT1_58\) # (!\U1|acqu_pos|Bloc_position|cpt_pres\(9)))) # (!\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & 
--- (!\U1|acqu_pos|Bloc_position|cpt_pres\(9) & !\U1|acqu_pos|Bloc_position|cpt_pres[8]~17COUT1_58\)))
+-- \U1|acqu_pos|Bloc_position|cpt_pres[9]~19\ = CARRY((\U1|acqu_pos|Bloc_position|cpt_pres\(9) & (\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & !\U1|acqu_pos|Bloc_position|cpt_pres[8]~17\)) # (!\U1|acqu_pos|Bloc_position|cpt_pres\(9) & 
+-- ((\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\) # (!\U1|acqu_pos|Bloc_position|cpt_pres[8]~17\))))
+-- \U1|acqu_pos|Bloc_position|cpt_pres[9]~19COUT1_60\ = CARRY((\U1|acqu_pos|Bloc_position|cpt_pres\(9) & (\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ & !\U1|acqu_pos|Bloc_position|cpt_pres[8]~17COUT1_58\)) # (!\U1|acqu_pos|Bloc_position|cpt_pres\(9) & 
+-- ((\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\) # (!\U1|acqu_pos|Bloc_position|cpt_pres[8]~17COUT1_58\))))
 
 -- pragma translate_off
 GENERIC MAP (
 	cin0_used => "true",
 	cin1_used => "true",
 	cin_used => "true",
-	lut_mask => "692b",
+	lut_mask => "694d",
 	operation_mode => "arithmetic",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -4740,8 +4604,8 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	dataa => \U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\,
-	datab => \U1|acqu_pos|Bloc_position|cpt_pres\(9),
+	dataa => \U1|acqu_pos|Bloc_position|cpt_pres\(9),
+	datab => \U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\,
 	aclr => \U1|acqu_pos|reset_pos_s\,
 	ena => \U1|acqu_pos|Bloc_MSS|WideOr15~combout\,
 	cin => \U1|acqu_pos|Bloc_position|cpt_pres[7]~15\,
@@ -4753,7 +4617,7 @@ PORT MAP (
 	cout0 => \U1|acqu_pos|Bloc_position|cpt_pres[9]~19\,
 	cout1 => \U1|acqu_pos|Bloc_position|cpt_pres[9]~19COUT1_60\);
 
--- Location: LC_X8_Y7_N2
+-- Location: LC_X9_Y7_N2
 \U1|acqu_pos|Bloc_position|cpt_pres[10]\ : maxv_lcell
 -- Equation(s):
 -- \U1|acqu_pos|Bloc_position|cpt_pres\(10) = DFFEAS(\U1|acqu_pos|Bloc_position|cpt_pres\(10) $ (\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ $ (((!\U1|acqu_pos|Bloc_position|cpt_pres[7]~15\ & \U1|acqu_pos|Bloc_position|cpt_pres[9]~19\) # 
@@ -4790,7 +4654,7 @@ PORT MAP (
 	cout0 => \U1|acqu_pos|Bloc_position|cpt_pres[10]~21\,
 	cout1 => \U1|acqu_pos|Bloc_position|cpt_pres[10]~21COUT1_62\);
 
--- Location: LC_X8_Y7_N3
+-- Location: LC_X9_Y7_N3
 \U1|acqu_pos|Bloc_position|cpt_pres[11]\ : maxv_lcell
 -- Equation(s):
 -- \U1|acqu_pos|Bloc_position|cpt_pres\(11) = DFFEAS(\U1|acqu_pos|Bloc_position|cpt_pres\(11) $ (\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ $ ((!(!\U1|acqu_pos|Bloc_position|cpt_pres[7]~15\ & \U1|acqu_pos|Bloc_position|cpt_pres[10]~21\) # 
@@ -4827,7 +4691,7 @@ PORT MAP (
 	cout0 => \U1|acqu_pos|Bloc_position|cpt_pres[11]~23\,
 	cout1 => \U1|acqu_pos|Bloc_position|cpt_pres[11]~23COUT1_64\);
 
--- Location: LC_X8_Y7_N4
+-- Location: LC_X9_Y7_N4
 \U1|acqu_pos|Bloc_position|cpt_pres[12]\ : maxv_lcell
 -- Equation(s):
 -- \U1|acqu_pos|Bloc_position|cpt_pres\(12) = DFFEAS(\U1|acqu_pos|Bloc_position|cpt_pres\(12) $ (\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ $ (((!\U1|acqu_pos|Bloc_position|cpt_pres[7]~15\ & \U1|acqu_pos|Bloc_position|cpt_pres[11]~23\) # 
@@ -4861,7 +4725,7 @@ PORT MAP (
 	regout => \U1|acqu_pos|Bloc_position|cpt_pres\(12),
 	cout => \U1|acqu_pos|Bloc_position|cpt_pres[12]~25\);
 
--- Location: LC_X8_Y7_N5
+-- Location: LC_X9_Y7_N5
 \U1|acqu_pos|Bloc_position|cpt_pres[13]\ : maxv_lcell
 -- Equation(s):
 -- \U1|acqu_pos|Bloc_position|cpt_pres\(13) = DFFEAS(\U1|acqu_pos|Bloc_position|cpt_pres\(13) $ (\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ $ ((!\U1|acqu_pos|Bloc_position|cpt_pres[12]~25\))), GLOBAL(\Clk_Main_i~combout\), !GLOBAL(\U1|acqu_pos|reset_pos_s\), 
@@ -4894,7 +4758,7 @@ PORT MAP (
 	cout0 => \U1|acqu_pos|Bloc_position|cpt_pres[13]~27\,
 	cout1 => \U1|acqu_pos|Bloc_position|cpt_pres[13]~27COUT1_66\);
 
--- Location: LC_X8_Y7_N6
+-- Location: LC_X9_Y7_N6
 \U1|acqu_pos|Bloc_position|cpt_pres[14]\ : maxv_lcell
 -- Equation(s):
 -- \U1|acqu_pos|Bloc_position|cpt_pres\(14) = DFFEAS(\U1|acqu_pos|Bloc_position|cpt_pres\(14) $ (\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\ $ (((!\U1|acqu_pos|Bloc_position|cpt_pres[12]~25\ & \U1|acqu_pos|Bloc_position|cpt_pres[13]~27\) # 
@@ -4931,18 +4795,18 @@ PORT MAP (
 	cout0 => \U1|acqu_pos|Bloc_position|cpt_pres[14]~29\,
 	cout1 => \U1|acqu_pos|Bloc_position|cpt_pres[14]~29COUT1_68\);
 
--- Location: LC_X8_Y7_N7
+-- Location: LC_X9_Y7_N7
 \U1|acqu_pos|Bloc_position|cpt_pres[15]\ : maxv_lcell
 -- Equation(s):
--- \U1|acqu_pos|Bloc_position|cpt_pres\(15) = DFFEAS((\U1|acqu_pos|Bloc_position|cpt_pres\(15) $ ((!\U1|acqu_pos|Bloc_position|cpt_pres[12]~25\ & \U1|acqu_pos|Bloc_position|cpt_pres[14]~29\) # (\U1|acqu_pos|Bloc_position|cpt_pres[12]~25\ & 
--- \U1|acqu_pos|Bloc_position|cpt_pres[14]~29COUT1_68\) $ (!\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\))), GLOBAL(\Clk_Main_i~combout\), !GLOBAL(\U1|acqu_pos|reset_pos_s\), , \U1|acqu_pos|Bloc_MSS|WideOr15~combout\, , , , )
+-- \U1|acqu_pos|Bloc_position|cpt_pres\(15) = DFFEAS(\U1|acqu_pos|Bloc_position|cpt_pres\(15) $ ((((!\U1|acqu_pos|Bloc_position|cpt_pres[12]~25\ & \U1|acqu_pos|Bloc_position|cpt_pres[14]~29\) # (\U1|acqu_pos|Bloc_position|cpt_pres[12]~25\ & 
+-- \U1|acqu_pos|Bloc_position|cpt_pres[14]~29COUT1_68\) $ (!\U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\)))), GLOBAL(\Clk_Main_i~combout\), !GLOBAL(\U1|acqu_pos|reset_pos_s\), , \U1|acqu_pos|Bloc_MSS|WideOr15~combout\, , , , )
 
 -- pragma translate_off
 GENERIC MAP (
 	cin0_used => "true",
 	cin1_used => "true",
 	cin_used => "true",
-	lut_mask => "3cc3",
+	lut_mask => "5aa5",
 	operation_mode => "normal",
 	output_mode => "reg_only",
 	register_cascade_mode => "off",
@@ -4951,7 +4815,7 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \Clk_Main_i~combout\,
-	datab => \U1|acqu_pos|Bloc_position|cpt_pres\(15),
+	dataa => \U1|acqu_pos|Bloc_position|cpt_pres\(15),
 	datad => \U1|acqu_pos|Bloc_MSS|WideOr16~1_combout\,
 	aclr => \U1|acqu_pos|reset_pos_s\,
 	ena => \U1|acqu_pos|Bloc_MSS|WideOr15~combout\,

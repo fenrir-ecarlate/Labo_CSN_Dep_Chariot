@@ -1,5 +1,5 @@
 Analysis & Synthesis report for maxv_top
-Thu Jan 21 11:40:22 2016
+Fri Jan 22 12:55:49 2016
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
 
 
@@ -45,12 +45,12 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Thu Jan 21 11:40:22 2016       ;
+; Analysis & Synthesis Status ; Successful - Fri Jan 22 12:55:49 2016       ;
 ; Quartus II 64-Bit Version   ; 13.0.0 Build 156 04/24/2013 SJ Full Version ;
 ; Revision Name               ; maxv_top                                    ;
 ; Top-level Entity Name       ; maxv_top                                    ;
 ; Family                      ; MAX V                                       ;
-; Total logic elements        ; 162                                         ;
+; Total logic elements        ; 158                                         ;
 ; Total pins                  ; 159                                         ;
 ; Total virtual pins          ; 0                                           ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
@@ -170,33 +170,33 @@ applicable agreement for further details.
 +---------------------------------------------+------------+
 ; Resource                                    ; Usage      ;
 +---------------------------------------------+------------+
-; Total logic elements                        ; 162        ;
-;     -- Combinational with no register       ; 56         ;
+; Total logic elements                        ; 158        ;
+;     -- Combinational with no register       ; 55         ;
 ;     -- Register only                        ; 12         ;
-;     -- Combinational with a register        ; 94         ;
+;     -- Combinational with a register        ; 91         ;
 ;                                             ;            ;
 ; Logic element usage by number of LUT inputs ;            ;
-;     -- 4 input functions                    ; 47         ;
-;     -- 3 input functions                    ; 33         ;
-;     -- 2 input functions                    ; 58         ;
+;     -- 4 input functions                    ; 46         ;
+;     -- 3 input functions                    ; 34         ;
+;     -- 2 input functions                    ; 54         ;
 ;     -- 1 input functions                    ; 11         ;
 ;     -- 0 input functions                    ; 1          ;
 ;                                             ;            ;
 ; Logic elements by mode                      ;            ;
-;     -- normal mode                          ; 102        ;
-;     -- arithmetic mode                      ; 60         ;
+;     -- normal mode                          ; 101        ;
+;     -- arithmetic mode                      ; 57         ;
 ;     -- qfbk mode                            ; 0          ;
 ;     -- register cascade mode                ; 0          ;
-;     -- synchronous clear/load mode          ; 38         ;
-;     -- asynchronous clear/load mode         ; 106        ;
+;     -- synchronous clear/load mode          ; 35         ;
+;     -- asynchronous clear/load mode         ; 103        ;
 ;                                             ;            ;
-; Total registers                             ; 106        ;
-; Total logic cells in carry chains           ; 64         ;
+; Total registers                             ; 103        ;
+; Total logic cells in carry chains           ; 61         ;
 ; I/O pins                                    ; 159        ;
 ; Maximum fan-out node                        ; Clk_Main_i ;
-; Maximum fan-out                             ; 106        ;
-; Total fan-out                               ; 758        ;
-; Average fan-out                             ; 2.36       ;
+; Maximum fan-out                             ; 103        ;
+; Total fan-out                               ; 734        ;
+; Average fan-out                             ; 2.32       ;
 +---------------------------------------------+------------+
 
 
@@ -205,14 +205,14 @@ applicable agreement for further details.
 +--------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node           ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                           ; Library Name ;
 +--------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------------------+--------------+
-; |maxv_top                            ; 162 (21)    ; 106          ; 0          ; 159  ; 0            ; 56 (1)       ; 12 (0)            ; 94 (20)          ; 64 (19)         ; 0 (0)      ; |maxv_top                                                                     ; work         ;
-;    |cmd_mvnt_mot_top:U1|             ; 141 (17)    ; 86           ; 0          ; 0    ; 0            ; 55 (1)       ; 12 (11)           ; 74 (5)           ; 45 (0)          ; 0 (0)      ; |maxv_top|cmd_mvnt_mot_top:U1                                                 ; work         ;
+; |maxv_top                            ; 158 (21)    ; 103          ; 0          ; 159  ; 0            ; 55 (1)       ; 12 (0)            ; 91 (20)          ; 61 (19)         ; 0 (0)      ; |maxv_top                                                                     ; work         ;
+;    |cmd_mvnt_mot_top:U1|             ; 137 (17)    ; 83           ; 0          ; 0    ; 0            ; 54 (1)       ; 12 (11)           ; 71 (5)           ; 42 (0)          ; 0 (0)      ; |maxv_top|cmd_mvnt_mot_top:U1                                                 ; work         ;
 ;       |acqu_pos_top:acqu_pos|        ; 57 (1)      ; 38           ; 0          ; 0    ; 0            ; 19 (1)       ; 1 (0)             ; 37 (0)           ; 16 (0)          ; 0 (0)      ; |maxv_top|cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos                           ; work         ;
 ;          |cpt_pos_acq:Bloc_position| ; 16 (16)     ; 16           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 16 (16)          ; 16 (16)         ; 0 (0)      ; |maxv_top|cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|cpt_pos_acq:Bloc_position ; work         ;
 ;          |mss_dir:Bloc_MSS|          ; 40 (40)     ; 22           ; 0          ; 0    ; 0            ; 18 (18)      ; 1 (1)             ; 21 (21)          ; 0 (0)           ; 0 (0)      ; |maxv_top|cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|mss_dir:Bloc_MSS          ; work         ;
-;       |cpt_pos:cpt_pas|              ; 14 (14)     ; 10           ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 10 (10)          ; 10 (10)         ; 0 (0)      ; |maxv_top|cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas                                 ; work         ;
+;       |cpt_pos:cpt_pas|              ; 11 (11)     ; 7            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 7 (7)            ; 7 (7)           ; 0 (0)      ; |maxv_top|cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas                                 ; work         ;
 ;       |div_clk:div_clk_mod|          ; 39 (39)     ; 19           ; 0          ; 0    ; 0            ; 20 (20)      ; 0 (0)             ; 19 (19)          ; 19 (19)         ; 0 (0)      ; |maxv_top|cmd_mvnt_mot_top:U1|div_clk:div_clk_mod                             ; work         ;
-;       |mss_cmd_moteur:mss|           ; 14 (14)     ; 3            ; 0          ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |maxv_top|cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss                              ; work         ;
+;       |mss_cmd_moteur:mss|           ; 13 (13)     ; 3            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |maxv_top|cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss                              ; work         ;
 +--------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -253,12 +253,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 106   ;
+; Total registers                              ; 103   ;
 ; Number of registers using Synchronous Clear  ; 9     ;
-; Number of registers using Synchronous Load   ; 29    ;
-; Number of registers using Asynchronous Clear ; 87    ;
+; Number of registers using Synchronous Load   ; 26    ;
+; Number of registers using Asynchronous Clear ; 84    ;
 ; Number of registers using Asynchronous Load  ; 19    ;
-; Number of registers using Clock Enable       ; 26    ;
+; Number of registers using Clock Enable       ; 23    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -268,8 +268,7 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |maxv_top|cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[2]      ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |maxv_top|cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[4]      ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |maxv_top|cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[5]      ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |maxv_top|cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss|Etat_Pres[0] ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |maxv_top|cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss|Mux2         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
@@ -314,7 +313,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
-    Info: Processing started: Thu Jan 21 11:40:21 2016
+    Info: Processing started: Fri Jan 22 12:55:46 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off maxv_top -c maxv_top
 Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Warning (12019): Can't analyze file -- file ../maxv_top.vhd is missing
@@ -452,15 +451,15 @@ Warning (21074): Design contains 5 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "Encoder_B_i"
     Warning (15610): No output dependent on input pin "nButton_i[2]"
     Warning (15610): No output dependent on input pin "nButton_i[7]"
-Info (21057): Implemented 321 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 317 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 21 input pins
     Info (21059): Implemented 19 output pins
     Info (21060): Implemented 119 bidirectional pins
-    Info (21061): Implemented 162 logic cells
+    Info (21061): Implemented 158 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 95 warnings
-    Info: Peak virtual memory: 621 megabytes
-    Info: Processing ended: Thu Jan 21 11:40:22 2016
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 601 megabytes
+    Info: Processing ended: Fri Jan 22 12:55:49 2016
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:01
 
 

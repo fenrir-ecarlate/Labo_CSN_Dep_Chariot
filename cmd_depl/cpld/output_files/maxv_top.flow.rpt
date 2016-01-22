@@ -1,5 +1,5 @@
 Flow report for maxv_top
-Thu Jan 21 11:40:32 2016
+Fri Jan 22 12:56:02 2016
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
 
 
@@ -40,14 +40,14 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------+
 ; Flow Summary                                                            ;
 +---------------------------+---------------------------------------------+
-; Flow Status               ; Successful - Thu Jan 21 11:40:32 2016       ;
+; Flow Status               ; Successful - Fri Jan 22 12:56:02 2016       ;
 ; Quartus II 64-Bit Version ; 13.0.0 Build 156 04/24/2013 SJ Full Version ;
 ; Revision Name             ; maxv_top                                    ;
 ; Top-level Entity Name     ; maxv_top                                    ;
 ; Family                    ; MAX V                                       ;
 ; Device                    ; 5M570ZF256C5                                ;
 ; Timing Models             ; Final                                       ;
-; Total logic elements      ; 157 / 570 ( 28 % )                          ;
+; Total logic elements      ; 153 / 570 ( 27 % )                          ;
 ; Total pins                ; 159 / 159 ( 100 % )                         ;
 ; Total virtual pins        ; 0                                           ;
 ; UFM blocks                ; 0 / 1 ( 0 % )                               ;
@@ -59,7 +59,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/21/2016 11:40:22 ;
+; Start date & time ; 01/22/2016 12:55:47 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; maxv_top            ;
 +-------------------+---------------------+
@@ -70,7 +70,7 @@ applicable agreement for further details.
 +-------------------------------+-----------------------------+---------------+-------------+----------------+
 ; Assignment Name               ; Value                       ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------+-----------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID         ; 0.145337282213863           ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID         ; 0.145346374705330           ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT        ; Vhdl                        ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL           ; QuestaSim (VHDL)            ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                ; 1 ps                        ; --            ; --          ; eda_simulation ;
@@ -87,12 +87,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 621 MB              ; 00:00:01                           ;
-; Fitter                    ; 00:00:02     ; 4.0                     ; 692 MB              ; 00:00:01                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 521 MB              ; 00:00:00                           ;
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 601 MB              ; 00:00:01                           ;
+; Fitter                    ; 00:00:04     ; 2.0                     ; 698 MB              ; 00:00:01                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 517 MB              ; 00:00:00                           ;
 ; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 510 MB              ; 00:00:01                           ;
 ; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 785 MB              ; 00:00:00                           ;
-; Total                     ; 00:00:06     ; --                      ; --                  ; 00:00:03                           ;
+; Total                     ; 00:00:10     ; --                      ; --                  ; 00:00:03                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -101,11 +101,11 @@ applicable agreement for further details.
 +---------------------------+------------------+----------------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
 +---------------------------+------------------+----------------+------------+----------------+
-; Analysis & Synthesis      ; a07pc05          ; Ubuntu 14.04.1 ; 14         ; x86_64         ;
-; Fitter                    ; a07pc05          ; Ubuntu 14.04.1 ; 14         ; x86_64         ;
-; Assembler                 ; a07pc05          ; Ubuntu 14.04.1 ; 14         ; x86_64         ;
-; TimeQuest Timing Analyzer ; a07pc05          ; Ubuntu 14.04.1 ; 14         ; x86_64         ;
-; EDA Netlist Writer        ; a07pc05          ; Ubuntu 14.04.1 ; 14         ; x86_64         ;
+; Analysis & Synthesis      ; a07pc15          ; Ubuntu 14.04.1 ; 14         ; x86_64         ;
+; Fitter                    ; a07pc15          ; Ubuntu 14.04.1 ; 14         ; x86_64         ;
+; Assembler                 ; a07pc15          ; Ubuntu 14.04.1 ; 14         ; x86_64         ;
+; TimeQuest Timing Analyzer ; a07pc15          ; Ubuntu 14.04.1 ; 14         ; x86_64         ;
+; EDA Netlist Writer        ; a07pc15          ; Ubuntu 14.04.1 ; 14         ; x86_64         ;
 +---------------------------+------------------+----------------+------------+----------------+
 
 

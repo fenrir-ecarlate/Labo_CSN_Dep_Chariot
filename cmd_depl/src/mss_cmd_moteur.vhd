@@ -41,16 +41,16 @@ end mss_cmd_moteur ;
 architecture struct of mss_cmd_moteur is
 
    -- Etat lorsque le moteur est à l'arrêt
-   constant E_Stop_0     : std_logic_vector(2 downto 0) := "000";
-   constant E_Stop_1     : std_logic_vector(2 downto 0) := "001";
-   constant E_Stop_2     : std_logic_vector(2 downto 0) := "010";
-   constant E_Stop_3     : std_logic_vector(2 downto 0) := "011";
+   constant E_Stop_0     : std_logic_vector(2 downto 0) := "100";
+   constant E_Stop_1     : std_logic_vector(2 downto 0) := "101";
+   constant E_Stop_2     : std_logic_vector(2 downto 0) := "110";
+   constant E_Stop_3     : std_logic_vector(2 downto 0) := "111";
    
    -- Etat lorsque le moteur est en marche
-   constant E_Run_0      : std_logic_vector(2 downto 0) := "100";
-   constant E_Run_1      : std_logic_vector(2 downto 0) := "101";
-   constant E_Run_2      : std_logic_vector(2 downto 0) := "110";
-   constant E_Run_3      : std_logic_vector(2 downto 0) := "111";
+   constant E_Run_0      : std_logic_vector(2 downto 0) := "000";
+   constant E_Run_1      : std_logic_vector(2 downto 0) := "001";
+   constant E_Run_2      : std_logic_vector(2 downto 0) := "010";
+   constant E_Run_3      : std_logic_vector(2 downto 0) := "011";
    
    signal Etat_Pres,Etat_Fut: std_logic_vector(2 downto 0);
    

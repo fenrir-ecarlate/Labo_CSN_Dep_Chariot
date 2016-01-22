@@ -1,5 +1,5 @@
 Fitter report for maxv_top
-Thu Jan 21 11:40:26 2016
+Fri Jan 22 12:55:54 2016
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
 
 
@@ -57,14 +57,14 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------+
 ; Fitter Summary                                                          ;
 +---------------------------+---------------------------------------------+
-; Fitter Status             ; Successful - Thu Jan 21 11:40:26 2016       ;
+; Fitter Status             ; Successful - Fri Jan 22 12:55:54 2016       ;
 ; Quartus II 64-Bit Version ; 13.0.0 Build 156 04/24/2013 SJ Full Version ;
 ; Revision Name             ; maxv_top                                    ;
 ; Top-level Entity Name     ; maxv_top                                    ;
 ; Family                    ; MAX V                                       ;
 ; Device                    ; 5M570ZF256C5                                ;
 ; Timing Models             ; Final                                       ;
-; Total logic elements      ; 157 / 570 ( 28 % )                          ;
+; Total logic elements      ; 153 / 570 ( 27 % )                          ;
 ; Total pins                ; 159 / 159 ( 100 % )                         ;
 ; Total virtual pins        ; 0                                           ;
 ; UFM blocks                ; 0 / 1 ( 0 % )                               ;
@@ -128,11 +128,12 @@ applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 4.00        ;
+; Average used               ; 2.00        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
-;     Processors 1-4         ; 100.0%      ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;  33.3%      ;
 ;     Processors 5-8         ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -148,29 +149,29 @@ The pin-out file can be found in /home/redsuser/nicolas.kobel/csn/Labo_CSN_Dep_C
 +---------------------------------------------+---------------------+
 ; Resource                                    ; Usage               ;
 +---------------------------------------------+---------------------+
-; Total logic elements                        ; 157 / 570 ( 28 % )  ;
-;     -- Combinational with no register       ; 51                  ;
+; Total logic elements                        ; 153 / 570 ( 27 % )  ;
+;     -- Combinational with no register       ; 50                  ;
 ;     -- Register only                        ; 7                   ;
-;     -- Combinational with a register        ; 99                  ;
+;     -- Combinational with a register        ; 96                  ;
 ;                                             ;                     ;
 ; Logic element usage by number of LUT inputs ;                     ;
-;     -- 4 input functions                    ; 47                  ;
-;     -- 3 input functions                    ; 33                  ;
-;     -- 2 input functions                    ; 58                  ;
+;     -- 4 input functions                    ; 46                  ;
+;     -- 3 input functions                    ; 34                  ;
+;     -- 2 input functions                    ; 54                  ;
 ;     -- 1 input functions                    ; 11                  ;
 ;     -- 0 input functions                    ; 1                   ;
 ;                                             ;                     ;
 ; Logic elements by mode                      ;                     ;
-;     -- normal mode                          ; 97                  ;
-;     -- arithmetic mode                      ; 60                  ;
+;     -- normal mode                          ; 96                  ;
+;     -- arithmetic mode                      ; 57                  ;
 ;     -- qfbk mode                            ; 4                   ;
 ;     -- register cascade mode                ; 0                   ;
-;     -- synchronous clear/load mode          ; 46                  ;
-;     -- asynchronous clear/load mode         ; 106                 ;
+;     -- synchronous clear/load mode          ; 43                  ;
+;     -- asynchronous clear/load mode         ; 103                 ;
 ;                                             ;                     ;
-; Total registers                             ; 106 / 570 ( 19 % )  ;
-; Total LABs                                  ; 26 / 57 ( 46 % )    ;
-; Logic elements in carry chains              ; 64                  ;
+; Total registers                             ; 103 / 570 ( 18 % )  ;
+; Total LABs                                  ; 27 / 57 ( 47 % )    ;
+; Logic elements in carry chains              ; 61                  ;
 ; Virtual pins                                ; 0                   ;
 ; I/O pins                                    ; 159 / 159 ( 100 % ) ;
 ;     -- Clock pins                           ; 4 / 4 ( 100 % )     ;
@@ -179,12 +180,12 @@ The pin-out file can be found in /home/redsuser/nicolas.kobel/csn/Labo_CSN_Dep_C
 ; UFM blocks                                  ; 0 / 1 ( 0 % )       ;
 ; Global clocks                               ; 3 / 4 ( 75 % )      ;
 ; JTAGs                                       ; 0 / 1 ( 0 % )       ;
-; Average interconnect usage (total/H/V)      ; 7% / 7% / 7%        ;
-; Peak interconnect usage (total/H/V)         ; 7% / 7% / 7%        ;
-; Maximum fan-out                             ; 106                 ;
+; Average interconnect usage (total/H/V)      ; 7% / 8% / 6%        ;
+; Peak interconnect usage (total/H/V)         ; 7% / 8% / 6%        ;
+; Maximum fan-out                             ; 103                 ;
 ; Highest non-global fan-out                  ; 24                  ;
-; Total fan-out                               ; 787                 ;
-; Average fan-out                             ; 2.49                ;
+; Total fan-out                               ; 761                 ;
+; Average fan-out                             ; 2.44                ;
 +---------------------------------------------+---------------------+
 
 
@@ -194,7 +195,7 @@ The pin-out file can be found in /home/redsuser/nicolas.kobel/csn/Labo_CSN_Dep_C
 ; Name         ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Location assigned by ;
 +--------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
 ; Clk_Gen_i    ; J5    ; 1        ; 0            ; 5            ; 1           ; 0                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
-; Clk_Main_i   ; H5    ; 1        ; 0            ; 5            ; 0           ; 106                   ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; Clk_Main_i   ; H5    ; 1        ; 0            ; 5            ; 0           ; 103                   ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
 ; Encoder_A_i  ; L4    ; 1        ; 0            ; 5            ; 6           ; 0                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
 ; Encoder_B_i  ; M1    ; 1        ; 0            ; 4            ; 6           ; 0                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
 ; Switch_i[0]  ; L3    ; 1        ; 0            ; 5            ; 4           ; 1                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
@@ -213,7 +214,7 @@ The pin-out file can be found in /home/redsuser/nicolas.kobel/csn/Labo_CSN_Dep_C
 ; nButton_i[6] ; E4    ; 1        ; 0            ; 7            ; 0           ; 1                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
 ; nButton_i[7] ; F1    ; 1        ; 0            ; 7            ; 3           ; 0                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
 ; nButton_i[8] ; F2    ; 1        ; 0            ; 7            ; 1           ; 2                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
-; nReset_i     ; M9    ; 1        ; 8            ; 3            ; 2           ; 90                    ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; nReset_i     ; M9    ; 1        ; 8            ; 3            ; 2           ; 87                    ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
 +--------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
 
 
@@ -277,9 +278,9 @@ The pin-out file can be found in /home/redsuser/nicolas.kobel/csn/Labo_CSN_Dep_C
 ; Con_80p_io[10]   ; A9    ; 2        ; 7            ; 8            ; 1           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; Con_80p_io[11]   ; B9    ; 2        ; 7            ; 8            ; 0           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; Con_80p_io[12]   ; B10   ; 2        ; 8            ; 8            ; 0           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
-; Con_80p_io[13]   ; C10   ; 2        ; 9            ; 8            ; 2           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; Con_80p_io[13]   ; C10   ; 2        ; 9            ; 8            ; 2           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ; -                    ; -                   ;
 ; Con_80p_io[14]   ; C11   ; 2        ; 10           ; 8            ; 2           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
-; Con_80p_io[15]   ; D11   ; 2        ; 9            ; 8            ; 0           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; Con_80p_io[15]   ; D11   ; 2        ; 9            ; 8            ; 0           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ; -                    ; -                   ;
 ; Con_80p_io[16]   ; C12   ; 2        ; 11           ; 8            ; 2           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; Con_80p_io[17]   ; D12   ; 2        ; 10           ; 8            ; 0           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
 ; Con_80p_io[18]   ; C13   ; 2        ; 12           ; 8            ; 2           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
@@ -670,14 +671,14 @@ Note: User assignments will override these defaults. The user specified values a
 +--------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node           ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                           ; Library Name ;
 +--------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------------------+--------------+
-; |maxv_top                            ; 157 (21)    ; 106          ; 0          ; 159  ; 0            ; 51 (1)       ; 7 (0)             ; 99 (20)          ; 64 (19)         ; 4 (0)      ; |maxv_top                                                                     ; work         ;
-;    |cmd_mvnt_mot_top:U1|             ; 136 (17)    ; 86           ; 0          ; 0    ; 0            ; 50 (1)       ; 7 (7)             ; 79 (9)           ; 45 (0)          ; 4 (0)      ; |maxv_top|cmd_mvnt_mot_top:U1                                                 ; work         ;
+; |maxv_top                            ; 153 (21)    ; 103          ; 0          ; 159  ; 0            ; 50 (1)       ; 7 (0)             ; 96 (20)          ; 61 (19)         ; 4 (0)      ; |maxv_top                                                                     ; work         ;
+;    |cmd_mvnt_mot_top:U1|             ; 132 (17)    ; 83           ; 0          ; 0    ; 0            ; 49 (1)       ; 7 (7)             ; 76 (9)           ; 42 (0)          ; 4 (0)      ; |maxv_top|cmd_mvnt_mot_top:U1                                                 ; work         ;
 ;       |acqu_pos_top:acqu_pos|        ; 53 (0)      ; 38           ; 0          ; 0    ; 0            ; 15 (0)       ; 0 (0)             ; 38 (0)           ; 16 (0)          ; 3 (1)      ; |maxv_top|cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos                           ; work         ;
 ;          |cpt_pos_acq:Bloc_position| ; 16 (16)     ; 16           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 16 (16)          ; 16 (16)         ; 0 (0)      ; |maxv_top|cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|cpt_pos_acq:Bloc_position ; work         ;
 ;          |mss_dir:Bloc_MSS|          ; 37 (37)     ; 22           ; 0          ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 22 (22)          ; 0 (0)           ; 2 (2)      ; |maxv_top|cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|mss_dir:Bloc_MSS          ; work         ;
-;       |cpt_pos:cpt_pas|              ; 14 (14)     ; 10           ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 10 (10)          ; 10 (10)         ; 0 (0)      ; |maxv_top|cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas                                 ; work         ;
+;       |cpt_pos:cpt_pas|              ; 11 (11)     ; 7            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 7 (7)            ; 7 (7)           ; 0 (0)      ; |maxv_top|cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas                                 ; work         ;
 ;       |div_clk:div_clk_mod|          ; 39 (39)     ; 19           ; 0          ; 0    ; 0            ; 20 (20)      ; 0 (0)             ; 19 (19)          ; 19 (19)         ; 0 (0)      ; |maxv_top|cmd_mvnt_mot_top:U1|div_clk:div_clk_mod                             ; work         ;
-;       |mss_cmd_moteur:mss|           ; 13 (13)     ; 3            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 1 (1)      ; |maxv_top|cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss                              ; work         ;
+;       |mss_cmd_moteur:mss|           ; 12 (12)     ; 3            ; 0          ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 1 (1)      ; |maxv_top|cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss                              ; work         ;
 +--------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -699,15 +700,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Switch_i[7]      ; Input    ; (1)           ;
 ; nButton_i[3]     ; Input    ; (1)           ;
 ; Switch_i[2]      ; Input    ; (1)           ;
-; nButton_i[6]     ; Input    ; (1)           ;
-; nButton_i[5]     ; Input    ; (1)           ;
-; nButton_i[4]     ; Input    ; (1)           ;
 ; Switch_i[0]      ; Input    ; (1)           ;
 ; Switch_i[1]      ; Input    ; (1)           ;
 ; Switch_i[3]      ; Input    ; (1)           ;
 ; Switch_i[4]      ; Input    ; (1)           ;
 ; Switch_i[5]      ; Input    ; (1)           ;
 ; Switch_i[6]      ; Input    ; (1)           ;
+; nButton_i[6]     ; Input    ; (1)           ;
+; nButton_i[5]     ; Input    ; (1)           ;
+; nButton_i[4]     ; Input    ; (1)           ;
 ; nLed_o[0]        ; Output   ; --            ;
 ; nLed_o[1]        ; Output   ; --            ;
 ; nLed_o[2]        ; Output   ; --            ;
@@ -854,26 +855,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------+--------------+---------+---------------------------+--------+----------------------+------------------+
 ; Name                                                                ; Location     ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ;
 +---------------------------------------------------------------------+--------------+---------+---------------------------+--------+----------------------+------------------+
-; Clk_Main_i                                                          ; PIN_H5       ; 106     ; Clock                     ; yes    ; Global Clock         ; GCLK0            ;
-; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|mss_dir:Bloc_MSS|WideOr15 ; LC_X6_Y5_N5  ; 16      ; Clock enable              ; no     ; --                   ; --               ;
-; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|reset_pos_s               ; LC_X5_Y5_N6  ; 16      ; Async. clear              ; yes    ; Global Clock         ; GCLK2            ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[2]~20                   ; LC_X3_Y7_N6  ; 10      ; Clock enable              ; no     ; --                   ; --               ;
-; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|Equal0~5                    ; LC_X11_Y2_N4 ; 24      ; Sync. load                ; no     ; --                   ; --               ;
-; cmd_mvnt_mot_top:U1|init_s                                          ; LC_X5_Y5_N6  ; 14      ; Sync. clear               ; no     ; --                   ; --               ;
-; cmd_mvnt_mot_top:U1|start_s                                         ; LC_X3_Y7_N8  ; 16      ; Sync. load                ; no     ; --                   ; --               ;
-; nReset_i                                                            ; PIN_M9       ; 90      ; Async. clear, Async. load ; yes    ; Global Clock         ; GCLK3            ;
+; Clk_Main_i                                                          ; PIN_H5       ; 103     ; Clock                     ; yes    ; Global Clock         ; GCLK0            ;
+; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|mss_dir:Bloc_MSS|WideOr15 ; LC_X8_Y7_N0  ; 16      ; Clock enable              ; no     ; --                   ; --               ;
+; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|reset_pos_s               ; LC_X10_Y3_N4 ; 16      ; Async. clear              ; yes    ; Global Clock         ; GCLK3            ;
+; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[5]~14                   ; LC_X3_Y5_N9  ; 7       ; Clock enable              ; no     ; --                   ; --               ;
+; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|Equal0~5                    ; LC_X7_Y6_N5  ; 24      ; Sync. load                ; no     ; --                   ; --               ;
+; cmd_mvnt_mot_top:U1|init_s                                          ; LC_X10_Y3_N4 ; 14      ; Sync. clear               ; no     ; --                   ; --               ;
+; cmd_mvnt_mot_top:U1|start_s                                         ; LC_X2_Y7_N0  ; 12      ; Sync. load                ; no     ; --                   ; --               ;
+; nReset_i                                                            ; PIN_M9       ; 87      ; Async. clear, Async. load ; yes    ; Global Clock         ; GCLK2            ;
 +---------------------------------------------------------------------+--------------+---------+---------------------------+--------+----------------------+------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                             ;
-+-------------------------------------------------------+-------------+---------+----------------------+------------------+
-; Name                                                  ; Location    ; Fan-Out ; Global Resource Used ; Global Line Name ;
-+-------------------------------------------------------+-------------+---------+----------------------+------------------+
-; Clk_Main_i                                            ; PIN_H5      ; 106     ; Global Clock         ; GCLK0            ;
-; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|reset_pos_s ; LC_X5_Y5_N6 ; 16      ; Global Clock         ; GCLK2            ;
-; nReset_i                                              ; PIN_M9      ; 90      ; Global Clock         ; GCLK3            ;
-+-------------------------------------------------------+-------------+---------+----------------------+------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                              ;
++-------------------------------------------------------+--------------+---------+----------------------+------------------+
+; Name                                                  ; Location     ; Fan-Out ; Global Resource Used ; Global Line Name ;
++-------------------------------------------------------+--------------+---------+----------------------+------------------+
+; Clk_Main_i                                            ; PIN_H5       ; 103     ; Global Clock         ; GCLK0            ;
+; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|reset_pos_s ; LC_X10_Y3_N4 ; 16      ; Global Clock         ; GCLK3            ;
+; nReset_i                                              ; PIN_M9       ; 87      ; Global Clock         ; GCLK2            ;
++-------------------------------------------------------+--------------+---------+----------------------+------------------+
 
 
 +-------------------------------------------------------------------------------------------------------+
@@ -883,7 +884,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------------+---------+
 ; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|Equal0~5                                            ; 24      ;
 ; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|mss_dir:Bloc_MSS|WideOr15                         ; 16      ;
-; cmd_mvnt_mot_top:U1|start_s                                                                 ; 16      ;
 ; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|mss_dir:Bloc_MSS|WideOr16~1                       ; 15      ;
 ; cmd_mvnt_mot_top:U1|sel_vitesse_s[2]                                                        ; 15      ;
 ; cmd_mvnt_mot_top:U1|capt_b_s                                                                ; 14      ;
@@ -891,11 +891,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; cmd_mvnt_mot_top:U1|capt_a_s                                                                ; 13      ;
 ; cmd_mvnt_mot_top:U1|sel_vitesse_s[0]                                                        ; 13      ;
 ; cmd_mvnt_mot_top:U1|sel_vitesse_s[1]                                                        ; 13      ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[2]~20                                           ; 10      ;
-; ~GND                                                                                        ; 7       ;
-; cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss|Etat_Pres[2]                                         ; 7       ;
+; cmd_mvnt_mot_top:U1|start_s                                                                 ; 12      ;
+; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[5]~14                                           ; 7       ;
 ; cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss|Etat_Pres[1]                                         ; 6       ;
 ; cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss|Etat_Pres[0]                                         ; 6       ;
+; cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss|Etat_Pres[2]                                         ; 6       ;
 ; Cpt_s[4]~31                                                                                 ; 5       ;
 ; Cpt_s[9]~21                                                                                 ; 5       ;
 ; Cpt_s[14]~11                                                                                ; 5       ;
@@ -906,10 +906,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|mss_dir:Bloc_MSS|Etat_Pres.E_CW0                  ; 5       ;
 ; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|cpt_pos_acq:Bloc_position|cpt_pres[7]~15          ; 5       ;
 ; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|cpt_pos_acq:Bloc_position|cpt_pres[2]~5           ; 5       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[4]~9                                            ; 5       ;
 ; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|cpt_now[13]~33                                      ; 5       ;
 ; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|cpt_now[8]~23                                       ; 5       ;
 ; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|cpt_now[3]~13                                       ; 5       ;
+; ~GND                                                                                        ; 4       ;
 ; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|mss_dir:Bloc_MSS|Etat_Pres.E_Init                 ; 4       ;
 ; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|mss_dir:Bloc_MSS|Etat_Pres.E_CCW3                 ; 4       ;
 ; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|mss_dir:Bloc_MSS|Etat_Pres.E_Start3               ; 4       ;
@@ -919,17 +919,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|mss_dir:Bloc_MSS|Etat_Pres.E_Start1               ; 4       ;
 ; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|mss_dir:Bloc_MSS|Etat_Pres.E_CCW0                 ; 4       ;
 ; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|mss_dir:Bloc_MSS|Etat_Pres.E_Start0               ; 4       ;
-; cmd_mvnt_mot_top:U1|dir_s                                                                   ; 4       ;
-; cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss|Mux0~0                                               ; 4       ;
+; cmd_mvnt_mot_top:U1|m_auto_s                                                                ; 4       ;
 ; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|mss_dir:Bloc_MSS|Etat_Pres~41                     ; 3       ;
 ; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|mss_dir:Bloc_MSS|Etat_Pres~40                     ; 3       ;
 ; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|mss_dir:Bloc_MSS|Etat_Pres~39                     ; 3       ;
 ; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|mss_dir:Bloc_MSS|Etat_Pres~38                     ; 3       ;
 ; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|cpt_pos_acq:Bloc_position|cpt_pres[12]~25         ; 3       ;
-; cmd_mvnt_mot_top:U1|m_auto_s                                                                ; 3       ;
+; cmd_mvnt_mot_top:U1|dir_s                                                                   ; 3       ;
+; cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss|Fut~0                                                ; 3       ;
+; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[6]                                              ; 3       ;
+; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[5]                                              ; 3       ;
+; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[4]                                              ; 3       ;
+; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[3]~7                                            ; 3       ;
 ; Con_80p_io[2]~4                                                                             ; 2       ;
 ; Switch_i[2]                                                                                 ; 2       ;
 ; nButton_i[8]                                                                                ; 2       ;
+; cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss|Mux2~7                                               ; 2       ;
 ; Cpt_s[0]                                                                                    ; 2       ;
 ; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|mss_dir:Bloc_MSS|Fut~0                            ; 2       ;
 ; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|mss_dir:Bloc_MSS|WideOr15~1                       ; 2       ;
@@ -957,21 +962,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|cpt_pos_acq:Bloc_position|cpt_pres[2]             ; 2       ;
 ; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|cpt_pos_acq:Bloc_position|cpt_pres[1]             ; 2       ;
 ; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|cpt_pos_acq:Bloc_position|cpt_pres[0]             ; 2       ;
-; cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss|Mux2~6                                               ; 2       ;
-; cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss|Mux2~3                                               ; 2       ;
+; cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss|Mux2~4                                               ; 2       ;
 ; cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss|Mux2~2                                               ; 2       ;
 ; cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss|Mux2~1                                               ; 2       ;
 ; cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss|Mux2~0                                               ; 2       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[9]                                              ; 2       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[8]                                              ; 2       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[7]                                              ; 2       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[6]                                              ; 2       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[5]                                              ; 2       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[4]                                              ; 2       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[3]                                              ; 2       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[2]                                              ; 2       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[1]                                              ; 2       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[0]                                              ; 2       ;
 ; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|cpt_now[15]                                         ; 2       ;
 ; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|cpt_now[14]                                         ; 2       ;
 ; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|cpt_now[13]                                         ; 2       ;
@@ -991,23 +985,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|cpt_now[18]                                         ; 2       ;
 ; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|cpt_now[17]                                         ; 2       ;
 ; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|cpt_now[16]                                         ; 2       ;
-; cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss|Fut~0                                                ; 2       ;
+; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|Equal0~1                                                ; 2       ;
+; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|Equal0~0                                                ; 2       ;
+; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[3]                                              ; 2       ;
+; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[2]                                              ; 2       ;
+; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[1]                                              ; 2       ;
+; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[0]                                              ; 2       ;
 ; Cpt_s[19]                                                                                   ; 2       ;
 ; cmd_mvnt_mot_top:U1|sel_vitesse_s[2]~_wirecell                                              ; 1       ;
 ; Con_80p_io[40]~42                                                                           ; 1       ;
 ; Con_80p_io[39]~41                                                                           ; 1       ;
+; nButton_i[4]                                                                                ; 1       ;
+; nButton_i[5]                                                                                ; 1       ;
+; nButton_i[6]                                                                                ; 1       ;
 ; Switch_i[6]                                                                                 ; 1       ;
 ; Switch_i[5]                                                                                 ; 1       ;
 ; Switch_i[4]                                                                                 ; 1       ;
 ; Switch_i[3]                                                                                 ; 1       ;
 ; Switch_i[1]                                                                                 ; 1       ;
 ; Switch_i[0]                                                                                 ; 1       ;
-; nButton_i[4]                                                                                ; 1       ;
-; nButton_i[5]                                                                                ; 1       ;
-; nButton_i[6]                                                                                ; 1       ;
 ; nButton_i[3]                                                                                ; 1       ;
 ; Switch_i[7]                                                                                 ; 1       ;
 ; nButton_i[1]                                                                                ; 1       ;
+; cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss|Mux0~2                                               ; 1       ;
+; cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss|Mux2~6                                               ; 1       ;
 ; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|mss_dir:Bloc_MSS|Selector21~3                     ; 1       ;
 ; cmd_mvnt_mot_top:U1|acqu_pos_top:acqu_pos|mss_dir:Bloc_MSS|Selector21~2                     ; 1       ;
 ; Cpt_s[1]~37COUT1_56                                                                         ; 1       ;
@@ -1086,13 +1087,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Cpt_s[17]~5COUT1_82                                                                         ; 1       ;
 ; Cpt_s[17]~5                                                                                 ; 1       ;
 ; Cpt_s[17]                                                                                   ; 1       ;
-; cmd_mvnt_mot_top:U1|dist_x_s[6]                                                             ; 1       ;
-; cmd_mvnt_mot_top:U1|dist_x_s[5]                                                             ; 1       ;
-; cmd_mvnt_mot_top:U1|dist_x_s[4]                                                             ; 1       ;
-; cmd_mvnt_mot_top:U1|dist_x_s[3]                                                             ; 1       ;
-; cmd_mvnt_mot_top:U1|dist_x_s[2]                                                             ; 1       ;
-; cmd_mvnt_mot_top:U1|dist_x_s[1]                                                             ; 1       ;
-; cmd_mvnt_mot_top:U1|dist_x_s[0]                                                             ; 1       ;
 ; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|Mux2~0                                              ; 1       ;
 ; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|Mux3~0                                              ; 1       ;
 ; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|Mux4~0                                              ; 1       ;
@@ -1107,32 +1101,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|Mux13~0                                             ; 1       ;
 ; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|Mux0~0                                              ; 1       ;
 ; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|Mux1~0                                              ; 1       ;
+; cmd_mvnt_mot_top:U1|dist_x_s[6]                                                             ; 1       ;
+; cmd_mvnt_mot_top:U1|dist_x_s[5]                                                             ; 1       ;
+; cmd_mvnt_mot_top:U1|dist_x_s[4]                                                             ; 1       ;
+; cmd_mvnt_mot_top:U1|dist_x_s[3]                                                             ; 1       ;
+; cmd_mvnt_mot_top:U1|dist_x_s[2]                                                             ; 1       ;
+; cmd_mvnt_mot_top:U1|dist_x_s[1]                                                             ; 1       ;
+; cmd_mvnt_mot_top:U1|dist_x_s[0]                                                             ; 1       ;
 ; Cpt_s[18]~3COUT1_84                                                                         ; 1       ;
 ; Cpt_s[18]~3                                                                                 ; 1       ;
 ; Cpt_s[18]                                                                                   ; 1       ;
 ; cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss|Mux1~0                                               ; 1       ;
-; cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss|Mux2~5                                               ; 1       ;
-; cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss|Mux2~4                                               ; 1       ;
-; cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss|Mux0~1                                               ; 1       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|Equal0~2                                                ; 1       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[8]~17COUT1_45                                   ; 1       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[8]~17                                           ; 1       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|Equal0~1                                                ; 1       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[7]~15COUT1_43                                   ; 1       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[7]~15                                           ; 1       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[6]~13COUT1_41                                   ; 1       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[6]~13                                           ; 1       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[5]~11COUT1_39                                   ; 1       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[5]~11                                           ; 1       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|Equal0~0                                                ; 1       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[3]~7COUT1_37                                    ; 1       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[3]~7                                            ; 1       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[2]~5COUT1_35                                    ; 1       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[2]~5                                            ; 1       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[1]~3COUT1_33                                    ; 1       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[1]~3                                            ; 1       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[0]~1COUT1_31                                    ; 1       ;
-; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[0]~1                                            ; 1       ;
+; cmd_mvnt_mot_top:U1|mss_cmd_moteur:mss|Mux2~3                                               ; 1       ;
 ; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|Equal0~4                                            ; 1       ;
 ; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|Equal0~3                                            ; 1       ;
 ; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|cpt_now[15]~37COUT1_79                              ; 1       ;
@@ -1168,6 +1148,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|cpt_now[17]~3                                       ; 1       ;
 ; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|cpt_now[16]~1COUT1_81                               ; 1       ;
 ; cmd_mvnt_mot_top:U1|div_clk:div_clk_mod|cpt_now[16]~1                                       ; 1       ;
+; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|Equal0~2                                                ; 1       ;
+; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[5]~11COUT1_30                                   ; 1       ;
+; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[5]~11                                           ; 1       ;
+; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[4]~9COUT1_28                                    ; 1       ;
+; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[4]~9                                            ; 1       ;
+; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[2]~5COUT1_26                                    ; 1       ;
+; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[2]~5                                            ; 1       ;
+; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[1]~3COUT1_24                                    ; 1       ;
+; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[1]~3                                            ; 1       ;
+; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[0]~1COUT1_22                                    ; 1       ;
+; cmd_mvnt_mot_top:U1|cpt_pos:cpt_pas|cpt_now[0]~1                                            ; 1       ;
 +---------------------------------------------------------------------------------------------+---------+
 
 
@@ -1176,43 +1167,43 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+---------------------+
 ; Other Routing Resource Type ; Usage               ;
 +-----------------------------+---------------------+
-; C4s                         ; 106 / 1,624 ( 7 % ) ;
-; Direct links                ; 28 / 1,930 ( 1 % )  ;
+; C4s                         ; 87 / 1,624 ( 5 % )  ;
+; Direct links                ; 27 / 1,930 ( 1 % )  ;
 ; Global clocks               ; 3 / 4 ( 75 % )      ;
-; LAB clocks                  ; 21 / 56 ( 38 % )    ;
-; LUT chains                  ; 1 / 513 ( < 1 % )   ;
-; Local interconnects         ; 174 / 1,930 ( 9 % ) ;
-; R4s                         ; 92 / 1,472 ( 6 % )  ;
+; LAB clocks                  ; 22 / 56 ( 39 % )    ;
+; LUT chains                  ; 0 / 513 ( 0 % )     ;
+; Local interconnects         ; 166 / 1,930 ( 9 % ) ;
+; R4s                         ; 95 / 1,472 ( 6 % )  ;
 +-----------------------------+---------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Logic Elements                                                        ;
 +--------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 6.04) ; Number of LABs  (Total = 26) ;
+; Number of Logic Elements  (Average = 5.67) ; Number of LABs  (Total = 27) ;
 +--------------------------------------------+------------------------------+
-; 1                                          ; 10                           ;
+; 1                                          ; 11                           ;
 ; 2                                          ; 0                            ;
 ; 3                                          ; 0                            ;
-; 4                                          ; 0                            ;
+; 4                                          ; 1                            ;
 ; 5                                          ; 1                            ;
 ; 6                                          ; 0                            ;
-; 7                                          ; 0                            ;
-; 8                                          ; 3                            ;
-; 9                                          ; 2                            ;
-; 10                                         ; 10                           ;
+; 7                                          ; 1                            ;
+; 8                                          ; 2                            ;
+; 9                                          ; 0                            ;
+; 10                                         ; 11                           ;
 +--------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 2.04) ; Number of LABs  (Total = 26) ;
+; LAB-wide Signals  (Average = 1.89) ; Number of LABs  (Total = 27) ;
 +------------------------------------+------------------------------+
 ; 1 Async. clear                     ; 20                           ;
 ; 1 Async. load                      ; 2                            ;
 ; 1 Clock                            ; 23                           ;
-; 1 Clock enable                     ; 3                            ;
+; 1 Clock enable                     ; 1                            ;
 ; 1 Sync. clear                      ; 2                            ;
 ; 1 Sync. load                       ; 3                            ;
 +------------------------------------+------------------------------+
@@ -1221,69 +1212,64 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                        ;
 +---------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 6.19) ; Number of LABs  (Total = 26) ;
+; Number of Signals Sourced  (Average = 5.81) ; Number of LABs  (Total = 27) ;
 +---------------------------------------------+------------------------------+
 ; 0                                           ; 0                            ;
-; 1                                           ; 9                            ;
+; 1                                           ; 10                           ;
 ; 2                                           ; 1                            ;
 ; 3                                           ; 0                            ;
-; 4                                           ; 0                            ;
+; 4                                           ; 1                            ;
 ; 5                                           ; 1                            ;
 ; 6                                           ; 0                            ;
 ; 7                                           ; 0                            ;
 ; 8                                           ; 3                            ;
-; 9                                           ; 1                            ;
-; 10                                          ; 10                           ;
-; 11                                          ; 0                            ;
-; 12                                          ; 1                            ;
+; 9                                           ; 0                            ;
+; 10                                          ; 9                            ;
+; 11                                          ; 2                            ;
 +---------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 4.31) ; Number of LABs  (Total = 26) ;
+; Number of Signals Sourced Out  (Average = 4.04) ; Number of LABs  (Total = 27) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 1                            ;
-; 1                                               ; 11                           ;
+; 1                                               ; 12                           ;
 ; 2                                               ; 2                            ;
 ; 3                                               ; 0                            ;
-; 4                                               ; 0                            ;
-; 5                                               ; 0                            ;
-; 6                                               ; 4                            ;
+; 4                                               ; 1                            ;
+; 5                                               ; 1                            ;
+; 6                                               ; 1                            ;
 ; 7                                               ; 1                            ;
-; 8                                               ; 3                            ;
-; 9                                               ; 0                            ;
+; 8                                               ; 4                            ;
+; 9                                               ; 1                            ;
 ; 10                                              ; 3                            ;
-; 11                                              ; 0                            ;
-; 12                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                        ;
 +---------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 6.81) ; Number of LABs  (Total = 26) ;
+; Number of Distinct Inputs  (Average = 6.15) ; Number of LABs  (Total = 27) ;
 +---------------------------------------------+------------------------------+
 ; 0                                           ; 0                            ;
 ; 1                                           ; 0                            ;
-; 2                                           ; 1                            ;
+; 2                                           ; 2                            ;
 ; 3                                           ; 11                           ;
-; 4                                           ; 1                            ;
-; 5                                           ; 2                            ;
+; 4                                           ; 0                            ;
+; 5                                           ; 3                            ;
 ; 6                                           ; 0                            ;
-; 7                                           ; 0                            ;
-; 8                                           ; 0                            ;
-; 9                                           ; 3                            ;
-; 10                                          ; 0                            ;
+; 7                                           ; 1                            ;
+; 8                                           ; 1                            ;
+; 9                                           ; 2                            ;
+; 10                                          ; 1                            ;
 ; 11                                          ; 1                            ;
-; 12                                          ; 1                            ;
+; 12                                          ; 0                            ;
 ; 13                                          ; 0                            ;
-; 14                                          ; 1                            ;
-; 15                                          ; 2                            ;
-; 16                                          ; 1                            ;
-; 17                                          ; 0                            ;
-; 18                                          ; 1                            ;
+; 14                                          ; 2                            ;
+; 15                                          ; 0                            ;
+; 16                                          ; 2                            ;
 +---------------------------------------------+------------------------------+
 
 
@@ -1334,20 +1320,20 @@ Info (186391): Fitter is using Normal packing mode for logic elements with Auto 
 Info (186468): Started processing fast register assignments
 Info (186469): Finished processing fast register assignments
 Info (176235): Finished register packing
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
 Info (170193): Fitter routing operations beginning
-Info (170195): Router estimated average interconnect usage is 7% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 7% of the available device resources in the region that extends from location X0_Y0 to location X13_Y8
+Info (170195): Router estimated average interconnect usage is 6% of the available device resources
+    Info (170196): Router estimated peak interconnect usage is 6% of the available device resources in the region that extends from location X0_Y0 to location X13_Y8
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.14 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.13 seconds.
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Warning (169064): Following 119 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
     Info (169065): Pin Con_25p_io[1] has a permanently enabled output enable
@@ -1471,9 +1457,9 @@ Warning (169064): Following 119 pins have no output enable or a GND or VCC outpu
     Info (169065): Pin Mezzanine_io[20] has a permanently enabled output enable
 Info (144001): Generated suppressed messages file /home/redsuser/nicolas.kobel/csn/Labo_CSN_Dep_Chariot/cmd_depl/cpld/output_files/maxv_top.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 692 megabytes
-    Info: Processing ended: Thu Jan 21 11:40:26 2016
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 698 megabytes
+    Info: Processing ended: Fri Jan 22 12:55:54 2016
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:01
 
 
