@@ -61,7 +61,7 @@
 
 %Ici commence réelement l'écriture du rapport
 \section{Mandat}
-Le but de se laboratoire est de commandé la rotation d'un moteur. Il y a deux modes. Le mode manuel qui fait tourné le moteur temps que l'on reste appuyer sur le bouton start et le mode automatique où l'on avance du nombre de position définit.
+Le but de se laboratoire est de commandé la rotation d'un moteur. Il y a deux modes. Le mode manuel qui fait tourné le moteur temps que l'on reste appuyer sur le bouton start et le mode automatique où l'on avance du nombre de position définit. Il sera possible de modifier la vitesse de rotation
 
 Schéma des entrée:\\
 \includegraphics[scale=0.5]{images/schema_entree.jpg}
@@ -69,14 +69,36 @@ Schéma des entrée:\\
 Tableau des entrées/sorties:\\
 \includegraphics[scale=0.5]{images/tableau.jpg}
 
+Tableau des vitesses:\\
+\includegraphics[scale=0.5]{images/vitesse.jpg}
+
+Chronogramme pour commander le moteur:\\
+\includegraphics[scale=0.5]{images/cmd_moteur.jpg}
+\newpage
 \section{Analyse}
 
+\newpage
 \section{Schéma}
 
+\newpage
 \section{Simulation}
+Pour les tests, nous avons testé que le fonctionnement normal dans les deux modes. En mode manuel, nous avons fait forcer le \texttt{div\_clk} à un afin de voir lorsque l'on appuie sur \texttt{start} les sortie \texttt{ph\_a} et \texttt{ph\_b} changeait et exécutait la bonne séquence. Le mode automatique, nous avons vérifier qu'après un flanc du \texttt{start} les sorties changer le bon nombre de fois. Durant c'est deux tests, nous avons aussi vérifier que les sorties \texttt{busy} et \texttt{done} correspondant au état attendu durant que le moteur fonctionne ou est à l'arrêt. Par manque de temps des tests plus poussé n'ont pas pu être effectuer.Par exemple, nous n'avons pas pus tester l'initialisation avec l'entrée \texttt{init} ou les deux sens de rotation, ici nous avons tester quand sens anti-horaire.\\
 
+Durant les tests, nous nous somme aperçu de deux erreurs d'implémentation. La première est que lorsque l'on est en mode automatique, il faut laisser le bouton \texttt{start} appuyer jusqu'au prochain signal du \texttt{clk\_div}. Cela peut durer jusqu'à une seconde selon la vitesse sélectionner.La deuxième est que l'on fait un pas de plus que le nombre définit en mode automatique. Par manque de temps, nous n'avons pas pu les corriger.
+
+\begin{tabular}{ll}
+
+Chronogramme (Mode Manuel): & Chronogramme (Mode Auto):\\\\
+\includegraphics[angle=90,scale=0.45]{images/manualSim.jpg} & \includegraphics[angle=90,scale=0.45]{images/autoSim.jpg}\\
+
+\end{tabular}
+\newpage
 \section{Synthèse}
+\includegraphics[scale=0.45]{images/summaryQuartus.png}\\
 
+Lors de l'importation sur la carte, nous avons tester le fonctionnement manuel et automatique. Nous avons aussi essayer les deux direction et différentes vitesses.
+
+\newpage
 \section{VHDL}
 
 \end{document}
