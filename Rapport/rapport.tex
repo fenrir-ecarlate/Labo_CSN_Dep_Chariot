@@ -22,6 +22,8 @@
 \usepackage{xcolor} % Style pour affichage du C
 \usepackage{courier} % police pour les listings
 
+\usepackage{listingsutf8}
+
 % Page de Garde -- Necessite d'installer le package titling, si probleme
 % commenter la ligne suivante ainsi que les infos necessaires a la page
 % de garde
@@ -52,6 +54,32 @@
 \lfoot{HEIG-VD}
 \cfoot{\today}
 \rfoot{\thepage}
+
+     \lstdefinelanguage{VHDL}{
+      morekeywords=[1]{
+        library,use,all,entity,is,port,in,out,end,architecture,of,
+        begin,and,or,Not,downto,ALL
+      },
+      morekeywords=[2]{
+        STD_LOGIC_VECTOR,STD_LOGIC,IEEE,STD_LOGIC_1164,
+        NUMERIC_STD,STD_LOGIC_ARITH,STD_LOGIC_UNSIGNED,std_logic_vector,
+        std_logic
+      },
+      morecomment=[l]--
+    }
+    \usepackage[usenames,dvipsnames]{xcolor}
+    \colorlet{keyword}{blue!100!black!80}
+    \colorlet{STD}{Lavender}
+    \colorlet{comment}{green!80!black!90}
+    \lstdefinestyle{vhdl}{
+      language     = VHDL,
+      basicstyle   = \footnotesize \ttfamily,
+      keywordstyle = [1]\color{keyword}\bfseries,
+      keywordstyle = [2]\color{STD}\bfseries,
+      commentstyle = \color{comment}
+      breaklines=true,                % sets automatic line breaking
+      tabsize=3                                % sets default tabsize to 2 spaces
+    }
 
 \begin{document}
 \maketitle
@@ -106,16 +134,26 @@ où $pas$ est le nombre de pas du moteur par seconde.
 Ces valeurs sont mémorisées en dûre, et choisis par un multipléxeur à l'entrée du compteur.
 Lorsque le compteur atteint 0, une pulse d'un coup de clock est généré qui permet la division de l'horloge de base.
 
-% schéma
+\includegraphics[width=\textwidth]{images/div_h.png}
 \subsubsection{Compteur de pas}
 Il s'agit là d'un simple compteur qui décrémente de valeur à chaque impulsion du diviseur d'horloge.
 Le compteur est remis à la valeur entrée par l'utilisateur à chaque fois que celui-ci donne le signal de départ.
 Lorsque le compteur atteint zéro, un signal est levé.
+
 % schéma
+\includegraphics[width=\textwidth]{images/cpt_pos.png}
 \newpage
 \section{Schéma}
 Ci dessous le schéma de la décomposition principale (top) du système.
 
+Les signaux suffixés par $\_s$ indiquent des signaux générés soit par les sous-systèmes les générants (ils sont graphiquement reliés l'un à l'autre), soit des signaux d'entrée synchronisés dans des registres non représentés.
+
+Les signaux suffixés par $\_o$ indiquent des signaux de sortie du système.
+L'architécture du système garanti que tout ces signaux ont été produits de manière synchrone.
+
+Les signaux suffixés par $\_i$ indiquent des signaux d'entrée asynchrones du système.
+
+\includegraphics[angle=90, width=\textwidth]{images/top.png}
 
 \newpage
 \section{Simulation}
@@ -137,5 +175,8 @@ Lors de l'importation sur la carte, nous avons tester le fonctionnement manuel e
 
 \newpage
 \section{VHDL}
-
+\lstinputlisting[caption=top, language=VHDL]{src/cmd_mvnt_mot_top.vhd}
+\lstinputlisting[caption=Machine D'états, language=VHDL]{src/mss_cmd_moteur.vhd}
+\lstinputlisting[caption=Diviseur d'horloge, language=VHDL]{src/div_clk.vhd}
+\lstinputlisting[caption=Compteur de position, language=VHDL]{src/cpt_pos.vhd}
 \end{document}
