@@ -76,13 +76,46 @@ Chronogramme pour commander le moteur:\\
 \includegraphics[scale=0.5]{images/cmd_moteur.jpg}
 \newpage
 \section{Analyse}
-Les deux fonctionnalités principales à implémenter sont la commande du moteur pas à pas et l'aquisition de la position au temps présent de la table tournante.
-Le second a été réalisé lors du dernier laboratoire, ce rapport va donc se concentrer sur la première fonctionnalité.
+\subsection{Commande des moteurs}
+Pour la commande des moteurs, nous avons fait la séparation suivante. La vitesse correspond à un diviseur d'horloge qui dépendra de la valeur de celui-c. Pour le parcours de distance en mode automatique, il s'agit que d'un compteur dont on charge la valeur définit au début du cycle et qui va décrémenter à chaque pas. Les pas sont dépendant de la vitesse, il faudra donc utilisé la sortie du diviseur d'horloge pour avoir la référence. Il génére une pulse lorsque l'on arrive à la fin de la distance.
 
-La commande du moteur se décompose en trois sous parties générales.
-Une machine d'états 
+La génération de commande se fait via une MSS. Elle reçoit en entrée le signal \texttt{start}, la direction, le mode (manuel/auto), la fin de distance pour le mode automatique et le diviseur d'horloge pour la vitesse. Il indique en  sortie si le moteur est occupé ou non et fait les différent changement de phase pour le moteur. Il s'occupe donc de faire les cycle moteur comme indiqué sur le chronnogramme lorsque celui si est en marche.
+
+L'acquisition de position a été repris de l'ancien laboratoire de Domingues Pedrosa João Miguel.
+\subsubsection{Organigramme}
+Il faut faire attention au lorsque l'on avance d'un pas, il faut faire attention d'attendre sur le diviseur de fréquence afin que l'on est bien la bonne vitesse pour la rotation du moteurs.\\
+\includegraphics[scale=0.5]{images/orga.jpg}
+
+\subsubsection{MSS génération de commande}
+\includegraphics[scale=0.5]{images/mss.jpg}
+\subsubsection{Diviseur d'horloge}
+Afin de pouvoir "changer de vitesse" un diviseur d'horloge à du être mis en place.
+Il s'agit d'un compteur décrémental.
+La valeur de rechargement est calculée en fonction de la fréquence d'horloge.
+
+Pour une horloge de $1MHz$ la valeur de rechargement $val$ est calculée comme suit :
+\begin{equation}
+val = periode * 1000
+\end{equation}
+où $periode$ est la période d'horloge divisée en milisecondes, ou
+\begin{equation}
+periode = \frac{1}{pas} * 1000
+\end{equation} 
+où $pas$ est le nombre de pas du moteur par seconde.
+
+Ces valeurs sont mémorisées en dûre, et choisis par un multipléxeur à l'entrée du compteur.
+Lorsque le compteur atteint 0, une pulse d'un coup de clock est généré qui permet la division de l'horloge de base.
+
+% schéma
+\subsubsection{Compteur de pas}
+Il s'agit là d'un simple compteur qui décrémente de valeur à chaque impulsion du diviseur d'horloge.
+Le compteur est remis à la valeur entrée par l'utilisateur à chaque fois que celui-ci donne le signal de départ.
+Lorsque le compteur atteint zéro, un signal est levé.
+% schéma
 \newpage
 \section{Schéma}
+Ci dessous le schéma de la décomposition principale (top) du système.
+
 
 \newpage
 \section{Simulation}

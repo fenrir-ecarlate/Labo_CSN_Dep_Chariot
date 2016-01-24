@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.8)  23 JAN 2016 17:45
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.9.8)  24 JAN 2016 15:10
 entering extended mode
 **rapport.tex
 
@@ -682,7 +682,7 @@ l\Rapport\rapport.out")
 
 ("C:\Users\Domingues\Documents\HEIG-VD\3eme_annee\S1\CSN\Laboratoires\Labo fina
 l\Rapport\pageGarde/HEIG_titlepage.tex"
-<pageGarde/logo.png, id=27, 401.5pt x 401.5pt>
+<pageGarde/logo.png, id=39, 401.5pt x 401.5pt>
 File: pageGarde/logo.png Graphic file (type png)
  <use pageGarde/logo.png>
 Package pdftex.def Info: pageGarde/logo.png used on input line 5.
@@ -697,7 +697,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 7.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<pageGarde/logo_hes.jpg, id=29, 87.49222pt x 44.67082pt>
+<pageGarde/logo_hes.jpg, id=41, 87.49222pt x 44.67082pt>
 File: pageGarde/logo_hes.jpg Graphic file (type jpg)
 
 <use pageGarde/logo_hes.jpg>
@@ -733,28 +733,28 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.60 \newpage
-              [1] <images/schema_entree.jpg, id=48, 512.66531pt x 233.37187pt>
+              [1] <images/schema_entree.jpg, id=63, 512.66531pt x 233.37187pt>
 File: images/schema_entree.jpg Graphic file (type jpg)
 
 <use images/schema_entree.jpg>
 Package pdftex.def Info: images/schema_entree.jpg used on input line 67.
 (pdftex.def)             Requested size: 256.33202pt x 116.68564pt.
 
-<images/tableau.jpg, id=49, 432.86719pt x 521.69907pt>
+<images/tableau.jpg, id=64, 432.86719pt x 521.69907pt>
 File: images/tableau.jpg Graphic file (type jpg)
 
 <use images/tableau.jpg>
 Package pdftex.def Info: images/tableau.jpg used on input line 70.
 (pdftex.def)             Requested size: 216.43306pt x 260.84889pt.
 
-<images/vitesse.jpg, id=50, 303.38344pt x 119.69719pt>
+<images/vitesse.jpg, id=65, 303.38344pt x 119.69719pt>
 File: images/vitesse.jpg Graphic file (type jpg)
 
 <use images/vitesse.jpg>
 Package pdftex.def Info: images/vitesse.jpg used on input line 73.
 (pdftex.def)             Requested size: 151.69135pt x 59.84843pt.
 
-<images/cmd_moteur.jpg, id=51, 523.20468pt x 109.91063pt>
+<images/cmd_moteur.jpg, id=66, 523.20468pt x 109.91063pt>
 File: images/cmd_moteur.jpg Graphic file (type jpg)
 
 <use images/cmd_moteur.jpg>
@@ -766,71 +766,87 @@ me_annee/S1/CSN/Laboratoires/Labo final/Rapport/images/tableau.jpg> <C:/Users/D
 omingues/Documents/HEIG-VD/3eme_annee/S1/CSN/Laboratoires/Labo final/Rapport/im
 ages/vitesse.jpg> <C:/Users/Domingues/Documents/HEIG-VD/3eme_annee/S1/CSN/Labor
 atoires/Labo final/Rapport/images/cmd_moteur.jpg>]
-[3] [4]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 85.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 79.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 82.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\t1pcr.fd"
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 85--86
+<images/orga.jpg, id=71, 614.295pt x 844.8363pt>
+File: images/orga.jpg Graphic file (type jpg)
+ <use images/orga.jpg>
+Package pdftex.def Info: images/orga.jpg used on input line 87.
+(pdftex.def)             Requested size: 307.14674pt x 422.41711pt.
 
- []
-
-<images/manualSim.jpg, id=64, 1407.75937pt x 336.50719pt>
-File: images/manualSim.jpg Graphic file (type jpg)
-
-<use images/manualSim.jpg>
-Package pdftex.def Info: images/manualSim.jpg used on input line 92.
-(pdftex.def)             Requested size: 1407.75594pt x 336.50635pt.
-
-<images/autoSim.jpg, id=65, 1407.75937pt x 336.50719pt>
-File: images/autoSim.jpg Graphic file (type jpg)
-
-<use images/autoSim.jpg>
-Package pdftex.def Info: images/autoSim.jpg used on input line 92.
-(pdftex.def)             Requested size: 1407.75594pt x 336.50635pt.
- [5] [6 <C:/Users/Domingues/Documents/HEIG-VD/3eme_annee/S1/CSN/Laboratoires/La
-bo final/Rapport/images/manualSim.jpg> <C:/Users/Domingues/Documents/HEIG-VD/3e
-me_annee/S1/CSN/Laboratoires/Labo final/Rapport/images/autoSim.jpg>] <images/su
-mmaryQuartus.png, id=76, 847.165pt x 843.15pt>
-File: images/summaryQuartus.png Graphic file (type png)
-
-<use images/summaryQuartus.png>
-Package pdftex.def Info: images/summaryQuartus.png used on input line 97.
-(pdftex.def)             Requested size: 381.22072pt x 379.41399pt.
-
+<images/MSS.jpg, id=72, 578.16pt x 810.50806pt>
+File: images/MSS.jpg Graphic file (type jpg)
+ <use images/MSS.jpg>
+Package pdftex.def Info: images/MSS.jpg used on input line 90.
+(pdftex.def)             Requested size: 289.07928pt x 405.25304pt.
+ [3 <C:/Users/Domingues/Documents/HEIG-VD/3eme_annee/S1/CSN/Laboratoires/Labo f
+inal/Rapport/images/orga.jpg>] [4 <C:/Users/Domingues/Documents/HEIG-VD/3eme_an
+nee/S1/CSN/Laboratoires/Labo final/Rapport/images/MSS.jpg>] [5]
 Underfull \hbox (badness 10000) in paragraph at lines 97--98
 
  []
 
-[7 <C:/Users/Domingues/Documents/HEIG-VD/3eme_annee/S1/CSN/Laboratoires/Labo fi
+<images/manualSim.jpg, id=86, 1407.75937pt x 336.50719pt>
+File: images/manualSim.jpg Graphic file (type jpg)
+
+<use images/manualSim.jpg>
+Package pdftex.def Info: images/manualSim.jpg used on input line 104.
+(pdftex.def)             Requested size: 1407.75594pt x 336.50635pt.
+
+<images/autoSim.jpg, id=87, 1407.75937pt x 336.50719pt>
+File: images/autoSim.jpg Graphic file (type jpg)
+
+<use images/autoSim.jpg>
+Package pdftex.def Info: images/autoSim.jpg used on input line 104.
+(pdftex.def)             Requested size: 1407.75594pt x 336.50635pt.
+ [6] [7 <C:/Users/Domingues/Documents/HEIG-VD/3eme_annee/S1/CSN/Laboratoires/La
+bo final/Rapport/images/manualSim.jpg> <C:/Users/Domingues/Documents/HEIG-VD/3e
+me_annee/S1/CSN/Laboratoires/Labo final/Rapport/images/autoSim.jpg>] <images/su
+mmaryQuartus.png, id=97, 847.165pt x 843.15pt>
+File: images/summaryQuartus.png Graphic file (type png)
+
+<use images/summaryQuartus.png>
+Package pdftex.def Info: images/summaryQuartus.png used on input line 109.
+(pdftex.def)             Requested size: 381.22072pt x 379.41399pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
+
+ []
+
+[8 <C:/Users/Domingues/Documents/HEIG-VD/3eme_annee/S1/CSN/Laboratoires/Labo fi
 nal/Rapport/images/summaryQuartus.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 104.
- [8]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 104.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 116.
+ [9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 116.
 
 ("C:\Users\Domingues\Documents\HEIG-VD\3eme_annee\S1\CSN\Laboratoires\Labo fina
 l\Rapport\rapport.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 104.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 104.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 116.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 116.
 Package rerunfilecheck Info: File `rapport.out' has not changed.
-(rerunfilecheck)             Checksum: 4A06FB8E969A5B2A89DC1D18D1CF0B5C;263.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 104.
+(rerunfilecheck)             Checksum: 4ADA989B3351C6E05CF5E917FD57A7E9;497.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 116.
  ) 
 Here is how much of TeX's memory you used:
- 9360 strings out of 493921
- 132830 string characters out of 3144865
+ 9380 strings out of 493921
+ 133148 string characters out of 3144865
  247812 words of memory out of 3000000
- 12459 multiletter control sequences out of 15000+200000
- 36357 words of font info for 41 fonts, out of 3000000 for 9000
+ 12472 multiletter control sequences out of 15000+200000
+ 39087 words of font info for 43 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 34i,14n,56p,919b,401s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,14n,56p,863b,401s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files (x86)/MiK
 TeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on rapport.pdf (9 pages, 940614 bytes).
+Output written on rapport.pdf (10 pages, 1731230 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
- 16 named destinations out of 1000 (max. 500000)
- 94 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 126 PDF objects out of 1000 (max. 8388607)
+ 20 named destinations out of 1000 (max. 500000)
+ 128 words of extra memory for PDF output out of 10000 (max. 10000000)
 
