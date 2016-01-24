@@ -1,7 +1,10 @@
 \select@language {french}
 \contentsline {section}{\numberline {1}Mandat}{2}{section.1}
 \contentsline {section}{\numberline {2}Analyse}{3}{section.2}
-\contentsline {section}{\numberline {3}Sch\IeC {\'e}ma}{4}{section.3}
-\contentsline {section}{\numberline {4}Simulation}{5}{section.4}
-\contentsline {section}{\numberline {5}Synth\IeC {\`e}se}{7}{section.5}
-\contentsline {section}{\numberline {6}VHDL}{8}{section.6}
+\contentsline {subsection}{\numberline {2.1}Commande des moteurs}{3}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Organigramme}{3}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}MSS g\IeC {\'e}n\IeC {\'e}ration de commande}{4}{subsubsection.2.1.2}
+\contentsline {section}{\numberline {3}Sch\IeC {\'e}ma}{5}{section.3}
+\contentsline {section}{\numberline {4}Simulation}{6}{section.4}
+\contentsline {section}{\numberline {5}Synth\IeC {\`e}se}{8}{section.5}
+\contentsline {section}{\numberline {6}VHDL}{9}{section.6}

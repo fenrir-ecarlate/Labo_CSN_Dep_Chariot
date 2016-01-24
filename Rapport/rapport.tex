@@ -76,6 +76,18 @@ Chronogramme pour commander le moteur:\\
 \includegraphics[scale=0.5]{images/cmd_moteur.jpg}
 \newpage
 \section{Analyse}
+\subsection{Commande des moteurs}
+Pour la commande des moteurs, nous avons fait la séparation suivante. La vitesse correspond à un diviseur d'horloge qui dépendra de la valeur de celui-c. Pour le parcours de distance en mode automatique, il s'agit que d'un compteur dont on charge la valeur définit au début du cycle et qui va décrémenter à chaque pas. Les pas sont dépendant de la vitesse, il faudra donc utilisé la sortie du diviseur d'horloge pour avoir la référence. Il génére une pulse lorsque l'on arrive à la fin de la distance.
+
+La génération de commande se fait via une MSS. Elle reçoit en entrée le signal \texttt{start}, la direction, le mode (manuel/auto), la fin de distance pour le mode automatique et le diviseur d'horloge pour la vitesse. Il indique en  sortie si le moteur est occupé ou non et fait les différent changement de phase pour le moteur. Il s'occupe donc de faire les cycle moteur comme indiqué sur le chronnogramme lorsque celui si est en marche.
+
+L'acquisition de position a été repris de l'ancien laboratoire de Domingues Pedrosa João Miguel.
+\subsubsection{Organigramme}
+Il faut faire attention au lorsque l'on avance d'un pas, il faut faire attention d'attendre sur le diviseur de fréquence afin que l'on est bien la bonne vitesse pour la rotation du moteurs.\\
+\includegraphics[scale=0.5]{images/orga.jpg}
+
+\subsubsection{MSS génération de commande}
+\includegraphics[scale=0.5]{images/MSS.jpg}
 
 \newpage
 \section{Schéma}

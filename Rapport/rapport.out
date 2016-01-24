@@ -1,6 +1,9 @@
 \BOOKMARK [1][-]{section.1}{Mandat}{}% 1
 \BOOKMARK [1][-]{section.2}{Analyse}{}% 2
-\BOOKMARK [1][-]{section.3}{Sch\351ma}{}% 3
-\BOOKMARK [1][-]{section.4}{Simulation}{}% 4
-\BOOKMARK [1][-]{section.5}{Synth\350se}{}% 5
-\BOOKMARK [1][-]{section.6}{VHDL}{}% 6
+\BOOKMARK [2][-]{subsection.2.1}{Commande des moteurs}{section.2}% 3
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Organigramme}{subsection.2.1}% 4
+\BOOKMARK [3][-]{subsubsection.2.1.2}{MSS g\351n\351ration de commande}{subsection.2.1}% 5
+\BOOKMARK [1][-]{section.3}{Sch\351ma}{}% 6
+\BOOKMARK [1][-]{section.4}{Simulation}{}% 7
+\BOOKMARK [1][-]{section.5}{Synth\350se}{}% 8
+\BOOKMARK [1][-]{section.6}{VHDL}{}% 9
